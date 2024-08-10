@@ -1,0 +1,86 @@
+.usy-typography-container {
+  /*
+    Font sizes
+  */
+
+  &.size-extra-small {
+    font-size: var(--usy-fontsize-xs);
+    line-height: calc(var(--usy-fontsize-xs) * 1.35);
+  }
+
+  &.size-small {
+    font-size: var(--usy-fontsize-sm);
+    line-height: calc(var(--usy-fontsize-sm) * 1.35);
+  }
+
+  &.size-medium {
+    font-size: var(--usy-fontsize-md);
+    line-height: calc(var(--usy-fontsize-md) * 1.35);
+  }
+
+  &.size-large {
+    font-size: var(--usy-fontsize-lg);
+    line-height: calc(var(--usy-fontsize-lg) * 1.35);
+  }
+
+  &.size-extra-large {
+    font-size: var(--usy-fontsize-xl);
+    line-height: calc(var(--usy-fontsize-xl) * 1.35);
+  }
+
+  /*
+    Font weight
+  */
+
+  &.weight-thin {
+    font-weight: var(--usy-fontweight-thin);
+  }
+
+  &.weight-light {
+    font-weight: var(--usy-fontweight-light);
+  }
+
+  &.weight-semilight {
+    font-weight: var(--usy-fontweight-semilight);
+  }
+
+  &.weight-normal {
+    font-weight: var(--usy-fontweight-normal);
+  }
+
+  &.weight-semibold {
+    font-weight: var(--usy-fontweight-semibold);
+  }
+
+  &.weight-bold {
+    font-weight: var(--usy-fontweight-bold);
+  }
+
+  &.weight-heavy {
+    font-weight: var(--usy-fontweight-heavy);
+  }
+
+  /*
+    Align
+  */
+
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.align-justify {
+    text-align: justify;
+  }
+
+  &.no-margin {
+    margin: 0;
+  }
+}

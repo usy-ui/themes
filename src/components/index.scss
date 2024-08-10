@@ -1,0 +1,223 @@
+/*
+ * Normalize
+ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+ * Variables
+ */
+
+:root {
+  /*
+  * Elements
+  */
+
+  --usy-element-height: 40px;
+  --usy-element-border-radius: 4px;
+  --usy-element-border-color: #cccccc;
+
+  --usy-layout-horizontal-padding: 18px;
+
+  --usy-drawer-header-height: 66px;
+  --usy-drawer-footer-height: 66px;
+
+  --usy-modal-header-height: 40px;
+
+  --usy-toggle-section-header-height: 44px;
+
+  --usy-button-height-xs: 30px;
+  --usy-button-height-md: 36px;
+  --usy-button-height-lg: 40px;
+
+  /*
+  * Font Sizes
+  * @export as variables
+  */
+
+  --usy-fontsize-xs: 0.7rem;
+  --usy-fontsize-sm: 0.9rem;
+  --usy-fontsize-md: 1rem;
+  --usy-fontsize-lg: 1.15rem;
+  --usy-fontsize-xl: 1.35rem;
+
+  /*
+  * Font Weights
+  * @export as variables
+  */
+
+  --usy-fontweight-thin: 100;
+  --usy-fontweight-light: 200;
+  --usy-fontweight-semilight: 300;
+  --usy-fontweight-normal: 400;
+  --usy-fontweight-semibold: 500;
+  --usy-fontweight-bold: 600;
+  --usy-fontweight-heavy: 700;
+
+  /*
+  * Spacing
+  * @export as variables
+  */
+
+  --usy-spacing-2px: 2px;
+  --usy-spacing-4px: 4px;
+  --usy-spacing-6px: 6px;
+  --usy-spacing-8px: 8px;
+  --usy-spacing-10px: 10px;
+  --usy-spacing-12px: 12px;
+  --usy-spacing-14px: 14px;
+  --usy-spacing-16px: 16px;
+  --usy-spacing-20px: 20px;
+  --usy-spacing-24px: 24px;
+  --usy-spacing-28px: 28px;
+  --usy-spacing-32px: 32px;
+  --usy-spacing-40px: 40px;
+  --usy-spacing-48px: 48px;
+  --usy-spacing-56px: 56px;
+  --usy-spacing-64px: 64px;
+  --usy-spacing-72px: 72px;
+  --usy-spacing-80px: 80px;
+
+  /*
+  * Colors
+  * @export as variables
+  */
+
+  --usy-color-primary: #16a085;
+  --usy-color-primary-light: #1ccdaa;
+  --usy-color-primary-dark: #107360;
+
+  --usy-color-white: #ffffff;
+  --usy-color-black: #000000;
+
+  --usy-color-light-0: #f5f5f5;
+  --usy-color-light-1: #ebebeb;
+  --usy-color-light-2: #e0e0e0;
+  --usy-color-light-3: #d6d6d6;
+  --usy-color-light-4: #cccccc;
+  --usy-color-light-5: #c2c2c2;
+  --usy-color-light-6: #b8b8b8;
+  --usy-color-light-7: #adadad;
+  --usy-color-light-8: #a3a3a3;
+  --usy-color-light-9: #999999;
+
+  --usy-color-dark-0: #666666;
+  --usy-color-dark-1: #5c5c5c;
+  --usy-color-dark-2: #525252;
+  --usy-color-dark-3: #474747;
+  --usy-color-dark-4: #3d3d3d;
+  --usy-color-dark-5: #333333;
+  --usy-color-dark-6: #292929;
+  --usy-color-dark-7: #1f1f1f;
+  --usy-color-dark-8: #141414;
+  --usy-color-dark-9: #0a0a0a;
+
+  --usy-color-red-0: #eb7d8c;
+  --usy-color-red-1: #e76779;
+  --usy-color-red-2: #e45065;
+  --usy-color-red-3: #e13a52;
+  --usy-color-red-4: #dd243e;
+  --usy-color-red-5: #c91f37;
+  --usy-color-red-6: #b31c31;
+  --usy-color-red-7: #9d182b;
+  --usy-color-red-8: #871525;
+  --usy-color-red-9: #71111f;
+
+  --usy-color-green-0: #63bf93;
+  --usy-color-green-1: #52b788;
+  --usy-color-green-2: #49a47a;
+  --usy-color-green-3: #40916c;
+  --usy-color-green-4: #377e5e;
+  --usy-color-green-5: #2d6a4f;
+  --usy-color-green-6: #245741;
+  --usy-color-green-7: #1b4332;
+  --usy-color-green-8: #173a2b;
+  --usy-color-green-9: #123024;
+
+  --usy-color-blue-0: #5fa3c4;
+  --usy-color-blue-1: #4c98be;
+  --usy-color-blue-2: #418bb0;
+  --usy-color-blue-3: #3a7d9d;
+  --usy-color-blue-4: #336e8b;
+  --usy-color-blue-5: #2c5f78;
+  --usy-color-blue-6: #255065;
+  --usy-color-blue-7: #1e4153;
+  --usy-color-blue-8: #173340;
+  --usy-color-blue-9: #11242d;
+
+  --usy-color-yellow-0: #ffcc34;
+  --usy-color-yellow-1: #ffc51a;
+  --usy-color-yellow-2: #ffbf00;
+  --usy-color-yellow-3: #e6ac00;
+  --usy-color-yellow-4: #cd9900;
+  --usy-color-yellow-5: #b38600;
+  --usy-color-yellow-6: #9a7300;
+  --usy-color-yellow-7: #806000;
+  --usy-color-yellow-8: #674d00;
+  --usy-color-yellow-9: #4d3a00;
+
+  /*
+  * z-index
+  */
+
+  --usy-zIndex-100: 100;
+  --usy-zIndex-200: 200;
+  --usy-zIndex-200: 300;
+  --usy-zIndex-300: 400;
+  --usy-zIndex-500: 500;
+  --usy-zIndex-600: 600;
+  --usy-zIndex-700: 700;
+  --usy-zIndex-800: 800;
+  --usy-zIndex-900: 900;
+  --usy-zIndex-latest: 1000;
+}

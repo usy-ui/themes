@@ -1,0 +1,57 @@
+.usy-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /*
+   * Sizes 
+   */
+
+  &.size-extra-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.size-small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.size-medium {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.size-large {
+    width: 64px;
+    height: 64px;
+  }
+
+  &.size-extra-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  /*
+   * Variant 
+   */
+
+  &.variant-circle {
+    border-radius: 50%;
+  }
+
+  &.variant-rounded {
+    border-radius: 15%;
+  }
+
+  /*
+   * Children elements 
+   */
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

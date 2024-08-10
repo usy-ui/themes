@@ -1,0 +1,28 @@
+.usy-drawer-footer-container {
+  height: var(--usy-drawer-footer-height);
+  border-top: 1px solid var(--usy-color-light-2);
+  padding: var(--usy-spacing-4px) var(--usy-layout-horizontal-padding);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &.align-content-left {
+    justify-content: flex-start;
+  }
+
+  &.align-content-center {
+    justify-content: center;
+  }
+
+  &.align-content-right {
+    justify-content: right;
+  }
+
+  .cta-button:not(:last-child) {
+    margin: 0 var(--usy-spacing-16px);
+  }
+}

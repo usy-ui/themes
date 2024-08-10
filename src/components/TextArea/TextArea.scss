@@ -1,0 +1,23 @@
+.usy-textarea-container {
+  display: flex;
+  flex-direction: column;
+
+  .textarea {
+    resize: vertical;
+    padding: var(--usy-spacing-10px);
+    border: 1px solid var(--usy-element-border-color);
+    border-radius: var(--usy-element-border-radius);
+    background-color: var(--usy-color-white);
+    outline: none;
+
+    &:not(.has-error):focus,
+    &:not(.has-error):focus-visible {
+      border: 1px solid var(--usy-color-primary);
+    }
+
+    &.has-error,
+    &.has-error:hover {
+      border: 1px solid var(--usy-color-red-4);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.usy-field-title-container {
+  margin: 0 0 var(--usy-spacing-6px) var(--usy-spacing-2px);
+  font-size: var(--usy-fontsize-sm);
+  font-weight: var(--usy-fontweight-semibold);
+
+  .asterisk {
+    color: var(--usy-color-red);
+    margin-right: var(--usy-spacing-4px);
+  }
+}

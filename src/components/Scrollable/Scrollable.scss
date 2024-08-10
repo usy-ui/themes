@@ -1,0 +1,14 @@
+.usy-scrollable-container {
+  &::-webkit-scrollbar-track {
+    background-color: var(--usy-color-light-1);
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--usy-color-light-4);
+    border-radius: 2px;
+  }
+}
