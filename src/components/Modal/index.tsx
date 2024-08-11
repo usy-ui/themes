@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 
 import { useMounted } from "@src/hooks/useMounted";
 
-import { CommonCompProps } from "../../types/common-comp.props";
+import { CommonCompProps } from "../../@types/common-comp.props";
 import { CloseIcon } from "../Icon";
 
 type ModalProps = {

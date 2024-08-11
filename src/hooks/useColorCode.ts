@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { getRandomColor } from "@src/utils";
 
-import { BaseColor } from "../types/base.type";
+import { BaseColor } from "../@types/base.types";
 
 export const useColorCode = (color: BaseColor | "random") => {
   const colorMemo = useMemo(() => {

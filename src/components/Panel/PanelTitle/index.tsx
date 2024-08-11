@@ -4,7 +4,7 @@ import { Box } from "@src/components/Layout/Box";
 import { Typography } from "@src/components/Typography";
 import { usySpacing } from "@src/styles";
 
-import { CommonCompProps } from "../../../types/common-comp.props";
+import { CommonCompProps } from "../../../@types/common-comp.props";
 
 type PanelTitleProps = {
   title: string;

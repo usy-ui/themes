@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { CommonCompProps } from "../../../types/common-comp.props";
+import { CommonCompProps } from "../../../@types/common-comp.props";
 import { CommonBoxFlexProps } from "../Box";
 
 type PureFlexProps = {

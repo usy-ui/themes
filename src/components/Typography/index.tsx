@@ -2,7 +2,9 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../types/common-comp.props";
+import { BaseExtraSize, BaseSize } from "@src/@types/base.types";
+
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 type TypographyTag =
   | "small"
@@ -16,12 +18,7 @@ type TypographyTag =
   | "h5"
   | "h6";
 
-type TypographySize =
-  | "extra-small"
-  | "small"
-  | "medium"
-  | "large"
-  | "extra-large";
+type TypographySize = BaseSize | BaseExtraSize;
 
 type TypographyWeight =
   | "thin"

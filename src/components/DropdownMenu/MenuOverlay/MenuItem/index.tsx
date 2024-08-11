@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../../../types/common-comp.props";
+import { CommonCompProps } from "../../../../@types/common-comp.props";
 
 export type MenuItem = {
   label: ReactNode;

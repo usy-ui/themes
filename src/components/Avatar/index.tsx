@@ -5,8 +5,8 @@ import clsx from "clsx";
 import { useRandomColor } from "@src/hooks/useRandomColor";
 import { usyColors } from "@src/styles";
 
-import { BaseExtraSize, BaseShape, BaseSize } from "../../types/base.type";
-import { CommonCompProps } from "../../types/common-comp.props";
+import { BaseExtraSize, BaseShape, BaseSize } from "../../@types/base.types";
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 type AvatarProps = {
   url: string;

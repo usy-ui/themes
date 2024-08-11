@@ -2,20 +2,18 @@ import { ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { BaseColor, BaseSize, BaseVariant } from "../../types/base.type";
-import { CommonCompProps } from "../../types/common-comp.props";
+import { BaseSize, BaseVariant } from "../../@types/base.types";
+import { CommonCompProps } from "../../@types/common-comp.props";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";
 export type ButtonVariant = BaseVariant | "normal" | "invisible";
-export type ButtonColor = BaseColor;
 export type ButtonSize = BaseSize;
 
 export type ButtonProps = {
   type?: ButtonType;
   width?: string;
   variant?: ButtonVariant;
-  color?: ButtonColor;
   size?: ButtonSize;
   isLoading?: boolean;
   iconLeft?: ReactNode;
@@ -33,7 +31,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = "button",
       width = "unset",
       variant = "normal",
-      color = "primary",
       size = "medium",
       isLoading = false,
       isDisabled = false,
@@ -54,9 +51,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       onClick();
     };
-
-    const sizeClassName = `size-${size}`;
-    const variantClassName = `variant-${variant}`;
 
     /**
      * Render
@@ -93,8 +87,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={clsx(
           "usy-button-container",
           {
-            [sizeClassName]: Boolean(size),
-            [variantClassName]: Boolean(variant),
+            [`size-${size}`]: Boolean(size),
+            [`variant-${variant}`]: Boolean(variant),
             disabled: isDisabled,
             block: isBlock,
           },

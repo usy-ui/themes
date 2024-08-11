@@ -4,13 +4,13 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { CommonCompProps } from "../../types/common-comp.props";
+import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
   WidthProps,
   MarginProps,
   PaddingProps,
-} from "../../types/styles.props";
+} from "../../@types/styles.props";
 
 type PureScrollableProps = {
   widthProps?: WidthProps;

@@ -1,11 +1,11 @@
-import { ChangeEvent, FC, useRef, useState } from "react";
+import { ChangeEvent, forwardRef, useRef, useState } from "react";
 
 import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
-import { CommonCompProps } from "../../types/common-comp.props";
-import { WidthProps } from "../../types/styles.props";
+import { CommonCompProps } from "../../@types/common-comp.props";
+import { WidthProps } from "../../@types/styles.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { CloseCircleSolidIcon } from "../Icon";
 
@@ -20,18 +20,21 @@ type PureTagsProps = {
 
 type TagsProps = PureTagsProps & PureFieldTitleProps & CommonCompProps;
 
-export const Tags: FC<TagsProps> = ({
-  name = "tags",
-  title,
-  tags: initTags,
-  placeholder = "New tag...",
-  hasAsterisk,
-  widthProps,
-  onAdd,
-  onRemove,
-  className,
-  testId = name,
-}) => {
+export const Tags = forwardRef<HTMLDivElement, TagsProps>(function Tags(
+  {
+    name = "tags",
+    title,
+    tags: initTags,
+    placeholder = "New tag...",
+    hasAsterisk,
+    widthProps,
+    onAdd,
+    onRemove,
+    className,
+    testId = name,
+  },
+  ref
+) {
   const [tags, setTags] = useState(initTags || []);
   const [inputTag, setInputTag] = useState("");
   const inputTagRef = useRef<HTMLInputElement>(null);
@@ -59,7 +62,11 @@ export const Tags: FC<TagsProps> = ({
   };
 
   return (
-    <div className={clsx("usy-tags-container", className)} data-testid={testId}>
+    <div
+      ref={ref}
+      className={clsx("usy-tags-container", className)}
+      data-testid={testId}
+    >
       {title && (
         <FieldTitle
           name={nameMemo}
@@ -96,4 +103,4 @@ export const Tags: FC<TagsProps> = ({
       </div>
     </div>
   );
-};
+});

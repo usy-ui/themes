@@ -21,7 +21,7 @@ export const Types: Story = {
   render: () => (
     <Flex direction="column" gap="20px">
       <Flex gap="20px">
-        <Button variant="primary">Primary</Button>
+        <Button variant="filled">Primary</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="normal">Normal</Button>
         <Button variant="invisible">Invisible</Button>

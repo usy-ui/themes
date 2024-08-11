@@ -2,7 +2,7 @@ import { ReactNode, forwardRef, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../types/common-comp.props";
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 type CheckboxProps = {
   label: ReactNode;

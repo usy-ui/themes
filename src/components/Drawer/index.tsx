@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect } from "react";
+import { forwardRef, ReactNode, useEffect } from "react";
 
 import clsx from "clsx";
 import { createPortal } from "react-dom";
@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import { useMounted } from "@src/hooks/useMounted";
 import { usyZIndex } from "@src/styles";
 
-import { CommonCompProps } from "../../types/common-comp.props";
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 export { DrawerHeader } from "./Header";
 export { DrawerContent } from "./Content";
@@ -23,19 +23,22 @@ type DrawerProps = {
   zIndex?: number;
 } & CommonCompProps;
 
-export const Drawer: FC<DrawerProps> = ({
-  name = "drawer",
-  isOpen,
-  side = "right",
-  maxWidth = "480px",
-  header,
-  children,
-  footer,
-  containerElement,
-  zIndex = usyZIndex[800],
-  className,
-  testId = name,
-}) => {
+export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
+  {
+    name = "drawer",
+    isOpen,
+    side = "right",
+    maxWidth = "480px",
+    header,
+    children,
+    footer,
+    containerElement,
+    zIndex = usyZIndex[800],
+    className,
+    testId = name,
+  },
+  ref
+) {
   const { isMounted } = useMounted();
 
   const enableScroll = () => {
@@ -64,6 +67,7 @@ export const Drawer: FC<DrawerProps> = ({
         data-testid={`${testId}-overlay`}
       >
         <div
+          ref={ref}
           className={clsx("usy-drawer-container", className)}
           style={{ maxWidth }}
           data-testid={testId}
@@ -79,4 +83,4 @@ export const Drawer: FC<DrawerProps> = ({
   return isMounted
     ? createPortal(renderDrawer(), containerElement || document.body)
     : null;
-};
+});

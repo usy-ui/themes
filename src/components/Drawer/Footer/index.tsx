@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { Button, ButtonType } from "@src/components/Button";
 
-import { CommonCompProps } from "../../../types/common-comp.props";
+import { CommonCompProps } from "../../../@types/common-comp.props";
 
 interface DrawerButtonProps {
   label: string;

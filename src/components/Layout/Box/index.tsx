@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react";
 
-import { CommonCompProps } from "../../../types/common-comp.props";
+import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
   WidthProps,
   HeightProps,
   MarginProps,
   PaddingProps,
-} from "../../../types/styles.props";
+} from "../../../@types/styles.props";
 
 export type CommonBoxFlexProps = {
   as?: "div" | "span";

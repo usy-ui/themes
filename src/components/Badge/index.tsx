@@ -4,8 +4,8 @@ import clsx from "clsx";
 
 import { useColorCode } from "@src/hooks/useColorCode";
 
-import { BaseColor, BaseSize, BaseVariant } from "../../types/base.type";
-import { CommonCompProps } from "../../types/common-comp.props";
+import { BaseColor, BaseSize, BaseVariant } from "../../@types/base.types";
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 export type BadgeVariant = BaseVariant;
 export type BadgeSize = BaseSize;
