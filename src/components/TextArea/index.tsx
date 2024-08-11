@@ -11,7 +11,7 @@ import clsx from "clsx";
 import { useNameMemo } from "@src/hooks/useNameMemo";
 import { usyElements } from "@src/styles";
 
-import { type ExtraCompProps } from "../../types/extra-comp.props";
+import { type CommonCompProps } from "../../types/common-comp.props";
 import { FieldTitle } from "../_internal/FieldTitle";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
@@ -35,7 +35,7 @@ type MoreTextAreaProps = {
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>, value: string) => void;
 };
 
-type TextAreaProps = PickedInputProps & MoreTextAreaProps & ExtraCompProps;
+type TextAreaProps = PickedInputProps & MoreTextAreaProps & CommonCompProps;
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   function TextArea(

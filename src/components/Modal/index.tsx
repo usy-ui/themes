@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 
 import { useMounted } from "@src/hooks/useMounted";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 import { CloseIcon } from "../Icon";
 
 type ModalProps = {
@@ -16,7 +16,7 @@ type ModalProps = {
   children: ReactNode;
   onClose?: () => void;
   zIndex?: number;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const Modal: FC<ModalProps> = ({
   name = "modal",

@@ -4,12 +4,12 @@ import { Box } from "@src/components/Layout/Box";
 import { Typography } from "@src/components/Typography";
 import { usySpacing } from "@src/styles";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 type PanelTitleProps = {
   title: string;
   size?: "medium" | "large" | "extra-large";
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const PanelTitle: FC<PanelTitleProps> = ({
   name = "panel-title",

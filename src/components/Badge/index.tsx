@@ -1,52 +1,55 @@
-import { CSSProperties, FC, ReactNode, useMemo } from "react";
+import { CSSProperties, forwardRef, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { useColorCode } from "@src/hooks/useColorCode";
 
-import { getColor, getTypeCss } from "./Badge.utils";
+import { BaseColor, BaseSize, BaseVariant } from "../../types/base.type";
+import { CommonCompProps } from "../../types/common-comp.props";
 
-export type BadgeType = "filled" | "outline" | "normal";
-export type BadgeSize = "small" | "medium" | "large";
-export type BadgeColor =
-  | "primary"
-  | "primary-light"
-  | "primary-dark"
-  | "random"
-  | CSSProperties["color"];
+export type BadgeVariant = BaseVariant;
+export type BadgeSize = BaseSize;
+export type BadgeColor = BaseColor | "random";
 
 type BadgeProps = {
-  type?: BadgeType;
+  variant?: BadgeVariant;
   size?: BadgeSize;
   color?: BadgeColor;
   children: ReactNode;
-} & ExtraCompProps;
+} & CommonCompProps;
 
-export const Badge: FC<BadgeProps> = ({
-  name = "badge",
-  type = "outline",
-  size = "medium",
-  color = "primary",
-  children,
-  className,
-  testId = name,
-}) => {
-  const colorInHex = useMemo(() => getColor(color), [color]);
-  const typeCss = getTypeCss(colorInHex, type);
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
+  {
+    name = "badge",
+    variant = "outline",
+    size = "medium",
+    color = "primary",
+    children,
+    className,
+    testId = name,
+  },
+  ref
+) {
+  const { colorMemo } = useColorCode(color);
+  const cssVariables = {
+    "--badge-color": colorMemo,
+  } as CSSProperties;
 
   return (
     <div
+      ref={ref}
       className={clsx(
         "usy-badge-container",
         {
+          [`variant-${variant}`]: Boolean(variant),
           [`size-${size}`]: Boolean(size),
         },
         className
       )}
-      style={{ ...typeCss }}
+      style={{ ...cssVariables }}
       data-testid={testId}
     >
       {children}
     </div>
   );
-};
+});

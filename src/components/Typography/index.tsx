@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 
 type TypographyTag =
   | "small"
@@ -41,7 +41,7 @@ type TypographyProps = {
   align?: TypographyAlign;
   noMargin?: boolean;
   children: ReactNode;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const Typography: FC<TypographyProps> = ({
   name = "typography",

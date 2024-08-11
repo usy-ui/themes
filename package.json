@@ -21,7 +21,7 @@
     "build": "rimraf dist && pnpm css:build && rollup -c --bundleConfigAsCjs",
     "build:pack": "pnpm build && pnpm pack",
     "release": "pnpm build && pnpm publish",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "pnpm css:merge && storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "keywords": [],
@@ -118,3 +118,4 @@
     ]
   }
 }
+

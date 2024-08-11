@@ -1,8 +1,12 @@
 import { FC, ReactNode } from "react";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
-import { MarginProps, PaddingProps } from "../../../types/margin-padding.props";
-import { WidthProps, HeightProps } from "../../../types/width-height.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
+import {
+  WidthProps,
+  HeightProps,
+  MarginProps,
+  PaddingProps,
+} from "../../../types/styles.props";
 
 export type CommonBoxFlexProps = {
   as?: "div" | "span";
@@ -17,7 +21,7 @@ export type PureBoxProps = {
   display?: "block" | "inline-block";
 };
 
-type BoxProps = CommonBoxFlexProps & PureBoxProps & ExtraCompProps;
+type BoxProps = CommonBoxFlexProps & PureBoxProps & CommonCompProps;
 
 export const Box: FC<BoxProps> = ({
   display,

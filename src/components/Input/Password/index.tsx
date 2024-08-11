@@ -12,7 +12,7 @@ import { EyeSlashIcon, EyeIcon } from "@src/components/Icon";
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
 import { PureInputProps } from "..";
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 import { FieldTitle } from "../../_internal/FieldTitle";
 import { InputDescription } from "../components/InputDescription";
 import { InputIconLeft } from "../components/InputIconLeft";
@@ -33,7 +33,7 @@ type PickedInputProps = Pick<
   | "onBlur"
 >;
 
-type PasswordProps = PickedInputProps & ExtraCompProps;
+type PasswordProps = PickedInputProps & CommonCompProps;
 
 export const Password = forwardRef<HTMLInputElement, PasswordProps>(
   function Password(

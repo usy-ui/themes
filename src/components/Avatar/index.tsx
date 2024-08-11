@@ -1,39 +1,43 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 
 import clsx from "clsx";
 
 import { useRandomColor } from "@src/hooks/useRandomColor";
 import { usyColors } from "@src/styles";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { BaseExtraSize, BaseShape, BaseSize } from "../../types/base.type";
+import { CommonCompProps } from "../../types/common-comp.props";
 
 type AvatarProps = {
   url: string;
   alt: string;
   fallback?: string;
-  variant?: "circle" | "rounded";
-  size?: "extra-small" | "small" | "medium" | "large" | "extra-large";
+  shape?: BaseShape;
+  size?: BaseSize | BaseExtraSize;
   onClick?: () => void;
-} & ExtraCompProps;
+} & CommonCompProps;
 
-export const Avatar: FC<AvatarProps> = ({
-  name = "avatar",
-  url,
-  alt,
-  fallback = "A",
-  variant = "rounded",
-  size = "medium",
-  onClick,
-  className,
-  testId = name,
-}) => {
+export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
+  {
+    name = "avatar",
+    url,
+    alt,
+    fallback = "A",
+    shape = "rounded",
+    size = "medium",
+    onClick,
+    className,
+    testId = name,
+  },
+  ref
+) {
   const { color: bgColor } = useRandomColor();
   const sizeClassName = `size-${size}`;
-  const variantClassName = `variant-${variant}`;
+  const shapeClassName = `shape-${shape}`;
 
   return (
     <div
-      role="button"
+      ref={ref}
       aria-hidden="true"
       title={url ? alt : fallback}
       onClick={onClick}
@@ -41,7 +45,7 @@ export const Avatar: FC<AvatarProps> = ({
         "usy-avatar-container",
         {
           [sizeClassName]: Boolean(size),
-          [variantClassName]: Boolean(variant),
+          [shapeClassName]: Boolean(shape),
         },
         className
       )}
@@ -52,11 +56,7 @@ export const Avatar: FC<AvatarProps> = ({
       }}
       data-testid={testId}
     >
-      {url ? (
-        <img src={url} alt={alt} className="image" />
-      ) : (
-        fallback[0].toUpperCase()
-      )}
+      {url ? <img src={url} alt={alt} className="image" /> : fallback}
     </div>
   );
-};
+});

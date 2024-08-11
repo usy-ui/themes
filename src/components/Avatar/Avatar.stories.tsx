@@ -16,18 +16,18 @@ const meta: Meta<typeof Avatar> = {
   },
 };
 
-export const Types: Story = {
+export const Shape: Story = {
   render: () => (
     <Flex gap="30px">
       <Avatar
         url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
         alt="Avatar"
-        variant="rounded"
+        shape="rounded"
       />
       <Avatar
         url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
         alt="Avatar"
-        variant="circle"
+        shape="circle"
       />
       <Avatar url="" alt="" fallback="Jarvis" />
     </Flex>

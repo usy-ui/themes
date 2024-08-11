@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 
 type Image = {
   url: string;
@@ -12,7 +12,7 @@ type Image = {
 
 type ImageGalleryProps = {
   images: Image[];
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const ImageGallery: FC<ImageGalleryProps> = ({
   name = "image-gallery",

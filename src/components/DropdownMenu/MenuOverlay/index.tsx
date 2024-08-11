@@ -4,14 +4,14 @@ import clsx from "clsx";
 
 import { usyZIndex } from "@src/styles";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 type PureMenuOverlayProps = {
   zIndex?: number;
   children: ReactElement[];
 };
 
-type MenuOverlayProps = PureMenuOverlayProps & ExtraCompProps;
+type MenuOverlayProps = PureMenuOverlayProps & CommonCompProps;
 
 export const MenuOverlay = forwardRef<HTMLDivElement, MenuOverlayProps>(
   function MenuOverlay(

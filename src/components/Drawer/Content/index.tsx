@@ -2,11 +2,11 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 type DrawerContentProps = {
   children: ReactNode;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const DrawerContent: FC<DrawerContentProps> = ({
   name = "drawer-content",

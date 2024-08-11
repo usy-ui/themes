@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 import { CommonBoxFlexProps } from "../Box";
 
 type PureFlexProps = {
@@ -14,7 +14,7 @@ type PureFlexProps = {
   gap?: string;
 };
 
-type FlexProps = CommonBoxFlexProps & PureFlexProps & ExtraCompProps;
+type FlexProps = CommonBoxFlexProps & PureFlexProps & CommonCompProps;
 
 export const Flex: FC<FlexProps> = ({
   as: Tag = "div",

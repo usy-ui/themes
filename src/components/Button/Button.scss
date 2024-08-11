@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   user-select: none;
+  cursor: pointer;
 
   /*
    * Sizes 
@@ -33,7 +33,7 @@
    * Variant 
    */
 
-  &.variant-primary {
+  &.variant-filled {
     background-color: var(--usy-color-primary);
     filter: drop-shadow(0px 4px 0px var(--usy-color-primary-dark));
     color: var(--usy-color-white);

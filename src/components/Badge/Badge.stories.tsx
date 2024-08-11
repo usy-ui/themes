@@ -16,19 +16,18 @@ const meta: Meta<typeof Badge> = {
   },
 };
 
-export const Types: Story = {
+export const Variants: Story = {
   render: () => (
-    <Flex gap="20px">
-      <Badge type="filled">filled</Badge>
-      <Badge type="outline">filled</Badge>
-      <Badge type="normal">filled</Badge>
+    <Flex gap="20px" alignItems="center">
+      <Badge variant="filled">filled</Badge>
+      <Badge variant="outline">outline</Badge>
     </Flex>
   ),
 };
 
 export const Sizes: Story = {
   render: () => (
-    <Flex gap="20px">
+    <Flex gap="20px" alignItems="center">
       <Badge size="small">small</Badge>
       <Badge size="medium">medium</Badge>
       <Badge size="large">large</Badge>
@@ -38,9 +37,9 @@ export const Sizes: Story = {
 
 export const Colors: Story = {
   render: () => (
-    <Flex gap="20px">
-      <Badge color="primary-light">primary light</Badge>
+    <Flex gap="20px" alignItems="center">
       <Badge color="primary">primary</Badge>
+      <Badge color="primary-light">primary light</Badge>
       <Badge color="primary-dark">primary dark</Badge>
       <Badge color="random">random</Badge>
     </Flex>

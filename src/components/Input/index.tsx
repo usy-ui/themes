@@ -11,7 +11,7 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 
 import { InputDescription } from "./components/InputDescription";
@@ -33,7 +33,7 @@ export type PureInputProps = {
   formatOnBlur?: (value: string) => string;
 } & PureFieldTitleProps;
 
-export type InputProps = PureInputProps & ExtraCompProps;
+export type InputProps = PureInputProps & CommonCompProps;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   {

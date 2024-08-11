@@ -2,14 +2,14 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../../types/common-comp.props";
 
 export type MenuItem = {
   label: ReactNode;
   onClick?: () => void;
 };
 
-type MenuItemProps = MenuItem & ExtraCompProps;
+type MenuItemProps = MenuItem & CommonCompProps;
 
 export const MenuItem: FC<MenuItemProps> = ({
   name = "dropdown-menu-ite,",

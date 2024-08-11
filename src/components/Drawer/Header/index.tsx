@@ -5,12 +5,12 @@ import clsx from "clsx";
 import { CloseIcon } from "@src/components/Icon";
 import { Typography } from "@src/components/Typography";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 type DrawerHeaderProps = {
   title: ReactNode;
   onClose?: () => void;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const DrawerHeader: FC<DrawerHeaderProps> = ({
   name = "drawer-header",

@@ -4,8 +4,8 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
-import { WidthProps } from "../../types/width-height.props";
+import { CommonCompProps } from "../../types/common-comp.props";
+import { WidthProps } from "../../types/styles.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { CloseCircleSolidIcon } from "../Icon";
 
@@ -18,7 +18,7 @@ type PureTagsProps = {
   onRemove?: (tags: string[], tag: string) => void;
 };
 
-type TagsProps = PureTagsProps & PureFieldTitleProps & ExtraCompProps;
+type TagsProps = PureTagsProps & PureFieldTitleProps & CommonCompProps;
 
 export const Tags: FC<TagsProps> = ({
   name = "tags",

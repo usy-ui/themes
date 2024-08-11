@@ -2,18 +2,21 @@ import { ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { BaseColor, BaseSize, BaseVariant } from "../../types/base.type";
+import { CommonCompProps } from "../../types/common-comp.props";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";
-export type ButtonVariant = "primary" | "outline" | "normal" | "invisible";
-export type ButtonSize = "small" | "medium" | "large";
+export type ButtonVariant = BaseVariant | "normal" | "invisible";
+export type ButtonColor = BaseColor;
+export type ButtonSize = BaseSize;
 
 export type ButtonProps = {
   type?: ButtonType;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
   width?: string;
+  variant?: ButtonVariant;
+  color?: ButtonColor;
+  size?: ButtonSize;
   isLoading?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -21,16 +24,17 @@ export type ButtonProps = {
   isBlock?: boolean;
   children: ReactNode;
   onClick?: () => void;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
     {
       name = "button",
       type = "button",
-      variant = "normal",
-      size = "medium",
       width = "unset",
+      variant = "normal",
+      color = "primary",
+      size = "medium",
       isLoading = false,
       isDisabled = false,
       isBlock = false,
@@ -54,6 +58,34 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const sizeClassName = `size-${size}`;
     const variantClassName = `variant-${variant}`;
 
+    /**
+     * Render
+     */
+
+    const renderIconLeft = () =>
+      iconLeft && (
+        <span className="left-icon" data-testid={`${testId}-icon-left`}>
+          {iconLeft}
+        </span>
+      );
+
+    const renderIconRight = () =>
+      iconRight && (
+        <span className="right-icon" data-testid={`${testId}-icon-right`}>
+          {iconRight}
+        </span>
+      );
+
+    const renderLoading = () =>
+      isLoading && (
+        <SvgLoadingCircle
+          width="30px"
+          height="30px"
+          className="loading-icon"
+          data-testid={`${testId}-loading-icon`}
+        />
+      );
+
     return (
       <button
         ref={ref}
@@ -72,25 +104,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={handleClick}
         data-testid={testId}
       >
-        {iconLeft && (
-          <span className="left-icon" data-testid={`${testId}-icon-left`}>
-            {iconLeft}
-          </span>
-        )}
-        {isLoading && (
-          <SvgLoadingCircle
-            width="30px"
-            height="30px"
-            className="loading-icon"
-            data-testid={`${testId}-loading-icon`}
-          />
-        )}
+        {renderIconLeft()}
+        {renderLoading()}
         {children}
-        {iconRight && (
-          <span className="right-icon" data-testid={`${testId}-icon-right`}>
-            {iconRight}
-          </span>
-        )}
+        {renderIconRight()}
       </button>
     );
   }

@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { createPortal } from "react-dom";
 
 import { useMounted } from "@src/hooks/useMounted";
+import { usyZIndex } from "@src/styles";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 
 export { DrawerHeader } from "./Header";
 export { DrawerContent } from "./Content";
@@ -20,7 +21,7 @@ type DrawerProps = {
   footer?: ReactNode;
   containerElement?: HTMLElement;
   zIndex?: number;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const Drawer: FC<DrawerProps> = ({
   name = "drawer",
@@ -31,7 +32,7 @@ export const Drawer: FC<DrawerProps> = ({
   children,
   footer,
   containerElement,
-  zIndex = 900,
+  zIndex = usyZIndex[800],
   className,
   testId = name,
 }) => {

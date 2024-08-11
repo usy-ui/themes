@@ -4,14 +4,14 @@ import clsx from "clsx";
 
 import { AngleDownIcon } from "@src/components/Icon";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 type PureTriggerProps = {
   hasBorder?: boolean;
   children: ReactNode;
 };
 
-type TriggerProps = PureTriggerProps & ExtraCompProps;
+type TriggerProps = PureTriggerProps & CommonCompProps;
 
 export const Trigger: FC<TriggerProps> = ({
   name = "dropdown-menu-trigger",

@@ -4,9 +4,13 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
-import { MarginProps, PaddingProps } from "../../types/margin-padding.props";
-import { HeightProps, WidthProps } from "../../types/width-height.props";
+import { CommonCompProps } from "../../types/common-comp.props";
+import {
+  HeightProps,
+  WidthProps,
+  MarginProps,
+  PaddingProps,
+} from "../../types/styles.props";
 
 type PureScrollableProps = {
   widthProps?: WidthProps;
@@ -18,7 +22,7 @@ type PureScrollableProps = {
   children?: ReactNode;
 };
 
-type ScrollableProps = PureScrollableProps & ExtraCompProps;
+type ScrollableProps = PureScrollableProps & CommonCompProps;
 
 export const Scrollable: FC<ScrollableProps> = ({
   name = "scrollable",

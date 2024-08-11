@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useNameMemo } from "@src/hooks/useNameMemo";
 import { useOutsideClick } from "@src/hooks/useOutsideClick";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { AngleDownIcon } from "../Icon";
 
@@ -22,7 +22,7 @@ type PureSelectProps = {
   onChange?: (item: SelectItem) => void;
 };
 
-type SelectProps = PureSelectProps & PureFieldTitleProps & ExtraCompProps;
+type SelectProps = PureSelectProps & PureFieldTitleProps & CommonCompProps;
 
 export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   {

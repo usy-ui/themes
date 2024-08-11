@@ -1,3 +1,15 @@
+export type WidthProps = {
+  width?: string;
+  maxWidth?: string;
+  minWidth?: string;
+};
+
+export type HeightProps = {
+  height?: string;
+  maxHeight?: string;
+  minHeight?: string;
+};
+
 export type MarginProps = {
   marginTop?: string;
   marginRight?: string;

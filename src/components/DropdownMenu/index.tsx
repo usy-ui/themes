@@ -9,7 +9,7 @@ import {
 
 import { useOutsideClick } from "@src/hooks/useOutsideClick";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 
 import { MenuOverlay } from "./MenuOverlay";
 import { MenuItem } from "./MenuOverlay/MenuItem";
@@ -21,7 +21,7 @@ type PureDropdownMenuProps = {
   children: ReactElement[];
 };
 
-type DropdownMenuProps = PureDropdownMenuProps & ExtraCompProps;
+type DropdownMenuProps = PureDropdownMenuProps & CommonCompProps;
 
 const DropdownMenu: FC<DropdownMenuProps> = ({
   name = "dropdown-menu",

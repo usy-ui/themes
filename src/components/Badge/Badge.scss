@@ -1,9 +1,20 @@
 .usy-badge-container {
-  display: inline-block;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+
+  &.variant-filled {
+    background-color: var(--badge-color);
+    border: 2px solid var(--badge-color);
+    color: var(--usy-color-white);
+  }
+
+  &.variant-outline {
+    background-color: var(--usy-color-white);
+    border: 2px solid var(--badge-color);
+    color: var(--badge-color);
+  }
 
   /*
    * Size

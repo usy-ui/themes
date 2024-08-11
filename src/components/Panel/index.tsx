@@ -4,9 +4,13 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
-import { MarginProps, PaddingProps } from "../../types/margin-padding.props";
-import { HeightProps, WidthProps } from "../../types/width-height.props";
+import { CommonCompProps } from "../../types/common-comp.props";
+import {
+  HeightProps,
+  WidthProps,
+  MarginProps,
+  PaddingProps,
+} from "../../types/styles.props";
 
 export { PanelTitle } from "./PanelTitle";
 
@@ -19,7 +23,7 @@ type PurePanelProps = {
   borderRadius?: string;
   children: ReactNode;
 };
-type PanelProps = PurePanelProps & ExtraCompProps;
+type PanelProps = PurePanelProps & CommonCompProps;
 
 export const Panel: FC<PanelProps> = ({
   name = "panel",

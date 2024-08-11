@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 export type PureFieldTitleProps = {
   name?: string;
@@ -10,7 +10,7 @@ export type PureFieldTitleProps = {
   hasAsterisk?: boolean;
 };
 
-type FieldTitleProps = PureFieldTitleProps & ExtraCompProps;
+type FieldTitleProps = PureFieldTitleProps & CommonCompProps;
 
 export const FieldTitle: FC<FieldTitleProps> = ({
   name = "field-title",

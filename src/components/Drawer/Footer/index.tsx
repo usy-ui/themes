@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { Button, ButtonType } from "@src/components/Button";
 
-import { ExtraCompProps } from "../../../types/extra-comp.props";
+import { CommonCompProps } from "../../../types/common-comp.props";
 
 interface DrawerButtonProps {
   label: string;
@@ -15,7 +15,7 @@ interface DrawerButtonProps {
 type DrawerFooterProps = {
   alignContent?: "left" | "center" | "right";
   buttons: DrawerButtonProps[];
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const DrawerFooter: FC<DrawerFooterProps> = ({
   name = "drawer-footer",

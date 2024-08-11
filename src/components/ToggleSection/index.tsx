@@ -2,7 +2,7 @@ import { FC, ReactNode, useState } from "react";
 
 import clsx from "clsx";
 
-import { ExtraCompProps } from "../../types/extra-comp.props";
+import { CommonCompProps } from "../../types/common-comp.props";
 import { AngleDownIcon } from "../Icon";
 
 export type ToggleSectionProps = {
@@ -12,7 +12,7 @@ export type ToggleSectionProps = {
   maxContentHeight?: string;
   children: ReactNode;
   onToggle?: (isExpand: boolean) => void;
-} & ExtraCompProps;
+} & CommonCompProps;
 
 export const ToggleSection: FC<ToggleSectionProps> = ({
   name = "toggle-section",
