@@ -3,6 +3,7 @@ import { forwardRef, ReactNode, useEffect } from "react";
 import clsx from "clsx";
 import { createPortal } from "react-dom";
 
+import { WidthProps } from "@src/@types/styles.props";
 import { useMounted } from "@src/hooks/useMounted";
 import { usyZIndex } from "@src/styles";
 
@@ -15,7 +16,7 @@ export { DrawerFooter } from "./Footer";
 type DrawerProps = {
   isOpen?: boolean;
   side?: "left" | "right";
-  maxWidth?: string;
+  widthProps: WidthProps;
   header?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
@@ -28,7 +29,7 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
     name = "drawer",
     isOpen,
     side = "right",
-    maxWidth = "480px",
+    widthProps,
     header,
     children,
     footer,
@@ -69,7 +70,7 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
         <div
           ref={ref}
           className={clsx("usy-drawer-container", className)}
-          style={{ maxWidth }}
+          style={{ ...(widthProps || { maxWidth: "480px" }) }}
           data-testid={testId}
         >
           {header}

@@ -50,11 +50,11 @@
     }
 
     &.warning {
-      background-color: var(--usy-color-amber-5);
+      background-color: var(--usy-color-amber-7);
 
       &::before {
         background-color: var(--usy-color-amber-3);
-        box-shadow: 0 0 10px var(--usy-color-amber-5);
+        box-shadow: 0 0 10px var(--usy-color-amber-7);
       }
     }
 

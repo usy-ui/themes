@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint src --ext .ts,.tsx,.js --fix",
@@ -24,8 +24,11 @@
     "storybook": "pnpm css:merge && storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "react-components"
+  ],
+  "author": "Thi Nguyen",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.5",
