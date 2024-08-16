@@ -1,7 +1,7 @@
 export enum usyFontSizes {
-  xs = "0.7rem",
-  sm = "0.9rem",
-  md = "1rem",
-  lg = "1.15rem",
-  xl = "1.35rem",
+  extraSmall = "0.7rem",
+  small = "0.9rem",
+  medium = "1rem",
+  large = "1.15rem",
+  extraLarge = "1.35rem",
 }

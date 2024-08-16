@@ -3,6 +3,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
+import { usySpacing } from "../../styles";
 import { Flex } from "../Layout/Flex";
 
 import { Avatar } from "./index";
@@ -18,7 +19,7 @@ const meta: Meta<typeof Avatar> = {
 
 export const Shape: Story = {
   render: () => (
-    <Flex gap="30px">
+    <Flex gap={usySpacing.px32}>
       <Avatar
         url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
         alt="Avatar"

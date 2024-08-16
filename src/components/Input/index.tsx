@@ -11,6 +11,7 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
+import { BaseSize } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 
@@ -21,6 +22,7 @@ import { InputIconRight } from "./components/InputIconRight";
 export type PureInputProps = {
   value?: string;
   type?: "text" | "number";
+  size?: BaseSize;
   maxWidth?: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -39,6 +41,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   {
     name = "input",
     value = "",
+    size = "medium",
     title,
     type = "text",
     maxWidth = "unset",
@@ -109,6 +112,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       )}
       <div
         className={clsx("input-container", {
+          [`size-${size}`]: Boolean(size),
           "has-error": hasError,
         })}
         style={{ maxWidth }}

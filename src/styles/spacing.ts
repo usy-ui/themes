@@ -7,6 +7,7 @@ export enum usySpacing {
   px12 = "12px",
   px14 = "14px",
   px16 = "16px",
+  px18 = "18px",
   px20 = "20px",
   px24 = "24px",
   px28 = "28px",

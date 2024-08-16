@@ -22,6 +22,7 @@ type PickedInputProps = Pick<
   PureInputProps,
   | "name"
   | "value"
+  | "size"
   | "title"
   | "maxWidth"
   | "iconLeft"
@@ -40,6 +41,7 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
     {
       name = "password",
       value = "",
+      size = "medium",
       title,
       maxWidth = "unset",
       iconLeft,
@@ -105,6 +107,7 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
         )}
         <div
           className={clsx("input-container", {
+            [`size-${size}`]: Boolean(size),
             "has-error": hasError,
           })}
           style={{ maxWidth }}
