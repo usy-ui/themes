@@ -1,4 +1,4 @@
-export const usyZIndex = {
+export const usyZIndex = Object.freeze({
   100: 100,
   200: 200,
   300: 300,
@@ -9,4 +9,4 @@ export const usyZIndex = {
   800: 800,
   900: 900,
   latest: 1000,
-};
+});

@@ -2,14 +2,13 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BaseExtraSize, BaseSize } from "@src/@types/base.types";
-
+import { BaseExtraSize, BaseSize } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 
 type TypographyTag =
   | "small"
-  | "span"
   | "label"
+  | "span"
   | "p"
   | "h1"
   | "h2"

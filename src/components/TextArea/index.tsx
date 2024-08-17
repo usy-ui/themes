@@ -9,7 +9,7 @@ import {
 import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks/useNameMemo";
-import { usyElements } from "@src/styles";
+import { usyElement } from "@src/styles";
 
 import { type CommonCompProps } from "../../@types/common-comp.props";
 import { FieldTitle } from "../_internal/FieldTitle";
@@ -45,7 +45,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       title,
       maxWidth = "unset",
       maxHeight = "200px",
-      minHeight = usyElements.elementHeight,
+      minHeight = usyElement.heightMedium,
       placeholder,
       description,
       hasAsterisk = false,

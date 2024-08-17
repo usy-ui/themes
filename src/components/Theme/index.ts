@@ -1,16 +1,26 @@
-import { usyColors } from "@src/styles";
+import { usyColor } from "@src/styles";
 import { camelCase, toCssVariable } from "@src/utils/format";
 
-type ThemeProps = Partial<
-  Record<
-    | "colorPrimary"
-    | "colorPrimaryLight"
-    | "colorPrimaryDark"
-    | "elementHeight"
-    | "elementRadius",
-    string
-  >
->;
+import { BaseRadius } from "../../@types/base.types";
+
+type ColorModify = {
+  colorPrimary: string;
+  colorPrimaryLight: string;
+  colorPrimaryDark: string;
+};
+
+type ElementModify = {
+  elementHeightSmall: string;
+  elementHeightMedium: string;
+  elementHeightLarge: string;
+  elementRadius: BaseRadius;
+};
+
+type LayoutModify = {
+  horizontalPadding: string;
+};
+
+type ThemeProps = Partial<ColorModify & ElementModify & LayoutModify>;
 
 const setThemeToCssVariables = (theme: ThemeProps) => {
   const root = document.documentElement;
@@ -22,18 +32,18 @@ const setThemeToCssVariables = (theme: ThemeProps) => {
 };
 
 const setThemeToUsyConstants = (theme: ThemeProps) => {
-  Object.entries(theme).forEach(([key, value]) => {
-    /**
-     * For usyColors variables
-     */
-
+  const setColors = (key: string, value: string) => {
     if (key.startsWith("color")) {
       const usyColorKey = camelCase(
         key.replace("color", "")
-      ) as keyof typeof usyColors;
+      ) as keyof typeof usyColor;
 
-      usyColors[usyColorKey] = value;
+      usyColor[usyColorKey] = value;
     }
+  };
+
+  Object.entries(theme).forEach(([key, value]) => {
+    setColors(key, value);
   });
 };
 

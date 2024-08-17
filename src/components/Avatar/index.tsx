@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 
 import { useRandomColor } from "@src/hooks/useRandomColor";
-import { usyColors } from "@src/styles";
+import { usyColor } from "@src/styles";
 
 import { BaseExtraSize, BaseShape, BaseSize } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
@@ -51,7 +51,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
       )}
       style={{
         backgroundColor: bgColor,
-        color: usyColors.white,
+        color: usyColor.white,
         cursor: onClick ? "pointer" : undefined,
       }}
       data-testid={testId}

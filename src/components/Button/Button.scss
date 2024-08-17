@@ -12,19 +12,19 @@
    */
 
   &.size-small {
-    height: var(--usy-button-height-xs);
+    height: 30px;
     padding: 1px var(--usy-spacing-10px);
     font-size: var(--usy-fontsize-xs);
   }
 
   &.size-medium {
-    height: var(--usy-button-height-md);
+    height: 36px;
     padding: 1px var(--usy-spacing-12px);
     font-size: var(--usy-fontsize-sm);
   }
 
   &.size-large {
-    height: var(--usy-button-height-lg);
+    height: 40px;
     padding: 1px var(--usy-spacing-16px);
     font-size: var(--usy-fontsize-md);
   }

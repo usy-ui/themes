@@ -1,6 +1,6 @@
 .usy-toggle-section-container {
   width: 100%;
-  max-height: var(--usy-toggle-section-header-height);
+  max-height: 44px;
   border: 1px solid var(--usy-color-light-3);
   border-radius: var(--usy-element-border-radius);
   overflow: hidden;
@@ -10,7 +10,7 @@
   }
 
   .usy-toggle-section-header {
-    min-height: var(--usy-toggle-section-header-height);
+    min-height: 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
