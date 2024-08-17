@@ -1,6 +1,9 @@
 export const usyFontWeight = Object.freeze({
-  light: 200,
-  medium: 300,
-  semibold: 500,
+  extraLight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
   bold: 700,
+  extraBold: 800,
 });

@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
+import { BaseTag } from "../..//@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
@@ -15,6 +16,7 @@ import {
 export { PanelTitle } from "./PanelTitle";
 
 type PurePanelProps = {
+  tag?: BaseTag;
   title?: ReactNode;
   widthProps?: WidthProps;
   heightProps?: HeightProps;

@@ -1,9 +1,11 @@
 import { FC } from "react";
 
+import { BaseTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import { CommonBoxFlexProps } from "../Box";
 
 type PureFlexProps = {
+  tag?: BaseTag;
   display?: "flex" | "inline-flex";
   direction?: "row" | "column" | "row-reverse" | "column-reverse";
   justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
@@ -17,7 +19,7 @@ type PureFlexProps = {
 type FlexProps = CommonBoxFlexProps & PureFlexProps & CommonCompProps;
 
 export const Flex: FC<FlexProps> = ({
-  as: Tag = "div",
+  tag: Tag = "div",
   display = "flex",
   direction,
   justifyContent,

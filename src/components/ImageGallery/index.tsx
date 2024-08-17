@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
+import { BaseTag } from "../..//@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 
 type Image = {
@@ -11,22 +12,24 @@ type Image = {
 };
 
 type ImageGalleryProps = {
+  tag?: BaseTag;
   images: Image[];
 } & CommonCompProps;
 
 export const ImageGallery: FC<ImageGalleryProps> = ({
+  tag: Tag = "div",
   name = "image-gallery",
   images,
   className,
   testId = name,
 }) => {
   return (
-    <div className={clsx("usy-image-gallery", className)} data-testid={testId}>
+    <Tag className={clsx("usy-image-gallery", className)} data-testid={testId}>
       {images.map(({ url, shape, alt }) => (
         <div key={url} className={clsx("image-container", shape)}>
           <img src={url} className="image" alt={alt} />
         </div>
       ))}
-    </div>
+    </Tag>
   );
 };

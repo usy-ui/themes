@@ -3,6 +3,21 @@ export type BaseShape = "circle" | "rounded";
 export type BaseSize = "small" | "medium" | "large";
 export type BaseExtraSize = "extra-small" | "extra-large";
 export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
+export type BaseTag =
+  | "header"
+  | "footer"
+  | "main"
+  | "section"
+  | "summary"
+  | "nav"
+  | "details"
+  | "article"
+  | "aside"
+  | "figcaption"
+  | "figure"
+  | "mark"
+  | "div"
+  | "span";
 export type BaseColor =
   | "primary"
   | "primary-light"

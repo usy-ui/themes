@@ -15,6 +15,7 @@
 - Accordion
 - Bottom Sheet
 - Date Picker
+- Grid
 - Popover
 - Progress
 - Radio

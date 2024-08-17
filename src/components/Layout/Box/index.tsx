@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 
+import { BaseTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
   WidthProps,
@@ -9,7 +10,7 @@ import {
 } from "../../../@types/styles.props";
 
 export type CommonBoxFlexProps = {
-  as?: "div" | "span";
+  tag?: BaseTag;
   widthProps?: WidthProps;
   heightProps?: HeightProps;
   paddingProps?: PaddingProps;
@@ -24,6 +25,7 @@ export type PureBoxProps = {
 type BoxProps = CommonBoxFlexProps & PureBoxProps & CommonCompProps;
 
 export const Box: FC<BoxProps> = ({
+  tag: Tag = "div",
   display,
   widthProps,
   heightProps,
@@ -32,7 +34,7 @@ export const Box: FC<BoxProps> = ({
   children,
 }) => {
   return (
-    <div
+    <Tag
       style={{
         display,
         ...widthProps,
@@ -42,6 +44,6 @@ export const Box: FC<BoxProps> = ({
       }}
     >
       {children}
-    </div>
+    </Tag>
   );
 };

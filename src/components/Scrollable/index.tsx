@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
+import { BaseTag } from "../..//@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
@@ -13,6 +14,7 @@ import {
 } from "../../@types/styles.props";
 
 type PureScrollableProps = {
+  tag?: BaseTag;
   widthProps?: WidthProps;
   heightProps?: HeightProps;
   paddingProps?: PaddingProps;
@@ -25,6 +27,7 @@ type PureScrollableProps = {
 type ScrollableProps = PureScrollableProps & CommonCompProps;
 
 export const Scrollable: FC<ScrollableProps> = ({
+  tag: Tag = "div",
   name = "scrollable",
   widthProps,
   heightProps,
@@ -37,7 +40,7 @@ export const Scrollable: FC<ScrollableProps> = ({
   testId = name,
 }) => {
   return (
-    <div
+    <Tag
       className={clsx("usy-scrollable-container", className)}
       style={{
         ...(widthProps || { width: "100%" }),
@@ -50,6 +53,6 @@ export const Scrollable: FC<ScrollableProps> = ({
       data-testid={testId}
     >
       {children}
-    </div>
+    </Tag>
   );
 };
