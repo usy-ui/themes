@@ -12,6 +12,7 @@ interface DrawerButtonProps {
   onClick: () => void;
   testId?: string;
 }
+
 type DrawerFooterProps = {
   alignContent?: "left" | "center" | "right";
   buttons: DrawerButtonProps[];

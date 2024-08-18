@@ -2,7 +2,7 @@ import { CSSProperties, forwardRef, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { useUsyColor } from "@src/hooks/useUsyColor";
+import { useUsyColor } from "@src/hooks";
 
 import {
   BaseColor,

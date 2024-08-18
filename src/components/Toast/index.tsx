@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { createPortal } from "react-dom";
 import { renderToStaticMarkup } from "react-dom/server";
 
-import { useMounted } from "@src/hooks/useMounted";
+import { useMounted } from "@src/hooks";
 import { getUniqueTime } from "@src/utils";
 
 import { CommonCompProps } from "../../@types/common-comp.props";

@@ -3,11 +3,11 @@ import { forwardRef, ReactNode, useEffect } from "react";
 import clsx from "clsx";
 import { createPortal } from "react-dom";
 
-import { WidthProps } from "@src/@types/styles.props";
-import { useMounted } from "@src/hooks/useMounted";
+import { useMounted } from "@src/hooks";
 import { usyZIndex } from "@src/styles";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
+import { WidthProps } from "../../@types/styles.props";
 
 export { DrawerHeader } from "./Header";
 export { DrawerContent } from "./Content";

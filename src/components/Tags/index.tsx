@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef, useRef, useState } from "react";
 
 import clsx from "clsx";
 
-import { useNameMemo } from "@src/hooks/useNameMemo";
+import { useNameMemo } from "@src/hooks";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
 import { WidthProps } from "../../@types/styles.props";

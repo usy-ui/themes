@@ -4,10 +4,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 
-import { ToggleSection } from "./index";
+import { TogglePanel } from "./index";
 
-const meta: Meta<typeof ToggleSection> = {
-  component: ToggleSection,
+const meta: Meta<typeof TogglePanel> = {
+  component: TogglePanel,
   decorators: [ThemeProviderDecorator],
   argTypes: {},
   parameters: {
@@ -17,7 +17,7 @@ const meta: Meta<typeof ToggleSection> = {
 
 export const Types: Story = {
   render: () => (
-    <ToggleSection title="Toggle Section" maxWidth="500px">
+    <TogglePanel title="Toggle Panel" maxWidth="500px">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry is standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -26,9 +26,9 @@ export const Types: Story = {
       unchanged. It was popularised in the 1960s with the release of Letraset
       sheets containing Lorem Ipsum passages, and more recently with desktop
       publishing software like Aldus PageMaker including versions of Lorem Ipsum
-    </ToggleSection>
+    </TogglePanel>
   ),
 };
 
 export default meta;
-type Story = StoryObj<typeof ToggleSection>;
+type Story = StoryObj<typeof TogglePanel>;

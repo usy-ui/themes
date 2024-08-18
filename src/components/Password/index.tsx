@@ -9,7 +9,7 @@ import {
 import clsx from "clsx";
 
 import { EyeSlashIcon, EyeIcon } from "@src/components/Icon";
-import { useNameMemo } from "@src/hooks/useNameMemo";
+import { useNameMemo } from "@src/hooks";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
 import { FieldTitle } from "../_internal/FieldTitle";

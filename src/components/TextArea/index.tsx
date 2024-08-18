@@ -8,7 +8,7 @@ import {
 
 import clsx from "clsx";
 
-import { useNameMemo } from "@src/hooks/useNameMemo";
+import { useNameMemo } from "@src/hooks";
 import { usyElement } from "@src/styles";
 
 import { type CommonCompProps } from "../../@types/common-comp.props";

@@ -1,4 +1,5 @@
 export * from "./Icon";
+export { Accordion } from "./Accordion";
 export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
 export { Button } from "./Button";
@@ -26,5 +27,5 @@ export { Tags } from "./Tags";
 export { TextArea } from "./TextArea";
 export { setUsyTheme } from "./Theme";
 export { Toast, toastIns } from "./Toast";
-export { ToggleSection } from "./ToggleSection";
+export { TogglePanel } from "./TogglePanel";
 export { Typography } from "./Typography";

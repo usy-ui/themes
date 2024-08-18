@@ -3,8 +3,7 @@ import { forwardRef, ReactNode, useState } from "react";
 
 import clsx from "clsx";
 
-import { useNameMemo } from "@src/hooks/useNameMemo";
-import { useOutsideClick } from "@src/hooks/useOutsideClick";
+import { useNameMemo, useOutsideClick } from "@src/hooks";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";

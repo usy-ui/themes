@@ -48,7 +48,9 @@ export default [
         },
       }),
       filesize(),
-      bundleStats(),
+      bundleStats({
+        html: false,
+      }),
     ],
     external: ["react", "react-dom"],
   },

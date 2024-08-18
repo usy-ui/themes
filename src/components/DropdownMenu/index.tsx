@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 
-import { useOutsideClick } from "@src/hooks/useOutsideClick";
+import { useOutsideClick } from "@src/hooks";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
 

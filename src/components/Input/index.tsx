@@ -9,7 +9,7 @@ import {
 
 import clsx from "clsx";
 
-import { useNameMemo } from "@src/hooks/useNameMemo";
+import { useNameMemo } from "@src/hooks";
 
 import { BaseSize } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";

@@ -1,22 +1,23 @@
-.usy-toggle-section-container {
+.usy-toggle-panel-container {
   width: 100%;
   max-height: 44px;
   border: 1px solid var(--usy-color-light-3);
   border-radius: var(--usy-element-border-radius);
   overflow: hidden;
 
-  &.is-expanded {
+  &.expanded {
     max-height: unset;
   }
 
-  .usy-toggle-section-header {
+  .usy-toggle-panel-header {
     min-height: 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--usy-color-light-0);
     padding: var(--usy-spacing-10px) var(--usy-layout-horizontal-padding);
-    border-bottom: 1px solid var(--usy-color-light-3);
+    border-bottom: 1px solid var(--usy-color-light-2);
+    cursor: pointer;
     user-select: none;
 
     .title {
@@ -26,15 +27,14 @@
 
     .arrow-icon {
       transition-duration: 0.3s;
-      cursor: pointer;
 
-      &.is-expanded {
+      &.expanded {
         transform: rotate(180deg);
       }
     }
   }
 
-  .usy-toggle-section-content {
+  .usy-toggle-panel-content {
     padding: var(--usy-spacing-10px) var(--usy-layout-horizontal-padding);
     background-color: var(--usy-color-white);
     overflow: auto;
