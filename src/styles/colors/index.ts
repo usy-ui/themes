@@ -17,3 +17,5 @@ export const usyColor = {
   ...BluePalette,
   ...AmberPalette,
 };
+
+export const usyHexColors = Object.values({ ...PrimaryColor, ...MainPalette });

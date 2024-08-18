@@ -4,6 +4,10 @@
   align-items: center;
   user-select: none;
 
+  /*
+   * Variant
+   */
+
   &.variant-filled {
     background-color: var(--badge-color);
     border: 2px solid var(--badge-color);
@@ -36,5 +40,29 @@
     padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
     font-size: 0.9rem;
     border-radius: 4px;
+  }
+
+  /*
+   * Radius 
+   */
+
+  &.radius-none {
+    border-radius: 0;
+  }
+
+  &.radius-small {
+    border-radius: calc(0.4vh * var(--badge-radius-coeff));
+  }
+
+  &.radius-medium {
+    border-radius: calc(0.7vh * var(--badge-radius-coeff));
+  }
+
+  &.radius-large {
+    border-radius: calc(1vh * var(--badge-radius-coeff));
+  }
+
+  &.radius-full {
+    border-radius: calc(2vh * var(--badge-radius-coeff));
   }
 }

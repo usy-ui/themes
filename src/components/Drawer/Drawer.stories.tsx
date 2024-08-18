@@ -29,7 +29,7 @@ export const Types: Story = {
             alignContent="center"
             buttons={[
               {
-                type: "primary",
+                type: "filled",
                 label: "Confirm",
                 onClick: () => alert("Confirmed"),
               },

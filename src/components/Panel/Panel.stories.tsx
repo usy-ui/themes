@@ -4,8 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 import { Box } from "../Layout/Box";
+import { PanelTitle } from "../PanelTitle";
 
-import { Panel, PanelTitle } from "./index";
+import { Panel } from "./index";
 
 const meta: Meta<typeof Panel> = {
   component: Panel,

@@ -34,20 +34,28 @@
   }
 
   /*
-   * Shape 
+   * Radius 
    */
 
-  &.shape-circle {
+  &.radius-none {
+    border-radius: 0;
+  }
+
+  &.radius-small {
+    border-radius: 10%;
+  }
+
+  &.radius-medium {
+    border-radius: 20%;
+  }
+
+  &.radius-large {
+    border-radius: 30%;
+  }
+
+  &.radius-full {
     border-radius: 50%;
   }
-
-  &.shape-rounded {
-    border-radius: 15%;
-  }
-
-  /*
-   * Children elements 
-   */
 
   .image {
     width: 100%;

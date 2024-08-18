@@ -17,52 +17,38 @@ const meta: Meta<typeof Avatar> = {
   },
 };
 
-export const Shape: Story = {
+const avatarUrl =
+  "https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg";
+
+export const Radius: Story = {
   render: () => (
     <Flex gap={usySpacing.px32}>
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        shape="rounded"
-      />
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        shape="circle"
-      />
-      <Avatar url="" alt="" fallback="Jarvis" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" radius="none" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" radius="small" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" radius="medium" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" radius="large" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" radius="full" />
     </Flex>
   ),
 };
 
 export const Sizes: Story = {
   render: () => (
-    <Flex gap="30px" alignItems="center">
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        size="extra-small"
-      />
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        size="small"
-      />
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        size="medium"
-      />
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        size="large"
-      />
-      <Avatar
-        url="https://t4.ftcdn.net/jpg/03/36/26/53/360_F_336265345_U65QKmIeAmmpaPM2C1QaQKhDG7AxoMl9.jpg"
-        alt="Avatar"
-        size="extra-large"
-      />
+    <Flex gap={usySpacing.px32} alignItems="center">
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="extra-small" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="small" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="medium" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="large" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="extra-large" />
+    </Flex>
+  ),
+};
+
+export const Fallback: Story = {
+  render: () => (
+    <Flex gap={usySpacing.px32}>
+      <Avatar url="" fallback="R" color="random" />
+      <Avatar url="" fallback="P" color="primary" />
     </Flex>
   ),
 };

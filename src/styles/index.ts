@@ -1,4 +1,4 @@
-export { usyColor } from "./colors";
+export { usyColor, usyHexColors } from "./colors";
 export { usyElement } from "./element/element";
 export { usyFontSize } from "./font-size/font-size";
 export { usyFontWeight } from "./font-weight/font-weight";

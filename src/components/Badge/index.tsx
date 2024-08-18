@@ -2,21 +2,29 @@ import { CSSProperties, forwardRef, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { useColorCode } from "@src/hooks/useColorCode";
+import { useUsyColor } from "@src/hooks/useUsyColor";
 
-import { BaseColor, BaseSize, BaseVariant } from "../../@types/base.types";
+import {
+  BaseColor,
+  BaseRadius,
+  BaseSize,
+  BaseVariant,
+} from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 
-export type BadgeVariant = BaseVariant;
-export type BadgeSize = BaseSize;
-export type BadgeColor = BaseColor | "random";
-
 type BadgeProps = {
-  variant?: BadgeVariant;
-  size?: BadgeSize;
-  color?: BadgeColor;
+  variant?: BaseVariant;
+  size?: BaseSize;
+  color?: BaseColor | "random";
+  radius?: BaseRadius;
   children: ReactNode;
 } & CommonCompProps;
+
+const radiusCoeffBaseOnSize: Record<BaseSize, number> = {
+  small: 1,
+  medium: 1.1,
+  large: 1.2,
+};
 
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   {
@@ -24,15 +32,17 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     variant = "outline",
     size = "medium",
     color = "primary",
+    radius = "small",
     children,
     className,
     testId = name,
   },
   ref
 ) {
-  const { colorMemo } = useColorCode(color);
+  const colorInHex = useUsyColor(color);
   const cssVariables = {
-    "--badge-color": colorMemo,
+    "--badge-color": colorInHex,
+    "--badge-radius-coeff": radiusCoeffBaseOnSize[size],
   } as CSSProperties;
 
   return (
@@ -43,6 +53,7 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
         {
           [`variant-${variant}`]: Boolean(variant),
           [`size-${size}`]: Boolean(size),
+          [`radius-${radius}`]: Boolean(radius),
         },
         className
       )}

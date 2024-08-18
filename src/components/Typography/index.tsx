@@ -1,9 +1,8 @@
-import { FC, ReactNode, useMemo } from "react";
+import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { usyColor } from "@src/styles";
-import { camelCase } from "@src/utils";
+import { useUsyColor } from "@src/hooks/useUsyColor";
 
 import {
   BaseColor,
@@ -40,25 +39,20 @@ export const Typography: FC<TypographyProps> = ({
   className,
   testId = name,
 }) => {
-  const sizeClassName = `size-${size}`;
-  const weightClassName = `weight-${weight}`;
-  const camelCaseColor = useMemo(
-    () => camelCase(color).replace("-", ""),
-    [color]
-  ) as keyof typeof usyColor;
+  const colorInHex = useUsyColor(color);
 
   return (
     <Tag
       className={clsx(
         "usy-typography-container",
         {
-          [sizeClassName]: Boolean(size),
-          [weightClassName]: Boolean(weight),
+          [`size-${size}`]: Boolean(size),
+          [`weight-${weight}`]: Boolean(weight),
           "no-margin": noMargin,
         },
         className
       )}
-      style={{ color: usyColor[camelCaseColor], textAlign: align }}
+      style={{ color: colorInHex, textAlign: align }}
       data-testid={testId}
     >
       {children}

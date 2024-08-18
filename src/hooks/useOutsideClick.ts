@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 
 export const useOutsideClick = (callback: () => void) => {
@@ -28,6 +29,7 @@ export const useOutsideClick = (callback: () => void) => {
     return () => {
       document.removeEventListener("click", handleClick);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { elementRef, triggerRef };

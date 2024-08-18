@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 
-import { Select, SelectItem } from "./index";
+import { Select, SelectItemType } from "./index";
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -17,16 +17,19 @@ const meta: Meta<typeof Select> = {
 
 export const Types: Story = {
   render: () => {
-    const items: SelectItem[] = [
+    const items: SelectItemType[] = [
       {
+        id: "cats",
         label: "Cats",
         value: "cats",
       },
       {
+        id: "dogs",
         label: "Dogs",
         value: "dogs",
       },
       {
+        id: "fishes",
         label: "Fishes",
         value: "fishes",
       },

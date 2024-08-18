@@ -16,7 +16,7 @@ export { DrawerFooter } from "./Footer";
 type DrawerProps = {
   isOpen?: boolean;
   side?: "left" | "right";
-  widthProps: WidthProps;
+  widthProps?: WidthProps;
   header?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;

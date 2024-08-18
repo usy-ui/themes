@@ -1,5 +1,4 @@
 export type BaseVariant = "filled" | "outline";
-export type BaseShape = "circle" | "rounded";
 export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
 
 /**
