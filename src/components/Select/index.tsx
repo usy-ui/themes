@@ -9,17 +9,17 @@ import { CommonCompProps } from "../../@types/common-comp.props";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { AngleDownIcon } from "../Icon";
 
-export type SelectItem<T = any> = {
+export type SelectItemType<T = any> = {
   id: string | number;
   label: ReactNode;
   value: T;
 };
 
 type PureSelectProps = {
-  items: SelectItem[];
+  items: SelectItemType[];
   isOpen?: boolean;
-  value?: SelectItem;
-  onChange?: (item: SelectItem) => void;
+  value?: SelectItemType;
+  onChange?: (item: SelectItemType) => void;
 };
 
 type SelectProps = PureSelectProps & PureFieldTitleProps & CommonCompProps;
@@ -39,7 +39,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   ref
 ) {
   const [isOpen, setIsOpen] = useState(initOpen || false);
-  const [selectedItem, setSelectedItem] = useState<SelectItem>(
+  const [selectedItem, setSelectedItem] = useState<SelectItemType>(
     value || items[0]
   );
 
@@ -52,7 +52,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   const { triggerRef, elementRef } = useOutsideClick(handleOutsideClick);
 
   const toggleSelect = () => setIsOpen(!isOpen);
-  const handleChange = (item: SelectItem) => {
+  const handleChange = (item: SelectItemType) => {
     setSelectedItem(item);
     onChange?.(item);
     setIsOpen(false);

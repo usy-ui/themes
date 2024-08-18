@@ -4,6 +4,6 @@ export const usyFontSize = Object.freeze({
   medium: "1rem",
   large: "1.2rem",
   extraLarge: "1.4rem",
-  extraLarge1: "1.65rem",
-  extraLarge2: "1.9rem",
+  gigant1: "1.65rem",
+  gigant2: "1.9rem",
 });

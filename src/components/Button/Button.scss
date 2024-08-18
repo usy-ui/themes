@@ -14,19 +14,19 @@
   &.size-small {
     height: 30px;
     padding: 1px var(--usy-spacing-10px);
-    font-size: var(--usy-fontsize-xs);
+    font-size: var(--usy-fontsize-extra-small);
   }
 
   &.size-medium {
     height: 36px;
     padding: 1px var(--usy-spacing-12px);
-    font-size: var(--usy-fontsize-sm);
+    font-size: var(--usy-fontsize-small);
   }
 
   &.size-large {
     height: 40px;
     padding: 1px var(--usy-spacing-16px);
-    font-size: var(--usy-fontsize-md);
+    font-size: var(--usy-fontsize-medium);
   }
 
   /*

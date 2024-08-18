@@ -4,38 +4,38 @@
   */
 
   &.size-extra-small {
-    font-size: var(--usy-fontsize-xs);
-    line-height: calc(var(--usy-fontsize-xs) * 1.35);
+    font-size: var(--usy-fontsize-extra-small);
+    line-height: calc(var(--usy-fontsize-extra-small) * 1.35);
   }
 
   &.size-small {
-    font-size: var(--usy-fontsize-sm);
-    line-height: calc(var(--usy-fontsize-sm) * 1.35);
+    font-size: var(--usy-fontsize-small);
+    line-height: calc(var(--usy-fontsize-small) * 1.35);
   }
 
   &.size-medium {
-    font-size: var(--usy-fontsize-md);
-    line-height: calc(var(--usy-fontsize-md) * 1.35);
+    font-size: var(--usy-fontsize-medium);
+    line-height: calc(var(--usy-fontsize-medium) * 1.35);
   }
 
   &.size-large {
-    font-size: var(--usy-fontsize-lg);
-    line-height: calc(var(--usy-fontsize-lg) * 1.35);
+    font-size: var(--usy-fontsize-large);
+    line-height: calc(var(--usy-fontsize-large) * 1.35);
   }
 
   &.size-extra-large {
-    font-size: var(--usy-fontsize-xl);
-    line-height: calc(var(--usy-fontsize-xl) * 1.35);
+    font-size: var(--usy-fontsize-extra-large);
+    line-height: calc(var(--usy-fontsize-extra-large) * 1.35);
   }
 
   &.size-gigant-1 {
-    font-size: var(--usy-fontsize-gg1);
-    line-height: calc(var(--usy-fontsize-gg1) * 1.35);
+    font-size: var(--usy-fontsize-gigant-1);
+    line-height: calc(var(--usy-fontsize-gigant-1) * 1.35);
   }
 
   &.size-gigant-2 {
-    font-size: var(--usy-fontsize-gg2);
-    line-height: calc(var(--usy-fontsize-gg2) * 1.35);
+    font-size: var(--usy-fontsize-gigant-2);
+    line-height: calc(var(--usy-fontsize-gigant-2) * 1.35);
   }
 
   /*

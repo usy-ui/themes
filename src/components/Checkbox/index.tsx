@@ -3,6 +3,7 @@ import { ReactNode, forwardRef, useState } from "react";
 import clsx from "clsx";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
+import { Typography } from "../Typography";
 
 type CheckboxProps = {
   label: ReactNode;
@@ -44,7 +45,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           })}
           data-testid={`${testId}-input`}
         />
-        {label}
+        <Typography size="small">{label}</Typography>
       </label>
     );
   }

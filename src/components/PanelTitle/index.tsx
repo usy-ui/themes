@@ -37,7 +37,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
 
     if (typeof description === "string") {
       return (
-        <Typography color="dark-1" size="small" noMargin>
+        <Typography color="dark-1" size="small" className="description">
           {description}
         </Typography>
       );
@@ -61,7 +61,6 @@ export const PanelTitle: FC<PanelTitleProps> = ({
         tag={MappingHeadingTag[size]}
         weight="semibold"
         size={size}
-        className="description"
         noMargin
       >
         {title}

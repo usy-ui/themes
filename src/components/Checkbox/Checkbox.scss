@@ -1,5 +1,4 @@
 .usy-checkbox-container {
-  font-size: var(--usy-fontsize-md);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -26,7 +25,7 @@
 
       &::before {
         content: "✓";
-        font-size: var(--usy-fontsize-sm);
+        font-size: var(--usy-fontsize-small);
         color: var(--usy-color-white);
       }
     }
