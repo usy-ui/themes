@@ -13,11 +13,12 @@ export {
 } from "./DropdownMenu";
 export { ImageGallery } from "./ImageGallery";
 export { Input } from "./Input";
-export { Password } from "./Input/Password";
+export { Password } from "./Password";
 export { Box } from "./Layout/Box";
 export { Flex } from "./Layout/Flex";
 export { Modal } from "./Modal";
-export { Panel, PanelTitle } from "./Panel";
+export { Panel } from "./Panel";
+export { PanelTitle } from "./PanelTitle";
 export { Scrollable } from "./Scrollable";
 export { Select, SelectItem as SelectItemType } from "./Select";
 export { Tags } from "./Tags";

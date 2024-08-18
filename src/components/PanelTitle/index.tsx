@@ -2,14 +2,25 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { Typography, TypographySize } from "../../..//components/Typography";
-import { CommonCompProps } from "../../../@types/common-comp.props";
+import { BaseTypographyTag } from "../..//@types/base.types";
+import { Typography, TypographySize } from "../..//components/Typography";
+import { CommonCompProps } from "../../@types/common-comp.props";
 
 type PanelTitleProps = {
   title: string;
   description?: string | ReactNode;
   size?: TypographySize;
 } & CommonCompProps;
+
+const MappingHeadingTag: Record<TypographySize, BaseTypographyTag> = {
+  "gigant-2": "h6",
+  "gigant-1": "h6",
+  "extra-large": "h5",
+  large: "h4",
+  medium: "h3",
+  small: "p",
+  "extra-small": "small",
+};
 
 export const PanelTitle: FC<PanelTitleProps> = ({
   name = "panel-title",
@@ -47,7 +58,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
       data-testid={testId}
     >
       <Typography
-        tag="h4"
+        tag={MappingHeadingTag[size]}
         weight="semibold"
         size={size}
         className="description"

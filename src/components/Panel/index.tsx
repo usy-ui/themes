@@ -13,8 +13,6 @@ import {
   PaddingProps,
 } from "../../@types/styles.props";
 
-export { PanelTitle } from "./PanelTitle";
-
 type PurePanelProps = {
   tag?: BaseTag;
   title?: ReactNode;

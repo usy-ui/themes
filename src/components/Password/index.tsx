@@ -11,12 +11,12 @@ import clsx from "clsx";
 import { EyeSlashIcon, EyeIcon } from "@src/components/Icon";
 import { useNameMemo } from "@src/hooks/useNameMemo";
 
-import { PureInputProps } from "..";
-import { CommonCompProps } from "../../../@types/common-comp.props";
-import { FieldTitle } from "../../_internal/FieldTitle";
-import { InputDescription } from "../components/InputDescription";
-import { InputIconLeft } from "../components/InputIconLeft";
-import { InputIconRight } from "../components/InputIconRight";
+import { CommonCompProps } from "../../@types/common-comp.props";
+import { FieldTitle } from "../_internal/FieldTitle";
+import { PureInputProps } from "../Input";
+import { InputDescription } from "../Input/components/InputDescription";
+import { InputIconLeft } from "../Input/components/InputIconLeft";
+import { InputIconRight } from "../Input/components/InputIconRight";
 
 type PickedInputProps = Pick<
   PureInputProps,
