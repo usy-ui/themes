@@ -1,8 +1,19 @@
 export type BaseVariant = "filled" | "outline";
 export type BaseShape = "circle" | "rounded";
+export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
+
+/**
+ * Size
+ */
+
 export type BaseSize = "small" | "medium" | "large";
 export type BaseExtraSize = "extra-small" | "extra-large";
-export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
+export type BaseGigantSize = "gigant-1" | "gigant-2";
+
+/**
+ * Semantic Tag
+ */
+
 export type BaseTag =
   | "header"
   | "footer"
@@ -18,10 +29,62 @@ export type BaseTag =
   | "mark"
   | "div"
   | "span";
-export type BaseColor =
-  | "primary"
-  | "primary-light"
-  | "primary-dark"
+
+/**
+ * Typography
+ */
+
+export type BaseTypographyNormal = "small" | "label" | "span" | "p";
+export type BaseTypographyHeading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type BaseTypographyFormat =
+  | "mark"
+  | "ins"
+  | "del"
+  | "sub"
+  | "sup"
+  | "em"
+  | "strong";
+export type BaseTypographyTag =
+  | BaseTypographyNormal
+  | BaseTypographyHeading
+  | BaseTypographyFormat;
+export type BaseTypographyWeight =
+  | "thin"
+  | "light"
+  | "semilight"
+  | "normal"
+  | "semibold"
+  | "bold"
+  | "heavy";
+
+/**
+ * Color
+ */
+
+export type BasePrimaryPalette = "primary" | "primary-light" | "primary-dark";
+export type BaseLightPalette =
+  | "light-0"
+  | "light-1"
+  | "light-2"
+  | "light-3"
+  | "light-4"
+  | "light-5"
+  | "light-6"
+  | "light-7"
+  | "light-8"
+  | "light-9";
+export type BaseDarkPalette =
+  | "dark-0"
+  | "dark-1"
+  | "dark-2"
+  | "dark-3"
+  | "dark-4"
+  | "dark-5"
+  | "dark-6"
+  | "dark-7"
+  | "dark-8"
+  | "dark-9";
+export type BaseColorPalette =
   | "white"
   | "black"
   | "gray"
@@ -50,3 +113,8 @@ export type BaseColor =
   | "lime"
   | "mint"
   | "sky";
+export type BaseColor =
+  | BasePrimaryPalette
+  | BaseLightPalette
+  | BaseDarkPalette
+  | BaseColorPalette;

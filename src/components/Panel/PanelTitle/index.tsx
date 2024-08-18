@@ -1,41 +1,61 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-import { Box } from "@src/components/Layout/Box";
-import { Typography } from "@src/components/Typography";
-import { usySpacing } from "@src/styles";
+import clsx from "clsx";
 
+import { Typography, TypographySize } from "../../..//components/Typography";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 
 type PanelTitleProps = {
   title: string;
-  size?: "medium" | "large" | "extra-large";
+  description?: string | ReactNode;
+  size?: TypographySize;
 } & CommonCompProps;
 
 export const PanelTitle: FC<PanelTitleProps> = ({
   name = "panel-title",
   title,
+  description,
   size = "large",
+  className,
   testId = name,
 }) => {
-  const getMarginBottom = () => {
-    switch (size) {
-      case "medium": {
-        return usySpacing.px20;
-      }
-      case "large": {
-        return usySpacing.px28;
-      }
-      case "extra-large": {
-        return usySpacing.px40;
-      }
+  const renderDescription = () => {
+    if (!description) {
+      return null;
     }
+
+    if (typeof description === "string") {
+      return (
+        <Typography color="dark-1" size="small" noMargin>
+          {description}
+        </Typography>
+      );
+    }
+
+    return description;
   };
 
   return (
-    <Box marginProps={{ marginBottom: getMarginBottom() }}>
-      <Typography weight="semibold" size={size} noMargin data-testid={testId}>
+    <div
+      className={clsx(
+        "usy-panel-title-container",
+        {
+          [`mt-${size}`]: Boolean(size),
+        },
+        className
+      )}
+      data-testid={testId}
+    >
+      <Typography
+        tag="h4"
+        weight="semibold"
+        size={size}
+        className="description"
+        noMargin
+      >
         {title}
       </Typography>
-    </Box>
+      {renderDescription()}
+    </div>
   );
 };

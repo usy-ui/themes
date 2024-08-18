@@ -28,6 +28,16 @@
     line-height: calc(var(--usy-fontsize-xl) * 1.35);
   }
 
+  &.size-gigant-1 {
+    font-size: var(--usy-fontsize-gg1);
+    line-height: calc(var(--usy-fontsize-gg1) * 1.35);
+  }
+
+  &.size-gigant-2 {
+    font-size: var(--usy-fontsize-gg2);
+    line-height: calc(var(--usy-fontsize-gg2) * 1.35);
+  }
+
   /*
     Font weight
   */
@@ -58,26 +68,6 @@
 
   &.weight-heavy {
     font-weight: var(--usy-fontweight-heavy);
-  }
-
-  /*
-    Align
-  */
-
-  &.align-left {
-    text-align: left;
-  }
-
-  &.align-center {
-    text-align: center;
-  }
-
-  &.align-right {
-    text-align: right;
-  }
-
-  &.align-justify {
-    text-align: justify;
   }
 
   &.no-margin {

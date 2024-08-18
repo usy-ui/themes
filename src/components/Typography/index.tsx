@@ -1,39 +1,28 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useMemo } from "react";
 
 import clsx from "clsx";
 
-import { BaseExtraSize, BaseSize } from "../../@types/base.types";
+import { usyColor } from "@src/styles";
+import { camelCase } from "@src/utils";
+
+import {
+  BaseColor,
+  BaseExtraSize,
+  BaseGigantSize,
+  BaseSize,
+  BaseTypographyTag,
+  BaseTypographyWeight,
+} from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 
-type TypographyTag =
-  | "small"
-  | "label"
-  | "span"
-  | "p"
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6";
-
-type TypographySize = BaseSize | BaseExtraSize;
-
-type TypographyWeight =
-  | "thin"
-  | "light"
-  | "semilight"
-  | "normal"
-  | "semibold"
-  | "bold"
-  | "heavy";
-
+export type TypographySize = BaseSize | BaseExtraSize | BaseGigantSize;
 type TypographyAlign = "left" | "center" | "right" | "justify";
 
 type TypographyProps = {
-  tag?: TypographyTag;
+  tag?: BaseTypographyTag;
+  weight?: BaseTypographyWeight;
+  color?: BaseColor;
   size?: TypographySize;
-  weight?: TypographyWeight;
   align?: TypographyAlign;
   noMargin?: boolean;
   children: ReactNode;
@@ -42,8 +31,9 @@ type TypographyProps = {
 export const Typography: FC<TypographyProps> = ({
   name = "typography",
   tag: Tag = "p",
-  size = "medium",
   weight = "medium",
+  color = "black",
+  size = "medium",
   align = "left",
   noMargin = false,
   children,
@@ -52,7 +42,10 @@ export const Typography: FC<TypographyProps> = ({
 }) => {
   const sizeClassName = `size-${size}`;
   const weightClassName = `weight-${weight}`;
-  const alignClassName = `align-${align}`;
+  const camelCaseColor = useMemo(
+    () => camelCase(color).replace("-", ""),
+    [color]
+  ) as keyof typeof usyColor;
 
   return (
     <Tag
@@ -61,11 +54,11 @@ export const Typography: FC<TypographyProps> = ({
         {
           [sizeClassName]: Boolean(size),
           [weightClassName]: Boolean(weight),
-          [alignClassName]: Boolean(align),
           "no-margin": noMargin,
         },
         className
       )}
+      style={{ color: usyColor[camelCaseColor], textAlign: align }}
       data-testid={testId}
     >
       {children}

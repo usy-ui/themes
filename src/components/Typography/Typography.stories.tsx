@@ -21,7 +21,7 @@ export const Types: Story = {
     <Flex direction="column" gap="30px">
       <Typography tag="h6">h6: Lorem Ipsum is simply dummy text</Typography>
       <Typography tag="h5">h5: Lorem Ipsum is simply dummy text</Typography>
-      <Typography tag="h4" isNoMargin>
+      <Typography tag="h4" noMargin>
         h4: Lorem Ipsum is simply dummy text
       </Typography>
       <Typography tag="h3">h3: Lorem Ipsum is simply dummy text</Typography>
@@ -61,13 +61,21 @@ export const Sizes: Story = {
         extraLarge:
         <br /> The h1 tag of the printing and typesetting industry
       </Typography>
+      <Typography size="gigant-1">
+        Gigant 1:
+        <br /> The h1 tag of the printing and typesetting industry
+      </Typography>
+      <Typography size="gigant-2">
+        Gigant 2:
+        <br /> The h1 tag of the printing and typesetting industry
+      </Typography>
     </Flex>
   ),
 };
 
 export const Weights: Story = {
   render: () => (
-    <>
+    <Flex direction="column" gap="30px">
       <Typography weight="thin">100: thin</Typography>
       <Typography weight="light">200: light</Typography>
       <Typography weight="semilight">300: semilight</Typography>
@@ -75,7 +83,18 @@ export const Weights: Story = {
       <Typography weight="semibold">500: semibold</Typography>
       <Typography weight="bold">600: bold</Typography>
       <Typography weight="heavy">700: heavy</Typography>
-    </>
+    </Flex>
+  ),
+};
+
+export const Colors: Story = {
+  render: () => (
+    <Flex direction="column" gap="30px">
+      <Typography color="primary" weight="heavy">
+        Primary Color
+      </Typography>
+      <Typography color="blue">Blue Color</Typography>
+    </Flex>
   ),
 };
 

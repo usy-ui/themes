@@ -1,5 +1,5 @@
 {
-  "name": "@usy-ui/themes",
+  "name": "usy-ui",
   "version": "1.0.0",
   "description": "A React UI components library",
   "module": "dist",
