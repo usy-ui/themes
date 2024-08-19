@@ -2,7 +2,7 @@ import { FC, ReactNode, useState } from "react";
 
 import clsx from "clsx";
 
-import { AngleDownIcon, AngleUpIcon } from "@src/components/Icon";
+import { AngleDownIcon } from "@src/components/Icon";
 import { Typography } from "@src/components/Typography";
 
 import { CommonCompProps } from "../../../@types/common-comp.props";

@@ -12,19 +12,19 @@
    */
 
   &.size-small {
-    height: 30px;
+    height: 28px;
     padding: 1px var(--usy-spacing-10px);
     font-size: var(--usy-fontsize-extra-small);
   }
 
   &.size-medium {
-    height: 36px;
+    height: 32px;
     padding: 1px var(--usy-spacing-12px);
     font-size: var(--usy-fontsize-small);
   }
 
   &.size-large {
-    height: 40px;
+    height: 38px;
     padding: 1px var(--usy-spacing-16px);
     font-size: var(--usy-fontsize-medium);
   }
@@ -46,10 +46,16 @@
     color: var(--usy-color-dark-7);
   }
 
-  &.variant-normal {
+  &.variant-simple {
     background-color: var(--usy-color-white);
     border: 1px solid var(--usy-color-light-3);
     filter: drop-shadow(0px 4px 0px var(--usy-color-light-3));
+    color: var(--usy-color-dark-7);
+  }
+
+  &.variant-normal {
+    background-color: var(--usy-color-white);
+    border: 1px solid var(--usy-color-light-3);
     color: var(--usy-color-dark-7);
   }
 

@@ -7,7 +7,7 @@ import { CommonCompProps } from "../../@types/common-comp.props";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";
-export type ButtonVariant = BaseVariant | "normal" | "invisible";
+export type ButtonVariant = BaseVariant | "simple" | "normal" | "invisible";
 export type ButtonSize = BaseSize;
 
 export type ButtonProps = {

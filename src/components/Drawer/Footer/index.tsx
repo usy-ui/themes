@@ -2,9 +2,8 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { Button, ButtonType } from "@src/components/Button";
-
 import { CommonCompProps } from "../../../@types/common-comp.props";
+import { Button, ButtonType } from "../../../components/Button";
 
 interface DrawerButtonProps {
   label: string;

@@ -23,6 +23,7 @@ export const Types: Story = {
       <Flex gap="20px">
         <Button variant="filled">Primary</Button>
         <Button variant="outline">Outline</Button>
+        <Button variant="simple">Simple</Button>
         <Button variant="normal">Normal</Button>
         <Button variant="invisible">Invisible</Button>
       </Flex>
