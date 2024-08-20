@@ -3,6 +3,7 @@ import { FC } from "react";
 import { BaseTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import { CommonBoxFlexProps } from "../Box";
+import clsx from "clsx";
 
 type PureFlexProps = {
   tag?: BaseTag;
@@ -52,7 +53,7 @@ export const Flex: FC<FlexProps> = ({
         ...paddingProps,
         ...marginProps,
       }}
-      className={className}
+      className={clsx("usy-flex-container", className)}
       data-testid={testId}
     >
       {children}

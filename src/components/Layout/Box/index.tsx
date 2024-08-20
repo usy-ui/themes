@@ -8,6 +8,7 @@ import {
   MarginProps,
   PaddingProps,
 } from "../../../@types/styles.props";
+import clsx from "clsx";
 
 export type CommonBoxFlexProps = {
   tag?: BaseTag;
@@ -32,6 +33,8 @@ export const Box: FC<BoxProps> = ({
   paddingProps,
   marginProps,
   children,
+  className,
+  testId,
 }) => {
   return (
     <Tag
@@ -42,6 +45,8 @@ export const Box: FC<BoxProps> = ({
         ...paddingProps,
         ...marginProps,
       }}
+      className={clsx("usy-box-container", className)}
+      data-testid={testId}
     >
       {children}
     </Tag>

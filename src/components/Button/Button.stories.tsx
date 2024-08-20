@@ -3,7 +3,8 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
-import { CaretLeftIcon, CaretRightIcon } from "../Icon";
+import { usySpacing } from "../../styles";
+import { AngleDownIcon, CaretLeftIcon, CaretRightIcon } from "../Icon";
 import { Flex } from "../Layout/Flex";
 
 import { Button } from "./index";
@@ -19,18 +20,29 @@ const meta: Meta<typeof Button> = {
 
 export const Types: Story = {
   render: () => (
-    <Flex direction="column" gap="20px">
-      <Flex gap="20px">
+    <Flex direction="column" gap={usySpacing.px20}>
+      <Flex gap={usySpacing.px20}>
         <Button variant="filled">Primary</Button>
         <Button variant="outline">Outline</Button>
-        <Button variant="simple">Simple</Button>
         <Button variant="normal">Normal</Button>
-        <Button variant="invisible">Invisible</Button>
-      </Flex>
-      <Flex gap="20px">
+        <Button variant="danger">Danger</Button>
         <Button variant="normal" isDisabled>
           Disabled
         </Button>
+      </Flex>
+      <Flex gap={usySpacing.px20}>
+        <Button variant="filled" noSole>
+          Primary
+        </Button>
+        <Button variant="outline" noSole>
+          Outline
+        </Button>
+        <Button variant="normal" noSole>
+          Normal
+        </Button>
+        <Button variant="invisible">Invisible</Button>
+      </Flex>
+      <Flex gap={usySpacing.px20}>
         <Button variant="normal" isLoading>
           Loading
         </Button>
@@ -46,6 +58,9 @@ export const Types: Story = {
         >
           Right Icon
         </Button>
+        <Button>
+          <AngleDownIcon />
+        </Button>
       </Flex>
     </Flex>
   ),
@@ -53,18 +68,87 @@ export const Types: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <Flex gap="20px" alignItems="center">
-      <Button variant="normal" size="small">
-        small
-      </Button>
-      &nbsp; &nbsp; &nbsp;
-      <Button variant="normal" size="medium">
-        medium
-      </Button>
-      &nbsp; &nbsp; &nbsp;
-      <Button variant="normal" size="large">
-        large
-      </Button>
+    <Flex direction="column" gap={usySpacing.px20}>
+      <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="small">
+          small
+        </Button>
+        <Button variant="normal" size="medium">
+          medium
+        </Button>
+        <Button variant="normal" size="large">
+          large
+        </Button>
+      </Flex>
+      <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="small">
+          <AngleDownIcon />
+        </Button>
+        <Button variant="normal" size="medium">
+          <AngleDownIcon />
+        </Button>
+        <Button variant="normal" size="large">
+          <AngleDownIcon />
+        </Button>
+      </Flex>
+    </Flex>
+  ),
+};
+
+export const Radius: Story = {
+  render: () => (
+    <Flex direction="column" gap={usySpacing.px20}>
+      <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="small" radius="none">
+          radius small
+        </Button>
+        <Button variant="normal" size="small" radius="small">
+          radius small
+        </Button>
+        <Button variant="normal" size="small" radius="medium">
+          radius medium
+        </Button>
+        <Button variant="normal" size="small" radius="large">
+          radius large
+        </Button>
+        <Button variant="normal" size="small" radius="full">
+          radius small
+        </Button>
+      </Flex>
+      <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="medium" radius="none">
+          radius small
+        </Button>
+        <Button variant="normal" size="medium" radius="small">
+          radius small
+        </Button>
+        <Button variant="normal" size="medium" radius="medium">
+          radius medium
+        </Button>
+        <Button variant="normal" size="medium" radius="large">
+          radius large
+        </Button>
+        <Button variant="normal" size="medium" radius="full">
+          radius small
+        </Button>
+      </Flex>
+      <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="large" radius="none">
+          radius small
+        </Button>
+        <Button variant="normal" size="large" radius="small">
+          radius small
+        </Button>
+        <Button variant="normal" size="large" radius="medium">
+          radius medium
+        </Button>
+        <Button variant="normal" size="large" radius="large">
+          radius large
+        </Button>
+        <Button variant="normal" size="large" radius="full">
+          radius small
+        </Button>
+      </Flex>
     </Flex>
   ),
 };

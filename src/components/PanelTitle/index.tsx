@@ -57,12 +57,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
       )}
       data-testid={testId}
     >
-      <Typography
-        tag={MappingHeadingTag[size]}
-        weight="semibold"
-        size={size}
-        noMargin
-      >
+      <Typography tag={MappingHeadingTag[size]} weight="semibold" size={size}>
         {title}
       </Typography>
       {renderDescription()}

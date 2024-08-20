@@ -47,7 +47,9 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
       style={{
         ...widthProps,
         ...heightProps,
-        ...(paddingProps || { padding: usySpacing.px24 }),
+        ...(paddingProps || {
+          padding: `${usySpacing.px20} ${usySpacing.px24} ${usySpacing.px24}`,
+        }),
         ...marginProps,
         borderRadius,
       }}

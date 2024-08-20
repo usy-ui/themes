@@ -14,6 +14,9 @@
     user-select: none;
 
     .arrow-icon {
+      width: var(--usy-spacing-18px);
+      height: var(--usy-spacing-18px);
+      color: var(--usy-color-dark-3);
       transition-duration: 0.3s;
 
       &.expanded {

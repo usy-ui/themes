@@ -49,10 +49,10 @@ const columns: TableColumnType<RowType>[] = [
     title: "",
     renderRow: () => (
       <Flex gap={usySpacing.px12}>
-        <Button variant="filled" size="small">
+        <Button variant="filled" size="small" noSole>
           Update
         </Button>
-        <Button variant="outline" size="small">
+        <Button variant="outline" size="small" noSole>
           Delete
         </Button>
       </Flex>

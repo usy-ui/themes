@@ -1,4 +1,6 @@
 .usy-typography-container {
+  margin: 0;
+
   /*
     Font sizes
   */
@@ -68,9 +70,5 @@
 
   &.weight-heavy {
     font-weight: var(--usy-fontweight-heavy);
-  }
-
-  &.no-margin {
-    margin: 0;
   }
 }

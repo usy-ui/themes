@@ -1,13 +1,15 @@
-import { ReactNode, forwardRef } from "react";
+import { CSSProperties, ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { BaseSize, BaseVariant } from "../../@types/base.types";
+import { usySpacing } from "@src/styles";
+
+import { BaseRadius, BaseSize, BaseVariant } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";
-export type ButtonVariant = BaseVariant | "simple" | "normal" | "invisible";
+export type ButtonVariant = BaseVariant | "normal" | "danger" | "invisible";
 export type ButtonSize = BaseSize;
 
 export type ButtonProps = {
@@ -15,14 +17,21 @@ export type ButtonProps = {
   width?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  radius?: BaseRadius;
   isLoading?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   isDisabled?: boolean;
-  isBlock?: boolean;
+  noSole?: boolean;
   children: ReactNode;
   onClick?: () => void;
 } & CommonCompProps;
+
+const radiusCoeffBaseOnSize: Record<BaseSize, number> = {
+  small: 1,
+  medium: 1.1,
+  large: 1.2,
+};
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
@@ -32,9 +41,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       width = "unset",
       variant = "normal",
       size = "medium",
+      radius = "small",
       isLoading = false,
       isDisabled = false,
-      isBlock = false,
+      noSole = false,
       iconLeft,
       iconRight,
       children,
@@ -44,6 +54,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) {
+    const cssVariables = {
+      "--usy-button-radius-coeff": radiusCoeffBaseOnSize[size],
+    } as CSSProperties;
+
     const handleClick = () => {
       if (isDisabled || isLoading || typeof onClick !== "function") {
         return;
@@ -73,8 +87,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const renderLoading = () =>
       isLoading && (
         <SvgLoadingCircle
-          width="30px"
-          height="30px"
+          width={usySpacing.px28}
+          height={usySpacing.px28}
           className="loading-icon"
           data-testid={`${testId}-loading-icon`}
         />
@@ -89,12 +103,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             [`size-${size}`]: Boolean(size),
             [`variant-${variant}`]: Boolean(variant),
+            [`radius-${radius}`]: Boolean(radius),
+            "no-sole": Boolean(noSole),
             disabled: isDisabled,
-            block: isBlock,
+            loading: isLoading,
           },
           className
         )}
-        style={{ width }}
+        style={{ ...cssVariables, width }}
         onClick={handleClick}
         data-testid={testId}
       >

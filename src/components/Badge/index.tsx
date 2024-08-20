@@ -41,8 +41,8 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
 ) {
   const colorInHex = useUsyColor(color);
   const cssVariables = {
-    "--badge-color": colorInHex,
-    "--badge-radius-coeff": radiusCoeffBaseOnSize[size],
+    "--usy-badge-color": colorInHex,
+    "--usy-badge-radius-coeff": radiusCoeffBaseOnSize[size],
   } as CSSProperties;
 
   return (

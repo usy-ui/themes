@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useMemo } from "react";
 
 import clsx from "clsx";
 
@@ -20,10 +20,9 @@ type TypographyAlign = "left" | "center" | "right" | "justify";
 type TypographyProps = {
   tag?: BaseTypographyTag;
   weight?: BaseTypographyWeight;
-  color?: BaseColor;
+  color?: BaseColor | "random";
   size?: TypographySize;
   align?: TypographyAlign;
-  noMargin?: boolean;
   children: ReactNode;
 } & CommonCompProps;
 
@@ -32,23 +31,25 @@ export const Typography: FC<TypographyProps> = ({
   tag: Tag = "p",
   weight = "medium",
   color = "black",
-  size = "medium",
+  size,
   align = "left",
-  noMargin = false,
   children,
   className,
   testId = name,
 }) => {
   const colorInHex = useUsyColor(color);
+  const innerSize = useMemo(
+    () => (!size && ["p", "span", "label"].includes(Tag) ? "small" : size),
+    [size, Tag]
+  );
 
   return (
     <Tag
       className={clsx(
         "usy-typography-container",
         {
-          [`size-${size}`]: Boolean(size),
+          [`size-${innerSize}`]: Boolean(innerSize),
           [`weight-${weight}`]: Boolean(weight),
-          "no-margin": noMargin,
         },
         className
       )}

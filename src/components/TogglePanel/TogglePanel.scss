@@ -26,6 +26,8 @@
     }
 
     .arrow-icon {
+      width: var(--usy-spacing-18px);
+      height: var(--usy-spacing-18px);
       transition-duration: 0.3s;
 
       &.expanded {

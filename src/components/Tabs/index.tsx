@@ -13,18 +13,11 @@ export type TabItemType = {
 type TabsProps = {
   tabs: TabItemType[];
   tabId?: string;
-  contentMounted?: boolean;
+  willMounted?: boolean;
 } & CommonCompProps;
 
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
-  {
-    name = "tabs",
-    tabs,
-    tabId,
-    contentMounted = true,
-    className,
-    testId = name,
-  },
+  { name = "tabs", tabs, tabId, willMounted = true, className, testId = name },
   ref
 ) {
   const [activeTabId, setActiveTabId] = useState(tabId || tabs[0].id);
@@ -52,7 +45,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   };
 
   const renderActiveContent = () => {
-    if (contentMounted) {
+    if (willMounted) {
       const activeTab = tabs.find(({ id }) => id === activeTabId) || tabs[0];
       return (
         <div className="active-content-container">{activeTab.content}</div>

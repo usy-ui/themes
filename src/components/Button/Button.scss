@@ -1,33 +1,11 @@
 .usy-button-container {
   border: 1px solid transparent;
-  border-radius: var(--usy-element-border-radius);
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 0;
   user-select: none;
   cursor: pointer;
-
-  /*
-   * Sizes 
-   */
-
-  &.size-small {
-    height: 28px;
-    padding: 1px var(--usy-spacing-10px);
-    font-size: var(--usy-fontsize-extra-small);
-  }
-
-  &.size-medium {
-    height: 32px;
-    padding: 1px var(--usy-spacing-12px);
-    font-size: var(--usy-fontsize-small);
-  }
-
-  &.size-large {
-    height: 38px;
-    padding: 1px var(--usy-spacing-16px);
-    font-size: var(--usy-fontsize-medium);
-  }
 
   /*
    * Variant 
@@ -46,24 +24,24 @@
     color: var(--usy-color-dark-7);
   }
 
-  &.variant-simple {
+  &.variant-normal {
     background-color: var(--usy-color-white);
     border: 1px solid var(--usy-color-light-3);
     filter: drop-shadow(0px 4px 0px var(--usy-color-light-3));
     color: var(--usy-color-dark-7);
   }
 
-  &.variant-normal {
-    background-color: var(--usy-color-white);
-    border: 1px solid var(--usy-color-light-3);
-    color: var(--usy-color-dark-7);
+  &.variant-danger {
+    background-color: var(--usy-color-red);
+    filter: drop-shadow(0px 4px 0px var(--usy-color-red-5));
+    color: var(--usy-color-white);
   }
 
   &.variant-invisible {
     background-color: transparent;
+    color: var(--usy-color-dark-7);
     border: none;
     filter: none;
-    color: var(--usy-color-dark-7);
   }
 
   &.disabled {
@@ -71,12 +49,82 @@
     cursor: not-allowed;
   }
 
-  &.block {
-    width: 100%;
+  &.loading {
+    cursor: unset;
+
+    svg {
+      width: var(--usy-spacing-28px) !important;
+      width: var(--usy-spacing-28px) !important;
+    }
+  }
+
+  &.no-sole {
+    filter: none;
   }
 
   /*
-   * Children elements 
+   * Sizes 
+   */
+
+  &.size-small {
+    height: 28px;
+    padding: 1px var(--usy-spacing-10px);
+    font-size: calc(var(--usy-fontsize-extra-small) + 0.1rem);
+
+    svg {
+      width: var(--usy-spacing-16px);
+      height: var(--usy-spacing-16px);
+    }
+  }
+
+  &.size-medium {
+    height: 32px;
+    padding: 1px var(--usy-spacing-12px);
+    font-size: var(--usy-fontsize-small);
+
+    svg {
+      width: var(--usy-spacing-18px);
+      height: var(--usy-spacing-18px);
+    }
+  }
+
+  &.size-large {
+    height: 38px;
+    padding: 1px var(--usy-spacing-16px);
+    font-size: var(--usy-fontsize-medium);
+
+    svg {
+      width: var(--usy-spacing-20px);
+      height: var(--usy-spacing-20px);
+    }
+  }
+
+  /*
+   * Radius 
+   */
+
+  &.radius-none {
+    border-radius: 0;
+  }
+
+  &.radius-small {
+    border-radius: calc(0.4vh * var(--usy-button-radius-coeff));
+  }
+
+  &.radius-medium {
+    border-radius: calc(0.7vh * var(--usy-button-radius-coeff));
+  }
+
+  &.radius-large {
+    border-radius: calc(1vh * var(--usy-button-radius-coeff));
+  }
+
+  &.radius-full {
+    border-radius: calc(2vh * var(--usy-button-radius-coeff));
+  }
+
+  /*
+   * Children 
    */
 
   .left-icon {
