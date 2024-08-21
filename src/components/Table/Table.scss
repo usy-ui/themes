@@ -1,31 +1,38 @@
 .usy-table-container {
-  .table {
-    width: 100%;
-    border-collapse: collapse;
+  .table-container {
+    border: 1px solid var(--usy-color-light-2);
+    border-radius: var(--usy-spacing-6px);
+    overflow: hidden;
 
-    .head {
-      .head-row {
-        height: var(--usy-spacing-32px);
-        min-height: var(--usy-spacing-32px);
-        border-bottom: 1px solid var(--usy-color-light-2);
+    .table {
+      width: 100%;
+      border-collapse: collapse;
 
-        .head-column {
-          font-size: var(--usy-color-dark-2);
-          font-weight: var(--usy-fontweight-normal);
-          padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
-          text-align: center;
+      .head {
+        .head-row {
+          height: var(--usy-spacing-40px);
+          border-bottom: 1px solid var(--usy-color-light-2);
+          background-color: var(--usy-color-light-0);
+
+          .head-column {
+            color: var(--usy-color-dark-2);
+            font-size: var(--usy-fontsize-small);
+            font-weight: var(--usy-fontweight-semibold);
+            padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
+            text-align: left;
+          }
         }
       }
-    }
 
-    .body {
-      .body-row {
-        height: var(--usy-spacing-32px);
-        min-height: var(--usy-spacing-32px);
-        border-bottom: 1px solid var(--usy-color-light-2);
+      .body {
+        .body-row {
+          height: var(--usy-spacing-40px);
+          border-bottom: 1px solid var(--usy-color-light-2);
 
-        .body-column {
-          padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
+          .body-column {
+            font-size: var(--usy-fontsize-small);
+            padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
+          }
         }
       }
     }

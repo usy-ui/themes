@@ -3,12 +3,15 @@ import { ReactNode } from "react";
 import clsx from "clsx";
 
 import { CommonCompProps } from "../../@types/common-comp.props";
+import { WidthProps } from "../../@types/styles.props";
 
 type FallbackRow = Record<string, any>;
 
 export type TableColumnType<R extends FallbackRow> = {
   key: Extract<keyof R | "action", string>;
   title?: string;
+  widthProps?: WidthProps;
+  align?: "left" | "center" | "right";
   renderRow?: (row: R) => ReactNode;
 };
 
@@ -31,7 +34,11 @@ export const Table = <R extends FallbackRow>({
       <thead className="head" data-testid={`${testId}-head`}>
         <tr className="head-row" data-testid={`${testId}-head-row`}>
           {columns.map((col) => (
-            <th key={col.key} className="head-column">
+            <th
+              key={col.key}
+              className="head-column"
+              style={{ ...col.widthProps, textAlign: col.align || "left" }}
+            >
               {col.title}
             </th>
           ))}
@@ -65,10 +72,12 @@ export const Table = <R extends FallbackRow>({
       className={clsx("usy-table-container", className)}
       data-testid={testId}
     >
-      <table className="table">
-        {renderHead()}
-        {renderBody()}
-      </table>
+      <div className="table-container">
+        <table className="table">
+          {renderHead()}
+          {renderBody()}
+        </table>
+      </div>
     </div>
   );
 };

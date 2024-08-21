@@ -4,6 +4,7 @@ export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
 export { Button } from "./Button";
 export { Checkbox } from "./Checkbox";
+export { Copyable } from "./Copyable";
 export { Drawer, DrawerHeader, DrawerContent, DrawerFooter } from "./Drawer";
 export {
   DropdownMenu,

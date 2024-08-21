@@ -5,11 +5,13 @@ import clsx from "clsx";
 import { BaseTypographyTag } from "../..//@types/base.types";
 import { Typography, TypographySize } from "../..//components/Typography";
 import { CommonCompProps } from "../../@types/common-comp.props";
+import { MarginProps } from "../../@types/styles.props";
 
 type PanelTitleProps = {
   title: string;
   description?: string | ReactNode;
   size?: TypographySize;
+  marginProps?: MarginProps;
 } & CommonCompProps;
 
 const MappingHeadingTag: Record<TypographySize, BaseTypographyTag> = {
@@ -27,6 +29,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
   title,
   description,
   size = "large",
+  marginProps,
   className,
   testId = name,
 }) => {
@@ -55,6 +58,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
         },
         className
       )}
+      style={{ ...marginProps }}
       data-testid={testId}
     >
       <Typography tag={MappingHeadingTag[size]} weight="semibold" size={size}>

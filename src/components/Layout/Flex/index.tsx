@@ -1,9 +1,10 @@
 import { FC } from "react";
 
+import clsx from "clsx";
+
 import { BaseTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import { CommonBoxFlexProps } from "../Box";
-import clsx from "clsx";
 
 type PureFlexProps = {
   tag?: BaseTag;

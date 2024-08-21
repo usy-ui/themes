@@ -1,13 +1,13 @@
-export type BaseVariant = "filled" | "outline";
-export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
-
 /**
- * Size
+ * Properties Priority
+ * - Variant
+ * - Size
+ * - Color
+ * - Radius
  */
 
-export type BaseSize = "small" | "medium" | "large";
-export type BaseExtraSize = "extra-small" | "extra-large";
-export type BaseGigantSize = "gigant-1" | "gigant-2";
+export type BaseVariant = "filled" | "outline";
+export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
 
 /**
  * Semantic Tag
@@ -30,31 +30,12 @@ export type BaseTag =
   | "span";
 
 /**
- * Typography
+ * Size
  */
 
-export type BaseTypographyNormal = "small" | "label" | "span" | "p";
-export type BaseTypographyHeading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type BaseTypographyFormat =
-  | "mark"
-  | "ins"
-  | "del"
-  | "sub"
-  | "sup"
-  | "em"
-  | "strong";
-export type BaseTypographyTag =
-  | BaseTypographyNormal
-  | BaseTypographyHeading
-  | BaseTypographyFormat;
-export type BaseTypographyWeight =
-  | "thin"
-  | "light"
-  | "semilight"
-  | "normal"
-  | "semibold"
-  | "bold"
-  | "heavy";
+export type BaseSize = "small" | "medium" | "large";
+export type BaseExtraSize = "extra-small" | "extra-large";
+export type BaseGigantSize = "gigant-1" | "gigant-2";
 
 /**
  * Color
@@ -117,3 +98,30 @@ export type BaseColor =
   | BaseLightPalette
   | BaseDarkPalette
   | BaseColorPalette;
+
+/**
+ * Typography
+ */
+
+export type BaseTypographyNormal = "small" | "label" | "span" | "p";
+export type BaseTypographyHeading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type BaseTypographyFormat =
+  | "mark"
+  | "ins"
+  | "del"
+  | "sub"
+  | "sup"
+  | "em"
+  | "strong";
+export type BaseTypographyTag =
+  | BaseTypographyNormal
+  | BaseTypographyHeading
+  | BaseTypographyFormat;
+export type BaseTypographyWeight =
+  | "thin"
+  | "light"
+  | "semilight"
+  | "normal"
+  | "semibold"
+  | "bold"
+  | "heavy";

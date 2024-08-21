@@ -125,6 +125,7 @@ export { default as ColumnIcon } from "./Column";
 export { default as CommandIcon } from "./Command";
 export { default as CompressIcon } from "./Compress";
 export { default as ComputerSpeakerIcon } from "./ComputerSpeaker";
+export { default as CopyIcon } from "./Copy";
 export { default as CreditCardPlusIcon } from "./CreditCardPlus";
 export { default as CreditCardIcon } from "./CreditCard";
 export { default as DatabaseIcon } from "./Database";

@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
 
+import clsx from "clsx";
+
 import { BaseTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
@@ -8,7 +10,6 @@ import {
   MarginProps,
   PaddingProps,
 } from "../../../@types/styles.props";
-import clsx from "clsx";
 
 export type CommonBoxFlexProps = {
   tag?: BaseTag;
