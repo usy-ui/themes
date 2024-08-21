@@ -1,6 +1,6 @@
 {
   "name": "usy-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React UI components library",
   "module": "dist",
   "types": "dist/index.d.ts",
@@ -134,4 +134,3 @@
     ]
   }
 }
-
