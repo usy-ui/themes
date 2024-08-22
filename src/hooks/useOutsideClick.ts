@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 
-export const useOutsideClick = (callback: () => void) => {
+export const useOutsideClick = (callback: () => void, isDisabled?: boolean) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isDisabled) {
+      return;
+    }
+
     const handleClick = (event: any) => {
       if (triggerRef.current) {
         if (
@@ -30,7 +34,7 @@ export const useOutsideClick = (callback: () => void) => {
       document.removeEventListener("click", handleClick);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isDisabled]);
 
   return { elementRef, triggerRef };
 };

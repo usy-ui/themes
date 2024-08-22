@@ -4,12 +4,17 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { BaseRadius, BaseSize, BaseVariant } from "../../@types/base.types";
+import { BaseRadius, BaseSize } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";
-export type ButtonVariant = BaseVariant | "normal" | "danger" | "invisible";
+export type ButtonVariant =
+  | "primary"
+  | "outline"
+  | "normal"
+  | "danger"
+  | "invisible";
 export type ButtonSize = BaseSize;
 
 export type ButtonProps = {

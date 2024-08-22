@@ -1,34 +1,21 @@
-## Requirements
+## Install
 
-- Setup fonts from outside
-- Display well on light and dark modes
-- Work well on ReactJS and NextJS
-- Lightweight
+```
+   npm install usy-ui
+```
 
-## Pending Updates
+```
+   yarn add usy-ui
+```
 
-- Toast display positions
-- Select, DropdownMenu display positions
-- Input supports mask
-- Set 'use client' to each components
-- Support animation
-- Support responsive
-- Support semantic tags
-- Check data-testid for elements in component
-- Unit tests
+```
+   pnpm add usy-ui
+```
 
-## Pending Components
+## Usage
 
-- Accordion
-- Bottom Sheet
-- Date Picker
-- Grid
-- Popover
-- Progress
-- Radio
-- Skeleton
-- Slider
-- Switch
-- Table
-- Tooltip
-- Upload
+Add styles to your root component
+
+```
+    import "usy-ui/dist/styles.css";
+```

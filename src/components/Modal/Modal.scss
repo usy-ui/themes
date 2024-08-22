@@ -24,16 +24,27 @@
     margin-top: calc(var(--usy-spacing-6px) * -1);
     margin-bottom: var(--usy-spacing-16px);
     font-size: var(--usy-fontsize-large);
+    user-select: none;
   }
 
   .header-close {
+    width: var(--usy-spacing-24px);
+    height: var(--usy-spacing-24px);
+    padding: var(--usy-spacing-2px);
     position: absolute;
-    top: var(--usy-spacing-16px);
+    top: var(--usy-spacing-12px);
     right: var(--usy-spacing-12px);
+    border-radius: var(--usy-spacing-2px);
     cursor: pointer;
 
+    &:hover {
+      path {
+        stroke: var(--usy-color-dark-1);
+      }
+    }
+
     path {
-      fill: var(--usy-color-light-7);
+      stroke: var(--usy-color-light-9);
     }
   }
 }

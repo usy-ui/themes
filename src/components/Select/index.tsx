@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { forwardRef, ReactNode, useState } from "react";
+import { forwardRef, ReactNode, useCallback, useState } from "react";
 
 import clsx from "clsx";
 
@@ -45,9 +45,9 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
 
   const { nameMemo } = useNameMemo(name, "select");
 
-  const handleOutsideClick = () => {
+  const handleOutsideClick = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []);
 
   const { triggerRef, elementRef } = useOutsideClick(handleOutsideClick);
 
