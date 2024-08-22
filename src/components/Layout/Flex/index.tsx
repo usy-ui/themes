@@ -2,8 +2,14 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { BaseTag } from "../../..//@types/base.types";
+import { BaseTag } from "../../../@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
+import {
+  HeightProps,
+  MarginProps,
+  PaddingProps,
+  WidthProps,
+} from "../../../@types/styles.props";
 import { CommonBoxFlexProps } from "../Box";
 
 type PureFlexProps = {
@@ -18,7 +24,13 @@ type PureFlexProps = {
   gap?: string;
 };
 
-type FlexProps = CommonBoxFlexProps & PureFlexProps & CommonCompProps;
+type FlexProps = CommonBoxFlexProps &
+  PureFlexProps &
+  WidthProps &
+  HeightProps &
+  MarginProps &
+  PaddingProps &
+  CommonCompProps;
 
 export const Flex: FC<FlexProps> = ({
   tag: Tag = "div",

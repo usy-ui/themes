@@ -23,7 +23,7 @@ export { Panel } from "./Panel";
 export { PanelTitle } from "./PanelTitle";
 export { Scrollable } from "./Scrollable";
 export { Select, SelectItemType } from "./Select";
-export { BarSkeleton } from "./Skeleton";
+export { BarSkeleton, CircleSkeleton } from "./Skeleton";
 export { Table, TableColumnType } from "./Table";
 export { Tabs, TabItemType } from "./Tabs";
 export { Tags } from "./Tags";
