@@ -1,6 +1,5 @@
 ## Pending Components
 
-- Accordion
 - Bottom Sheet
 - Date Picker
 - Grid
@@ -10,6 +9,4 @@
 - Skeleton
 - Slider
 - Switch
-- Table
-- Tooltip
 - Upload

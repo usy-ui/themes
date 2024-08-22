@@ -20,12 +20,6 @@ type BadgeProps = {
   children: ReactNode;
 } & CommonCompProps;
 
-const radiusCoeffBaseOnSize: Record<BaseSize, number> = {
-  small: 1,
-  medium: 1.1,
-  large: 1.2,
-};
-
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   {
     name = "badge",
@@ -42,7 +36,6 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   const colorInHex = useUsyColor(color);
   const cssVariables = {
     "--usy-badge-color": colorInHex,
-    "--usy-badge-radius-coeff": radiusCoeffBaseOnSize[size],
   } as CSSProperties;
 
   return (

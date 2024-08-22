@@ -22,7 +22,7 @@ export default [
     output: {
       dir: packageJson.module,
       format: "esm",
-      sourcemap: true,
+      sourcemap: false,
       preserveModules: true,
     },
     plugins: [

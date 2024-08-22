@@ -27,19 +27,16 @@
   &.size-small {
     padding: var(--usy-spacing-2px) var(--usy-spacing-6px);
     font-size: 0.7rem;
-    border-radius: 3px;
   }
 
   &.size-medium {
     padding: 3px var(--usy-spacing-6px);
     font-size: 0.8rem;
-    border-radius: 3px;
   }
 
   &.size-large {
     padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
     font-size: 0.9rem;
-    border-radius: 4px;
   }
 
   /*
@@ -51,18 +48,18 @@
   }
 
   &.radius-small {
-    border-radius: calc(0.4vh * var(--usy-badge-radius-coeff));
+    border-radius: 0.3em;
   }
 
   &.radius-medium {
-    border-radius: calc(0.7vh * var(--usy-badge-radius-coeff));
+    border-radius: 0.5em;
   }
 
   &.radius-large {
-    border-radius: calc(1vh * var(--usy-badge-radius-coeff));
+    border-radius: 0.7em;
   }
 
   &.radius-full {
-    border-radius: calc(2vh * var(--usy-badge-radius-coeff));
+    border-radius: 1.2em;
   }
 }

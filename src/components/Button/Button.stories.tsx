@@ -22,7 +22,7 @@ export const Types: Story = {
   render: () => (
     <Flex direction="column" gap={usySpacing.px20}>
       <Flex gap={usySpacing.px20}>
-        <Button variant="filled">Primary</Button>
+        <Button variant="primary">Primary</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="normal">Normal</Button>
         <Button variant="danger">Danger</Button>
@@ -31,7 +31,7 @@ export const Types: Story = {
         </Button>
       </Flex>
       <Flex gap={usySpacing.px20}>
-        <Button variant="filled" noSole>
+        <Button variant="primary" noSole>
           Primary
         </Button>
         <Button variant="outline" noSole>

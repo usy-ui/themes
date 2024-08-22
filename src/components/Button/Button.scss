@@ -108,19 +108,19 @@
   }
 
   &.radius-small {
-    border-radius: calc(0.4vh * var(--usy-button-radius-coeff));
+    border-radius: 0.3em;
   }
 
   &.radius-medium {
-    border-radius: calc(0.7vh * var(--usy-button-radius-coeff));
+    border-radius: 0.6em;
   }
 
   &.radius-large {
-    border-radius: calc(1vh * var(--usy-button-radius-coeff));
+    border-radius: 0.8em;
   }
 
   &.radius-full {
-    border-radius: calc(2vh * var(--usy-button-radius-coeff));
+    border-radius: 1.2em;
   }
 
   /*

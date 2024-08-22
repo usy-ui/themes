@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
@@ -32,12 +32,6 @@ export type ButtonProps = {
   onClick?: () => void;
 } & CommonCompProps;
 
-const radiusCoeffBaseOnSize: Record<BaseSize, number> = {
-  small: 1,
-  medium: 1.1,
-  large: 1.2,
-};
-
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
     {
@@ -59,10 +53,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) {
-    const cssVariables = {
-      "--usy-button-radius-coeff": radiusCoeffBaseOnSize[size],
-    } as CSSProperties;
-
     const handleClick = () => {
       if (isDisabled || isLoading || typeof onClick !== "function") {
         return;
@@ -115,7 +105,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
-        style={{ ...cssVariables, width }}
+        style={{ width }}
         onClick={handleClick}
         data-testid={testId}
       >
