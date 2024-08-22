@@ -16,14 +16,15 @@ import {
 type PureScrollableProps = {
   tag?: BaseTag;
   scrollType?: "vertical" | "horizontal" | "both";
-  widthProps?: WidthProps;
-  heightProps?: HeightProps;
-  paddingProps?: PaddingProps;
-  marginProps?: MarginProps;
   children?: ReactNode;
 };
 
-type ScrollableProps = PureScrollableProps & CommonCompProps;
+type ScrollableProps = PureScrollableProps &
+  WidthProps &
+  HeightProps &
+  MarginProps &
+  PaddingProps &
+  CommonCompProps;
 
 export const Scrollable: FC<ScrollableProps> = ({
   tag: Tag = "div",

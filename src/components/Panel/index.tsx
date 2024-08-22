@@ -16,14 +16,15 @@ import {
 type PurePanelProps = {
   tag?: BaseTag;
   title?: ReactNode;
-  widthProps?: WidthProps;
-  heightProps?: HeightProps;
-  paddingProps?: PaddingProps;
-  marginProps?: MarginProps;
   borderRadius?: string;
   children: ReactNode;
 };
-type PanelProps = PurePanelProps & CommonCompProps;
+type PanelProps = PurePanelProps &
+  WidthProps &
+  HeightProps &
+  MarginProps &
+  PaddingProps &
+  CommonCompProps;
 
 export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
   {

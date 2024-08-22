@@ -16,13 +16,13 @@ export { DrawerFooter } from "./Footer";
 type DrawerProps = {
   isOpen?: boolean;
   side?: "left" | "right";
-  widthProps?: WidthProps;
   header?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
   containerElement?: HTMLElement;
   zIndex?: number;
-} & CommonCompProps;
+} & WidthProps &
+  CommonCompProps;
 
 export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
   {

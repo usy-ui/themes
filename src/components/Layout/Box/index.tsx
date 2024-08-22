@@ -13,10 +13,6 @@ import {
 
 export type CommonBoxFlexProps = {
   tag?: BaseTag;
-  widthProps?: WidthProps;
-  heightProps?: HeightProps;
-  paddingProps?: PaddingProps;
-  marginProps?: MarginProps;
   children: ReactNode;
 };
 
@@ -24,7 +20,13 @@ export type PureBoxProps = {
   display?: "block" | "inline-block";
 };
 
-type BoxProps = CommonBoxFlexProps & PureBoxProps & CommonCompProps;
+type BoxProps = CommonBoxFlexProps &
+  PureBoxProps &
+  WidthProps &
+  HeightProps &
+  MarginProps &
+  PaddingProps &
+  CommonCompProps;
 
 export const Box: FC<BoxProps> = ({
   tag: Tag = "div",

@@ -12,8 +12,8 @@ import { CopyIcon } from "../Icon";
 type CopyableProps = {
   text: string;
   color?: BaseColor;
-  widthProps?: WidthProps;
-} & CommonCompProps;
+} & WidthProps &
+  CommonCompProps;
 
 export const Copyable: FC<CopyableProps> = ({
   name = "copyable",

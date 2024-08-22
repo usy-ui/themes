@@ -11,8 +11,8 @@ type PanelTitleProps = {
   title: string;
   description?: string | ReactNode;
   size?: TypographySize;
-  marginProps?: MarginProps;
-} & CommonCompProps;
+} & MarginProps &
+  CommonCompProps;
 
 const MappingHeadingTag: Record<TypographySize, BaseTypographyTag> = {
   "gigant-2": "h6",

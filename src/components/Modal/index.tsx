@@ -11,13 +11,13 @@ import { CloseIcon } from "../Icon";
 
 type ModalProps = {
   title?: ReactNode;
-  widthProps?: WidthProps;
   preventOutsideClose?: boolean;
   containerElement?: HTMLElement;
   children: ReactNode;
   onClose?: () => void;
   zIndex?: number;
-} & CommonCompProps;
+} & WidthProps &
+  CommonCompProps;
 
 export const Modal: FC<ModalProps> = ({
   name = "modal",

@@ -13,12 +13,14 @@ type PureTagsProps = {
   title?: string;
   tags?: string[];
   placeholder?: string;
-  widthProps?: WidthProps;
   onAdd?: (tags: string[], tag: string) => void;
   onRemove?: (tags: string[], tag: string) => void;
 };
 
-type TagsProps = PureTagsProps & PureFieldTitleProps & CommonCompProps;
+type TagsProps = PureTagsProps &
+  PureFieldTitleProps &
+  WidthProps &
+  CommonCompProps;
 
 export const Tags = forwardRef<HTMLDivElement, TagsProps>(function Tags(
   {

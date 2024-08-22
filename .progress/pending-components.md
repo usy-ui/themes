@@ -6,7 +6,6 @@
 - Popover
 - Progress
 - Radio
-- Skeleton
 - Slider
 - Switch
 - Upload

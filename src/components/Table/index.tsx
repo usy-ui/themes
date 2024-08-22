@@ -10,10 +10,9 @@ type FallbackRow = Record<string, any>;
 export type TableColumnType<R extends FallbackRow> = {
   key: Extract<keyof R | "action", string>;
   title?: string;
-  widthProps?: WidthProps;
   align?: "left" | "center" | "right";
   renderRow?: (row: R) => ReactNode;
-};
+} & WidthProps;
 
 type TableProps<R extends FallbackRow> = {
   columns: TableColumnType<R>[];
