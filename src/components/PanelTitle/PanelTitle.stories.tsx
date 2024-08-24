@@ -35,7 +35,7 @@ export const Sizes: Story = {
       <PanelTitle
         title="Username"
         description="Choose a your own username"
-        size="extra-large"
+        size="huge"
       />
       <PanelTitle
         title="Username"

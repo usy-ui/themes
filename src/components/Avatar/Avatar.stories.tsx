@@ -35,11 +35,11 @@ export const Radius: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex gap={usySpacing.px32} alignItems="center">
-      <Avatar url={avatarUrl} imgAlt="Avatar" size="extra-small" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="tiny" />
       <Avatar url={avatarUrl} imgAlt="Avatar" size="small" />
       <Avatar url={avatarUrl} imgAlt="Avatar" size="medium" />
       <Avatar url={avatarUrl} imgAlt="Avatar" size="large" />
-      <Avatar url={avatarUrl} imgAlt="Avatar" size="extra-large" />
+      <Avatar url={avatarUrl} imgAlt="Avatar" size="huge" />
     </Flex>
   ),
 };

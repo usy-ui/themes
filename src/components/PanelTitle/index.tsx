@@ -17,11 +17,11 @@ type PanelTitleProps = {
 const MappingHeadingTag: Record<TypographySize, BaseTypographyTag> = {
   "gigant-2": "h6",
   "gigant-1": "h6",
-  "extra-large": "h5",
+  huge: "h5",
   large: "h4",
   medium: "h3",
   small: "p",
-  "extra-small": "small",
+  tiny: "small",
 };
 
 export const PanelTitle: FC<PanelTitleProps> = ({

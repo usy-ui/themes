@@ -50,8 +50,8 @@ export const Tags: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={usySpacing.px20}>
-      <Typography size="extra-small">
-        extraSmall:
+      <Typography size="tiny">
+        tiny:
         <br /> The h1 tag of the printing and typesetting industry
       </Typography>
       <Typography size="small">
@@ -66,8 +66,8 @@ export const Sizes: Story = {
         large:
         <br /> The h1 tag of the printing and typesetting industry
       </Typography>
-      <Typography size="extra-large">
-        extraLarge:
+      <Typography size="huge">
+        huge:
         <br /> The h1 tag of the printing and typesetting industry
       </Typography>
       <Typography size="gigant-1">

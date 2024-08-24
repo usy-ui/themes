@@ -69,7 +69,7 @@
   &.size-small {
     height: 28px;
     padding: 1px var(--usy-spacing-10px);
-    font-size: calc(var(--usy-fontsize-extra-small) + 0.1rem);
+    font-size: calc(var(--usy-fontsize-tiny) + 0.1rem);
 
     svg {
       width: var(--usy-spacing-16px);
@@ -80,7 +80,7 @@
   &.size-medium {
     height: 32px;
     padding: 1px var(--usy-spacing-12px);
-    font-size: var(--usy-fontsize-small);
+    font-size: var(--usy-fontsize-medium);
 
     svg {
       width: var(--usy-spacing-18px);

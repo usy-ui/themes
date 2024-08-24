@@ -3,7 +3,7 @@
 - Toast display positions
 - Select, DropdownMenu display positions
 - Input supports mask
-- Set 'use client' to each components
+- Apply 'use client' to only components
 - Support animation
 - Support responsive
 - Support semantic tags

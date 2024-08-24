@@ -16,9 +16,9 @@
 
           .head-column {
             color: var(--usy-color-dark-2);
-            font-size: var(--usy-fontsize-small);
+            font-size: var(--usy-fontsize-medium);
             font-weight: var(--usy-fontweight-semibold);
-            padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
+            padding: var(--usy-spacing-6px) var(--usy-spacing-14px);
             text-align: left;
           }
         }
@@ -29,9 +29,13 @@
           height: var(--usy-spacing-40px);
           border-bottom: 1px solid var(--usy-color-light-2);
 
+          &:last-child {
+            border-bottom: none;
+          }
+
           .body-column {
-            font-size: var(--usy-fontsize-small);
-            padding: var(--usy-spacing-6px) var(--usy-spacing-8px);
+            font-size: var(--usy-fontsize-medium);
+            padding: var(--usy-spacing-6px) var(--usy-spacing-14px);
           }
         }
       }

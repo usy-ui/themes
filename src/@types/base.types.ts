@@ -35,7 +35,7 @@ export type BaseTag =
  */
 
 export type BaseSize = "small" | "medium" | "large";
-export type BaseExtraSize = "extra-small" | "extra-large";
+export type BaseExtraSize = "tiny" | "huge";
 export type BaseGigantSize = "gigant-1" | "gigant-2";
 
 /**

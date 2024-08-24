@@ -16,7 +16,7 @@
       display: inline-flex;
       justify-content: space-between;
       align-items: center;
-      font-size: var(--usy-fontsize-small);
+      font-size: var(--usy-fontsize-medium);
       border: 1px solid var(--usy-color-primary);
       border-radius: var(--usy-spacing-12px);
       margin-right: var(--usy-spacing-4px);
@@ -33,7 +33,7 @@
     .tag-input {
       border: none;
       outline: none;
-      font-size: var(--usy-fontsize-small);
+      font-size: var(--usy-fontsize-medium);
     }
   }
 }

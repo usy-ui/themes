@@ -1,4 +1,5 @@
 export * from "./Icon";
+export { setUsyTheme } from "./Theme";
 export { Accordion } from "./Accordion";
 export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
@@ -28,7 +29,6 @@ export { Table, TableColumnType } from "./Table";
 export { Tabs, TabItemType } from "./Tabs";
 export { Tags } from "./Tags";
 export { TextArea } from "./TextArea";
-export { setUsyTheme } from "./Theme";
 export { Toast, toastIns } from "./Toast";
 export { TogglePanel } from "./TogglePanel";
 export { Typography } from "./Typography";

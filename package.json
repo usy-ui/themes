@@ -28,7 +28,7 @@
     "css:build": "pnpm css:merge && postcss src/styles.scss -o dist/styles.css",
     "build": "rimraf dist && pnpm css:build && rollup -c --bundleConfigAsCjs",
     "build:pack": "pnpm build && pnpm pack",
-    "release": "pnpm build && pnpm publish",
+    "release": "pnpm version patch && pnpm build && npm publish --access=public",
     "storybook": "pnpm css:merge && storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

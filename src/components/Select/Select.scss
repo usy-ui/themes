@@ -11,7 +11,7 @@
     border: 1px solid var(--usy-element-border-color);
     border-radius: var(--usy-element-border-radius);
     padding: 0 var(--usy-spacing-10px) 0 var(--usy-spacing-12px);
-    font-size: var(--usy-fontsize-small);
+    font-size: var(--usy-fontsize-medium);
     user-select: none;
     cursor: pointer;
 
@@ -50,7 +50,7 @@
         }
 
         .item-label {
-          font-size: var(--usy-fontsize-small);
+          font-size: var(--usy-fontsize-medium);
           text-wrap: nowrap;
           margin: 0;
         }

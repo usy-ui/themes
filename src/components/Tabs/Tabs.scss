@@ -9,7 +9,7 @@
       outline: none;
       background: transparent;
       color: var(--usy-color-dark-0);
-      font-size: var(--usy-fontsize-small);
+      font-size: var(--usy-fontsize-medium);
       font-weight: var(--usy-fontweight-semibold);
       padding: var(--usy-spacing-12px) var(--usy-spacing-18px);
       border-bottom: 2px solid transparent;
@@ -23,7 +23,7 @@
   }
 
   .active-content-container {
-    padding: var(--usy-spacing-12px) var(--usy-spacing-14px);
+    padding: var(--usy-spacing-12px) 0;
 
     &.hidden {
       display: none;
