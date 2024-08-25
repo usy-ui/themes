@@ -7,7 +7,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { useMounted } from "@src/hooks";
 import { getUniqueTime } from "@src/utils";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { CommonCompProps } from "../../@types";
 import {
   CheckCircleIcon,
   CloseIcon,

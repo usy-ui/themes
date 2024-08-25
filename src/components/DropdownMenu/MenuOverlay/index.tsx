@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { usyZIndex } from "@src/styles";
 
-import { CommonCompProps } from "../../../@types/common-comp.props";
+import { CommonCompProps } from "../../../@types";
 
 type PureMenuOverlayProps = {
   zIndex?: number;

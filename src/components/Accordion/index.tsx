@@ -2,12 +2,12 @@ import { forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
 import {
+  CommonCompProps,
   MarginProps,
   PaddingProps,
   WidthProps,
-} from "../../@types/styles.props";
+} from "../../@types";
 
 import { AccordionItem, AccordionItemType } from "./AccordionItem";
 

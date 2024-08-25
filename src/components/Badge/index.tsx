@@ -9,8 +9,8 @@ import {
   BaseRadius,
   BaseSize,
   BaseVariant,
-} from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+  CommonCompProps,
+} from "../../@types";
 
 type BadgeProps = {
   variant?: BaseVariant;

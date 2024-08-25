@@ -1,7 +1,7 @@
 import { usyColor } from "@src/styles";
 import { camelCase, toCssVariable } from "@src/utils/format";
 
-import { BaseRadius } from "../../@types/base.types";
+import { BaseRadius } from "../../@types";
 
 type ColorModify = {
   colorPrimary: string;

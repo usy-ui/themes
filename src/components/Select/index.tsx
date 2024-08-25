@@ -3,9 +3,9 @@ import { forwardRef, ReactNode, useCallback, useState } from "react";
 
 import clsx from "clsx";
 
-import { useNameMemo, useOutsideClick } from "@src/hooks";
+import { useOutsideClick } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { CommonCompProps } from "../../@types";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { AngleDownIcon } from "../Icon";
 
@@ -42,8 +42,6 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   const [selectedItem, setSelectedItem] = useState<SelectItemType>(
     value || items[0]
   );
-
-  const { nameMemo } = useNameMemo(name, "select");
 
   const handleOutsideClick = useCallback(() => {
     setIsOpen(false);
@@ -109,7 +107,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
     >
       {title && (
         <FieldTitle
-          name={nameMemo}
+          name={name}
           hasAsterisk={hasAsterisk}
           title={title}
           testId={`${testId}-title`}

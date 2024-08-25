@@ -4,8 +4,7 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { WidthProps } from "../../@types/styles.props";
+import { CommonCompProps, WidthProps } from "../../@types";
 import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
 import { CloseCircleSolidIcon } from "../Icon";
 

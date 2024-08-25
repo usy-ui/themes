@@ -2,8 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../../@types/common-comp.props";
-import { MarginProps } from "../../../@types/styles.props";
+import { CommonCompProps, MarginProps } from "../../../@types";
 
 type CircleSkeletonProps = {
   width: string;

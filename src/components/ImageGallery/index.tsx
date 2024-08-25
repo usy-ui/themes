@@ -2,8 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { BaseSemanticTag } from "../..//@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { BaseSemanticTag, CommonCompProps } from "../../@types";
 
 type Image = {
   url: string;

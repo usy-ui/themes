@@ -5,10 +5,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 import { Flex } from "../Layout/Flex";
 
-import { PanelTitle } from "./index";
+import { ParagraphHeading } from "./index";
 
-const meta: Meta<typeof PanelTitle> = {
-  component: PanelTitle,
+const meta: Meta<typeof ParagraphHeading> = {
+  component: ParagraphHeading,
   decorators: [ThemeProviderDecorator],
   argTypes: {},
   parameters: {
@@ -19,7 +19,10 @@ const meta: Meta<typeof PanelTitle> = {
 export const Types: Story = {
   render: () => (
     <Flex widthProps={{ width: "700px" }} direction="column">
-      <PanelTitle title="Username" description="Choose a your own username" />
+      <ParagraphHeading
+        title="Username"
+        description="Choose a your own username"
+      />
     </Flex>
   ),
 };
@@ -27,22 +30,22 @@ export const Types: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex widthProps={{ width: "700px" }} direction="column">
-      <PanelTitle
+      <ParagraphHeading
         title="Username"
         description="Choose a your own username"
         size="large"
       />
-      <PanelTitle
+      <ParagraphHeading
         title="Username"
         description="Choose a your own username"
         size="huge"
       />
-      <PanelTitle
+      <ParagraphHeading
         title="Username"
         description="Choose a your own username"
         size="gigant-1"
       />
-      <PanelTitle
+      <ParagraphHeading
         title="Username"
         description="Choose a your own username"
         size="gigant-2"
@@ -52,4 +55,4 @@ export const Sizes: Story = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PanelTitle>;
+type Story = StoryObj<typeof ParagraphHeading>;

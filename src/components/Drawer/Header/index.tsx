@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { CloseIcon } from "@src/components/Icon";
 import { Typography } from "@src/components/Typography";
 
-import { CommonCompProps } from "../../../@types/common-comp.props";
+import { CommonCompProps } from "../../../@types";
 
 type DrawerHeaderProps = {
   title: ReactNode;

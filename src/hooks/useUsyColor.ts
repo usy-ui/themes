@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { usyColor, usyHexColors } from "@src/styles";
 import { camelCase } from "@src/utils";
 
-import { BaseColor } from "../@types/base.types";
+import { BaseColor } from "../@types";
 
 /**
  *

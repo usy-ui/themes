@@ -4,11 +4,8 @@ import clsx from "clsx";
 
 import { useUsyColor } from "@src/hooks";
 
-import { BaseColor } from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { WidthProps } from "../../@types/styles.props";
-import { CheckCircleIcon, CheckIcon, CopyIcon } from "../Icon";
-import { Tooltip } from "../Tooltip";
+import { BaseColor, CommonCompProps, WidthProps } from "../../@types";
+import { CheckIcon, CopyIcon } from "../Icon";
 
 type CopyableProps = {
   text: string;

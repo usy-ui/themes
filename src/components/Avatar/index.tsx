@@ -6,12 +6,12 @@ import { useUsyColor } from "@src/hooks";
 import { usyColor } from "@src/styles";
 
 import {
+  CommonCompProps,
   BaseColor,
   BaseExtraSize,
   BaseRadius,
   BaseSize,
-} from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+} from "../../@types";
 
 type AvatarProps = {
   url: string;

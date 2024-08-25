@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { AngleDownIcon } from "@src/components/Icon";
 
-import { CommonCompProps } from "../../../@types/common-comp.props";
+import { CommonCompProps } from "../../../@types";
 
 type PureTriggerProps = {
   hasBorder?: boolean;

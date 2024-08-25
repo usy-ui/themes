@@ -2,8 +2,7 @@ import { ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { WidthProps } from "../../@types/styles.props";
+import { CommonCompProps, WidthProps } from "../../@types";
 
 type FallbackRow = Record<string, any>;
 

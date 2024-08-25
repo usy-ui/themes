@@ -2,12 +2,10 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BaseTypographyTag } from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { MarginProps } from "../../@types/styles.props";
-import { Typography, TypographySize } from "../../components/Typography";
+import { BaseTypographyTag, CommonCompProps, MarginProps } from "../../@types";
+import { Typography, TypographySize } from "../Typography";
 
-type PanelTitleProps = {
+type ParagraphHeadingProps = {
   title: string;
   description?: string | ReactNode;
   size?: TypographySize;
@@ -15,17 +13,17 @@ type PanelTitleProps = {
   CommonCompProps;
 
 const MappingHeadingTag: Record<TypographySize, BaseTypographyTag> = {
-  "gigant-2": "h6",
-  "gigant-1": "h6",
-  huge: "h5",
-  large: "h4",
-  medium: "h3",
-  small: "p",
   tiny: "small",
+  small: "small",
+  medium: "p",
+  large: "h3",
+  huge: "h4",
+  "gigant-2": "h5",
+  "gigant-1": "h6",
 };
 
-export const PanelTitle: FC<PanelTitleProps> = ({
-  name = "panel-title",
+export const ParagraphHeading: FC<ParagraphHeadingProps> = ({
+  name = "paragraph-heading",
   title,
   description,
   size = "large",
@@ -52,7 +50,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
   return (
     <div
       className={clsx(
-        "usy-panel-title-container",
+        "usy-paragraph-heading-container",
         {
           [`mt-${size}`]: Boolean(size),
         },

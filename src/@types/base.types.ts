@@ -1,11 +1,3 @@
-/**
- * Properties Priority
- * - Variant
- * - Size
- * - Color
- * - Radius
- */
-
 export type BaseVariant = "filled" | "outline";
 export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
 export type BasePosition = "top" | "right" | "bottom" | "left";

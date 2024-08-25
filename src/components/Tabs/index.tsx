@@ -2,7 +2,7 @@ import { forwardRef, ReactNode, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { CommonCompProps } from "../../@types";
 
 export type TabItemType = {
   id: string;

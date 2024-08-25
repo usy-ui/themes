@@ -4,14 +4,14 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { BaseSemanticTag } from "../..//@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
   WidthProps,
   MarginProps,
   PaddingProps,
-} from "../../@types/styles.props";
+  BaseSemanticTag,
+  CommonCompProps,
+} from "../../@types";
 
 type PureScrollableProps = {
   tag?: BaseSemanticTag;

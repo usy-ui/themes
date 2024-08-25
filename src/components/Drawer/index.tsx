@@ -6,8 +6,7 @@ import { createPortal } from "react-dom";
 import { useMounted } from "@src/hooks";
 import { usyZIndex } from "@src/styles";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { WidthProps } from "../../@types/styles.props";
+import { CommonCompProps, WidthProps } from "../../@types";
 
 export { DrawerHeader } from "./Header";
 export { DrawerContent } from "./Content";

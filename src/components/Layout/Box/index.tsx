@@ -2,14 +2,14 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BaseSemanticTag } from "../../..//@types/base.types";
-import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
   WidthProps,
   HeightProps,
   MarginProps,
   PaddingProps,
-} from "../../../@types/styles.props";
+  CommonCompProps,
+  BaseSemanticTag,
+} from "../../../@types";
 
 export type CommonBoxFlexProps = {
   tag?: BaseSemanticTag;

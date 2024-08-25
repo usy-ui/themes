@@ -2,12 +2,12 @@ import { ReactNode, forwardRef, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { CommonCompProps } from "../../@types";
 import { Typography } from "../Typography";
 
 type CheckboxProps = {
   label: ReactNode;
-  isChecked?: boolean;
+  value?: boolean;
   onChange?: (checked: boolean) => void;
 } & CommonCompProps;
 
@@ -16,14 +16,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     {
       name = "checkbox",
       label,
-      isChecked = false,
+      value = false,
       onChange,
       className,
       testId = name,
     },
     ref
   ) {
-    const [checked, setChecked] = useState(isChecked);
+    const [checked, setChecked] = useState(value);
 
     const handleCheck = () => {
       setChecked(!checked);

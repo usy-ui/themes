@@ -21,7 +21,7 @@ export { Box } from "./Layout/Box";
 export { Flex } from "./Layout/Flex";
 export { Modal } from "./Modal";
 export { Panel } from "./Panel";
-export { PanelTitle } from "./PanelTitle";
+export { ParagraphHeading } from "./ParagraphHeading";
 export { Scrollable } from "./Scrollable";
 export { Select, SelectItemType } from "./Select";
 export { BarSkeleton, CircleSkeleton } from "./Skeleton";

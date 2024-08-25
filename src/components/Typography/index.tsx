@@ -11,8 +11,8 @@ import {
   BaseSize,
   BaseTypographyTag,
   BaseTypographyWeight,
-} from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+  CommonCompProps,
+} from "../../@types";
 
 export type TypographySize = BaseSize | BaseExtraSize | BaseGigantSize;
 type TypographyAlign = "left" | "center" | "right" | "justify";

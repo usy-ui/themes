@@ -2,8 +2,7 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BasePosition } from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { BasePosition, CommonCompProps } from "../../@types";
 
 type TooltipProps = {
   content: string;

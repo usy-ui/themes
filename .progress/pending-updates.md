@@ -11,3 +11,4 @@
 - Set name prop to component
 - Set 'use client' for needed components
 - Order CSS variables
+- Standardize form fields with value, onChange...

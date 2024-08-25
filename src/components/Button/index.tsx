@@ -4,8 +4,7 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { BaseRadius, BaseSize } from "../../@types/base.types";
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { BaseRadius, BaseSize, CommonCompProps } from "../../@types";
 import SvgLoadingCircle from "../Icon/LoadingCircle";
 
 export type ButtonType = "button" | "submit";

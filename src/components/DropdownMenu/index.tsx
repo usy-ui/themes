@@ -9,7 +9,7 @@ import {
 
 import { useOutsideClick } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
+import { CommonCompProps } from "../../@types";
 
 import { MenuOverlay } from "./MenuOverlay";
 import { MenuItem } from "./MenuOverlay/MenuItem";

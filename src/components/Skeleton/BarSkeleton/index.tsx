@@ -2,12 +2,8 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../../@types/common-comp.props";
-import {
-  MarginProps,
-  PaddingProps,
-  WidthProps,
-} from "../../../@types/styles.props";
+import { CommonCompProps } from "../../../@types";
+import { MarginProps, PaddingProps, WidthProps } from "../../../@types";
 
 type BarSkeletonProps = {
   rows?: number;

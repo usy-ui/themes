@@ -5,8 +5,7 @@ import { createPortal } from "react-dom";
 
 import { useMounted, useOutsideClick } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types/common-comp.props";
-import { WidthProps } from "../../@types/styles.props";
+import { CommonCompProps, WidthProps } from "../../@types";
 import { CloseIcon } from "../Icon";
 
 type ModalProps = {
