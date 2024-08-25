@@ -30,8 +30,8 @@ export const Typography: FC<TypographyProps> = ({
   name = "typography",
   tag: Tag = "p",
   weight = "medium",
-  color = "black",
-  size,
+  color = "dark-9",
+  size = "medium",
   align = "left",
   children,
   className,
@@ -39,7 +39,7 @@ export const Typography: FC<TypographyProps> = ({
 }) => {
   const colorInHex = useUsyColor(color);
   const innerSize = useMemo(
-    () => (!size && ["p", "span", "label"].includes(Tag) ? "small" : size),
+    () => (!size && ["p", "span", "label"].includes(Tag) ? "medium" : size),
     [size, Tag]
   );
 

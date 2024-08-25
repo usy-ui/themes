@@ -14,7 +14,7 @@ export type BasePosition = "top" | "right" | "bottom" | "left";
  * Semantic Tag
  */
 
-export type BaseTag =
+export type BaseSemanticTag =
   | "header"
   | "footer"
   | "main"

@@ -1,5 +1,5 @@
 export type CommonCompProps = {
-  name?: string;
   className?: string;
+  name?: string;
   testId?: string;
 };

@@ -15,7 +15,7 @@
     margin: 0;
   }
 
-  .copy-icon {
+  .status-icon {
     position: absolute;
     top: var(--usy-spacing-6px);
     right: var(--usy-spacing-8px);
@@ -30,10 +30,19 @@
       background-color: rgba(0, 0, 0, 0.2);
     }
 
-    svg {
+    .copy-icon {
       width: var(--usy-spacing-16px);
       height: var(--usy-spacing-16px);
       fill: var(--usy-color-light-0);
+    }
+
+    .copied-icon {
+      width: var(--usy-spacing-16px);
+      height: var(--usy-spacing-16px);
+
+      path {
+        stroke: var(--usy-color-light-0);
+      }
     }
   }
 }

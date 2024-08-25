@@ -28,6 +28,7 @@
   .content-container {
     display: block;
     padding-bottom: var(--usy-spacing-18px);
+    font-size: var(--usy-fontsize-medium);
 
     &.hidden {
       display: none;

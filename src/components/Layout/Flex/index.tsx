@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-import { BaseTag } from "../../../@types/base.types";
+import { BaseSemanticTag } from "../../../@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
   HeightProps,
@@ -13,7 +13,7 @@ import {
 import { CommonBoxFlexProps } from "../Box";
 
 type PureFlexProps = {
-  tag?: BaseTag;
+  tag?: BaseSemanticTag;
   display?: "flex" | "inline-flex";
   direction?: "row" | "column" | "row-reverse" | "column-reverse";
   justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
@@ -22,6 +22,7 @@ type PureFlexProps = {
   shrink?: number;
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
   gap?: string;
+  id?: string;
 };
 
 type FlexProps = CommonBoxFlexProps &
@@ -47,8 +48,10 @@ export const Flex: FC<FlexProps> = ({
   paddingProps,
   marginProps,
   children,
+  id,
   className,
-  testId,
+  name = "flex",
+  testId = name,
 }) => {
   return (
     <Tag
@@ -66,6 +69,7 @@ export const Flex: FC<FlexProps> = ({
         ...paddingProps,
         ...marginProps,
       }}
+      id={id}
       className={clsx("usy-flex-container", className)}
       data-testid={testId}
     >

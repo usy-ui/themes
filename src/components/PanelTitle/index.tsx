@@ -2,10 +2,10 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BaseTypographyTag } from "../..//@types/base.types";
-import { Typography, TypographySize } from "../..//components/Typography";
+import { BaseTypographyTag } from "../../@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import { MarginProps } from "../../@types/styles.props";
+import { Typography, TypographySize } from "../../components/Typography";
 
 type PanelTitleProps = {
   title: string;
@@ -40,7 +40,7 @@ export const PanelTitle: FC<PanelTitleProps> = ({
 
     if (typeof description === "string") {
       return (
-        <Typography color="dark-1" size="small" className="description">
+        <Typography color="dark-1" size="medium" className="description">
           {description}
         </Typography>
       );

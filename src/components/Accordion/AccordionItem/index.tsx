@@ -18,7 +18,7 @@ type AccordionItemProps = AccordionItemType & CommonCompProps;
 export const AccordionItem: FC<AccordionItemProps> = ({
   title,
   content,
-  name = "accordion",
+  name = "accordion-item",
   className,
   testId = name,
 }) => {
@@ -35,7 +35,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   const renderTitle = () => {
     if (typeof title === "string") {
       return (
-        <Typography tag="h3" size="small">
+        <Typography tag="h3" size="medium" weight="semibold">
           {title}
         </Typography>
       );

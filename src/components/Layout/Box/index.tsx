@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { BaseTag } from "../../..//@types/base.types";
+import { BaseSemanticTag } from "../../..//@types/base.types";
 import { CommonCompProps } from "../../../@types/common-comp.props";
 import {
   WidthProps,
@@ -12,8 +12,9 @@ import {
 } from "../../../@types/styles.props";
 
 export type CommonBoxFlexProps = {
-  tag?: BaseTag;
+  tag?: BaseSemanticTag;
   children: ReactNode;
+  id?: string;
 };
 
 export type PureBoxProps = {
@@ -37,7 +38,9 @@ export const Box: FC<BoxProps> = ({
   marginProps,
   children,
   className,
-  testId,
+  id,
+  name = "box",
+  testId = name,
 }) => {
   return (
     <Tag
@@ -48,6 +51,7 @@ export const Box: FC<BoxProps> = ({
         ...paddingProps,
         ...marginProps,
       }}
+      id={id}
       className={clsx("usy-box-container", className)}
       data-testid={testId}
     >

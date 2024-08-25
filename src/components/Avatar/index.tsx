@@ -25,14 +25,14 @@ type AvatarProps = {
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
   {
-    name = "avatar",
     url,
     size = "medium",
     color = "black",
     radius = "small",
     fallback = "A",
-    imgAlt,
+    imgAlt = "avatar",
     onClick,
+    name = "avatar",
     className,
     testId = name,
   },

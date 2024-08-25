@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { BaseTag } from "../..//@types/base.types";
+import { BaseSemanticTag } from "../..//@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
@@ -12,12 +12,13 @@ import {
   MarginProps,
   PaddingProps,
 } from "../../@types/styles.props";
+import { Typography } from "../Typography";
 
 type PurePanelProps = {
-  tag?: BaseTag;
+  tag?: BaseSemanticTag;
   title?: ReactNode;
-  borderRadius?: string;
-  children: ReactNode;
+  hasBorder?: boolean;
+  children: string | ReactNode;
 };
 type PanelProps = PurePanelProps &
   WidthProps &
@@ -30,11 +31,11 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
   {
     name = "panel",
     title,
+    hasBorder = true,
     widthProps,
     heightProps,
     paddingProps,
     marginProps,
-    borderRadius = usySpacing.px6,
     children,
     className,
     testId = name,
@@ -44,7 +45,13 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
   return (
     <div
       ref={ref}
-      className={clsx("usy-panel-container", className)}
+      className={clsx(
+        "usy-panel-container",
+        {
+          "has-border": Boolean(hasBorder),
+        },
+        className
+      )}
       style={{
         ...widthProps,
         ...heightProps,
@@ -52,12 +59,15 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
           padding: `${usySpacing.px20} ${usySpacing.px24} ${usySpacing.px24}`,
         }),
         ...marginProps,
-        borderRadius,
       }}
       data-testid={testId}
     >
       {title}
-      {children}
+      {typeof children === "string" ? (
+        <Typography size="medium">{children}</Typography>
+      ) : (
+        children
+      )}
     </div>
   );
 });

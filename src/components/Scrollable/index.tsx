@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { usySpacing } from "@src/styles";
 
-import { BaseTag } from "../..//@types/base.types";
+import { BaseSemanticTag } from "../..//@types/base.types";
 import { CommonCompProps } from "../../@types/common-comp.props";
 import {
   HeightProps,
@@ -14,7 +14,7 @@ import {
 } from "../../@types/styles.props";
 
 type PureScrollableProps = {
-  tag?: BaseTag;
+  tag?: BaseSemanticTag;
   scrollType?: "vertical" | "horizontal" | "both";
   children?: ReactNode;
 };
