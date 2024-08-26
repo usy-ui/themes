@@ -1,3 +1,4 @@
+"use client";
 import { usyColor } from "@src/styles";
 import { camelCase, toCssVariable } from "@src/utils/format";
 

@@ -1,3 +1,4 @@
+"use client";
 import { FC, FunctionComponent, ReactNode, createRef, useEffect } from "react";
 
 import clsx from "clsx";

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 import { forwardRef, ReactNode, useCallback, useState } from "react";
 
 import clsx from "clsx";

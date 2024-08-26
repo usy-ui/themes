@@ -113,6 +113,7 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-preserve-directives": "^0.4.0",
     "sass": "^1.77.2",
     "sass-loader": "^14.2.1",
     "storybook": "^8.2.8",

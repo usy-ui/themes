@@ -1,3 +1,4 @@
+"use client";
 import { FC, ReactNode, useMemo } from "react";
 
 import clsx from "clsx";

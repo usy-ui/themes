@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+"use client";
 import { ChangeEvent, FC, useState } from "react";
 
 import clsx from "clsx";

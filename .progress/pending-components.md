@@ -5,6 +5,5 @@
 - Grid
 - Popover
 - Progress
-- Radio
 - Slider
 - Upload

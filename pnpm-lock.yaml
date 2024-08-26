@@ -234,6 +234,9 @@ importers:
       rollup-plugin-peer-deps-external:
         specifier: ^2.2.4
         version: 2.2.4(rollup@4.20.0)
+      rollup-plugin-preserve-directives:
+        specifier: ^0.4.0
+        version: 0.4.0(rollup@4.20.0)
       sass:
         specifier: ^1.77.2
         version: 1.77.8
@@ -5669,6 +5672,11 @@ packages:
     resolution: {integrity: sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==}
     peerDependencies:
       rollup: '*'
+
+  rollup-plugin-preserve-directives@0.4.0:
+    resolution: {integrity: sha512-gx4nBxYm5BysmEQS+e2tAMrtFxrGvk+Pe5ppafRibQi0zlW7VYAbEGk6IKDw9sJGPdFWgVTE0o4BU4cdG0Fylg==}
+    peerDependencies:
+      rollup: 2.x || 3.x || 4.x
 
   rollup-plugin-webpack-stats@0.4.1:
     resolution: {integrity: sha512-Zi7t0G7FtA55LNcU9B3s2gBo3PODbdo+288Cw2/4sA8+o9H/ahhWZ25UxADeHwriAzW808iDpPbB81C5jGLIbg==}
@@ -13172,6 +13180,12 @@ snapshots:
 
   rollup-plugin-peer-deps-external@2.2.4(rollup@4.20.0):
     dependencies:
+      rollup: 4.20.0
+
+  rollup-plugin-preserve-directives@0.4.0(rollup@4.20.0):
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.20.0)
+      magic-string: 0.30.11
       rollup: 4.20.0
 
   rollup-plugin-webpack-stats@0.4.1(rollup@4.20.0):

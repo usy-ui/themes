@@ -12,6 +12,7 @@ import { bundleStats } from "rollup-plugin-bundle-stats";
 import dts from "rollup-plugin-dts";
 import filesize from "rollup-plugin-filesize";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import { preserveDirectives } from "rollup-plugin-preserve-directives";
 
 const packageJson = require("./package.json");
 
@@ -42,11 +43,8 @@ export default [
       image(),
       svgr(),
       peerDepsExternal(),
-      terser({
-        format: {
-          preamble: `"use client"`,
-        },
-      }),
+      preserveDirectives(),
+      terser(),
       filesize(),
       bundleStats({
         html: false,

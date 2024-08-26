@@ -1,3 +1,4 @@
+"use client";
 import { ChangeEvent, ReactNode, forwardRef, useEffect, useState } from "react";
 
 import clsx from "clsx";
