@@ -11,7 +11,7 @@ import {
   PaddingProps,
   BaseSemanticTag,
   CommonCompProps,
-} from "../../@types";
+} from "../../../@types";
 
 type PureScrollableProps = {
   tag?: BaseSemanticTag;

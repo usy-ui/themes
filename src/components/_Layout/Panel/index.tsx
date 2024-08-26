@@ -11,8 +11,8 @@ import {
   PaddingProps,
   BaseSemanticTag,
   CommonCompProps,
-} from "../../@types";
-import { Typography } from "../Typography";
+} from "../../../@types";
+import { Typography } from "../../Typography";
 
 type PurePanelProps = {
   tag?: BaseSemanticTag;

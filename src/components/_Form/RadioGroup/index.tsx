@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, FormFieldProps } from "../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
+import { CommonCompProps, FormFieldProps } from "../../../@types";
+import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
 
 type RadioType = {
   id: string;
@@ -14,8 +14,8 @@ type RadioType = {
 type RadioGroupProps = {
   items: RadioType[];
   direction?: "vertical" | "horizontal";
-} & FormFieldProps<RadioType> &
-  PureFieldTitleProps &
+} & PureFieldTitleProps &
+  Omit<FormFieldProps<RadioType, HTMLInputElement>, "hasError" | "disabled"> &
   CommonCompProps;
 
 export const RadioGroup: FC<RadioGroupProps> = ({
@@ -38,9 +38,9 @@ export const RadioGroup: FC<RadioGroupProps> = ({
     }
   }, [value]);
 
-  const handleChange = (item: RadioType) => {
+  const handleChange = (item: RadioType, e: ChangeEvent<HTMLInputElement>) => {
     setSelectedItem(item);
-    onChange?.(item);
+    onChange?.(item, e);
 
     console.log(name);
   };
@@ -68,7 +68,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
                 id={itemId}
                 name={name}
                 checked={item.value === selectedItem.value}
-                onChange={() => handleChange(item)}
+                onChange={(e) => handleChange(item, e)}
                 className="input"
               />
               <span className="label">{item.label}</span>

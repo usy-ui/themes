@@ -11,8 +11,8 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { BaseSize, CommonCompProps } from "../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
+import { BaseSize, CommonCompProps } from "../../../@types";
+import { FieldTitle, PureFieldTitleProps } from "../FieldTitle";
 
 import { InputDescription } from "./components/InputDescription";
 import { InputIconLeft } from "./components/InputIconLeft";

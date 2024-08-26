@@ -11,8 +11,8 @@ import clsx from "clsx";
 import { useNameMemo } from "@src/hooks";
 import { usyElement } from "@src/styles";
 
-import { type CommonCompProps } from "../../@types";
-import { FieldTitle } from "../_internal/FieldTitle";
+import { type CommonCompProps } from "../../../@types";
+import { FieldTitle } from "../FieldTitle";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
 

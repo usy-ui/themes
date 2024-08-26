@@ -11,8 +11,8 @@ import clsx from "clsx";
 import { EyeSlashIcon, EyeIcon } from "@src/components/Icon";
 import { useNameMemo } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types";
-import { FieldTitle } from "../_internal/FieldTitle";
+import { CommonCompProps } from "../../../@types";
+import { FieldTitle } from "../FieldTitle";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
 import { InputIconLeft } from "../Input/components/InputIconLeft";

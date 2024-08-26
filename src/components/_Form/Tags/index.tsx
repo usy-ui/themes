@@ -4,9 +4,9 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { CommonCompProps, WidthProps } from "../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
-import { CloseCircleSolidIcon } from "../Icon";
+import { CommonCompProps, WidthProps } from "../../../@types";
+import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
+import { CloseCircleSolidIcon } from "../../Icon";
 
 type PureTagsProps = {
   title?: string;

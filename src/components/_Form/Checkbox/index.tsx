@@ -1,15 +1,14 @@
-import { ReactNode, forwardRef, useEffect, useState } from "react";
+import { ChangeEvent, ReactNode, forwardRef, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types";
-import { Typography } from "../Typography";
+import { CommonCompProps, FormFieldProps } from "../../../@types";
+import { Typography } from "../../Typography";
 
 type CheckboxProps = {
   label: ReactNode;
-  value?: boolean;
-  onChange?: (checked: boolean) => void;
-} & CommonCompProps;
+} & Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError" | "disabled"> &
+  CommonCompProps;
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   function Checkbox(
@@ -29,9 +28,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       setChecked(value);
     }, [value]);
 
-    const handleCheck = () => {
+    const handleCheck = (e: ChangeEvent<HTMLInputElement>) => {
       setChecked(!checked);
-      onChange?.(!checked);
+      onChange?.(!checked, e);
     };
 
     return (

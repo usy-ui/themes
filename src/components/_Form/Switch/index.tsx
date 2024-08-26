@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { FC, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, FormFieldProps } from "../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
+import { CommonCompProps, FormFieldProps } from "../../../@types";
+import { FieldTitle, PureFieldTitleProps } from "../FieldTitle";
 
-type SwitchProps = FormFieldProps<boolean> &
-  PureFieldTitleProps &
+type SwitchProps = PureFieldTitleProps &
+  Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError" | "disabled"> &
   CommonCompProps;
 
 export const Switch: FC<SwitchProps> = ({
@@ -21,9 +21,9 @@ export const Switch: FC<SwitchProps> = ({
 }) => {
   const [checked, setChecked] = useState(value);
 
-  const handleChange = () => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setChecked(!checked);
-    onChange?.(!checked);
+    onChange?.(!checked, e);
   };
 
   return (

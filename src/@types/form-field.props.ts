@@ -1,6 +1,9 @@
-export type FormFieldProps<T> = {
-  value?: T;
+import { ChangeEvent, FocusEvent } from "react";
+
+export type FormFieldProps<ValueType, ElementType = HTMLElement> = {
+  value?: ValueType;
   disabled?: boolean;
-  onChange?: (value: T) => void;
-  onBlur?: (value: T) => void;
+  hasError?: boolean;
+  onChange?: (value: ValueType, e?: ChangeEvent<ElementType>) => void;
+  onBlur?: (value: ValueType, e?: FocusEvent<ElementType>) => void;
 };

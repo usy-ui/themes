@@ -5,9 +5,9 @@ import clsx from "clsx";
 
 import { useOutsideClick } from "@src/hooks";
 
-import { CommonCompProps } from "../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../_internal/FieldTitle";
-import { AngleDownIcon } from "../Icon";
+import { CommonCompProps, FormFieldProps } from "../../../@types";
+import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
+import { AngleDownIcon } from "../../Icon";
 
 export type SelectItemType<T = any> = {
   id: string | number;
@@ -18,11 +18,12 @@ export type SelectItemType<T = any> = {
 type PureSelectProps = {
   items: SelectItemType[];
   isOpen?: boolean;
-  value?: SelectItemType;
-  onChange?: (item: SelectItemType) => void;
 };
 
-type SelectProps = PureSelectProps & PureFieldTitleProps & CommonCompProps;
+type SelectProps = PureSelectProps &
+  PureFieldTitleProps &
+  Omit<FormFieldProps<SelectItemType>, "hasError" | "disabled"> &
+  CommonCompProps;
 
 export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   {

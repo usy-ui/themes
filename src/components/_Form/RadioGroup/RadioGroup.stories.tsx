@@ -2,11 +2,11 @@ import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ThemeProviderDecorator } from "../../../.storybook/decorators";
+import { ThemeProviderDecorator } from "../../../../.storybook/decorators";
+import { usySpacing } from "../../../styles";
+import { Flex } from "../../_Layout/Flex";
 
 import { RadioGroup } from "./index";
-import { Flex } from "../Layout/Flex";
-import { usySpacing } from "../../styles";
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
