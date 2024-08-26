@@ -25,6 +25,7 @@ export { ParagraphHeading } from "./ParagraphHeading";
 export { Scrollable } from "./Scrollable";
 export { Select, SelectItemType } from "./Select";
 export { BarSkeleton, CircleSkeleton } from "./Skeleton";
+export { Switch } from "./Switch";
 export { Table, TableColumnType } from "./Table";
 export { Tabs, TabItemType } from "./Tabs";
 export { Tags } from "./Tags";

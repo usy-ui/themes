@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef, useState } from "react";
+import { ReactNode, forwardRef, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
@@ -24,6 +24,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ref
   ) {
     const [checked, setChecked] = useState(value);
+
+    useEffect(() => {
+      setChecked(value);
+    }, [value]);
 
     const handleCheck = () => {
       setChecked(!checked);

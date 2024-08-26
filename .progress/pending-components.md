@@ -7,5 +7,4 @@
 - Progress
 - Radio
 - Slider
-- Switch
 - Upload

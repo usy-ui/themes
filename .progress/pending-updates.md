@@ -5,10 +5,10 @@
 - Input supports mask
 - Support animation
 - Support responsive
-- Support semantic tags
+- Check semantic tags in components
 - Check data-testid for elements in component
-- Unit tests
 - Set name prop to component
 - Set 'use client' for needed components
 - Order CSS variables
 - Standardize form fields with value, onChange...
+- Check unused props from type props
