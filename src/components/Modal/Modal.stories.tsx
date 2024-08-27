@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
+import { Flex } from "../_Layout/Flex";
 import { Button } from "../Button";
-import { Flex } from "../Layout/Flex";
 
 import { Modal } from "./index";
 

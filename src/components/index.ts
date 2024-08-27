@@ -43,6 +43,7 @@ export {
 export { ImageGallery } from "./ImageGallery";
 export { Modal } from "./Modal";
 export { ParagraphHeading } from "./ParagraphHeading";
+export { Popover } from "./Popover";
 export { BarSkeleton, CircleSkeleton } from "./Skeleton";
 export { Table, TableColumnType } from "./Table";
 export { Tabs, TabItemType } from "./Tabs";

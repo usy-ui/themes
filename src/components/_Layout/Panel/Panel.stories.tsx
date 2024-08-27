@@ -2,9 +2,9 @@ import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ThemeProviderDecorator } from "../../../.storybook/decorators";
-import { Box } from "../Layout/Box";
-import { ParagraphHeading } from "../ParagraphHeading";
+import { ThemeProviderDecorator } from "../../../../.storybook/decorators";
+import { Box } from "../../_Layout/Box";
+import { ParagraphHeading } from "../../ParagraphHeading";
 
 import { Panel } from "./index";
 

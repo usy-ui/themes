@@ -12,11 +12,11 @@ type TooltipProps = {
 } & CommonCompProps;
 
 export const Tooltip: FC<TooltipProps> = ({
-  name = "tooltip",
   content,
   position = "top",
   children,
   className,
+  name = "tooltip",
   testId = name,
 }) => {
   return (
@@ -30,7 +30,7 @@ export const Tooltip: FC<TooltipProps> = ({
       )}
       data-testid={testId}
     >
-      <div className="tooltip-container" data-testid={`${testId}-content`}>
+      <div className="tooltip-overlay" data-testid={`${testId}-content`}>
         {content}
       </div>
       {children}

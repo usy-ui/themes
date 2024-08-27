@@ -24,6 +24,7 @@ type TypographyProps = {
   color?: BaseColor | "random";
   size?: TypographySize;
   align?: TypographyAlign;
+  wrap?: "wrap" | "nowrap";
   children: ReactNode;
 } & CommonCompProps;
 
@@ -34,6 +35,7 @@ export const Typography: FC<TypographyProps> = ({
   color = "dark-9",
   size = "medium",
   align = "left",
+  wrap,
   children,
   className,
   testId = name,
@@ -54,7 +56,7 @@ export const Typography: FC<TypographyProps> = ({
         },
         className
       )}
-      style={{ color: colorInHex, textAlign: align }}
+      style={{ color: colorInHex, textAlign: align, textWrap: wrap }}
       data-testid={testId}
     >
       {children}

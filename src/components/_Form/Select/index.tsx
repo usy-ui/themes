@@ -67,6 +67,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
       <div
         className="field-container"
         aria-hidden="true"
+        role="button"
         onClick={toggleSelect}
         ref={triggerRef}
       >

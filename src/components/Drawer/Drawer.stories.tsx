@@ -29,12 +29,12 @@ export const Types: Story = {
             alignContent="center"
             buttons={[
               {
-                type: "filled",
+                variant: "primary",
                 label: "Confirm",
                 onClick: () => alert("Confirmed"),
               },
               {
-                type: "normal",
+                variant: "normal",
                 label: "Cancel",
                 onClick: () => alert("Canceled"),
               },

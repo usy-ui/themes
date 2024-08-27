@@ -4,8 +4,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 import { usySpacing } from "../../styles";
+import { Flex } from "../_Layout/Flex";
 import { AngleDownIcon, CaretLeftIcon, CaretRightIcon } from "../Icon";
-import { Flex } from "../Layout/Flex";
 
 import { Button } from "./index";
 

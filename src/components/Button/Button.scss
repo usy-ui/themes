@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   line-height: 0;
+  margin-bottom: var(--usy-spacing-4px);
   user-select: none;
   cursor: pointer;
 
@@ -59,6 +60,7 @@
   }
 
   &.no-sole {
+    margin-bottom: 0;
     filter: none;
   }
 

@@ -3,11 +3,11 @@ import { FC } from "react";
 import clsx from "clsx";
 
 import { CommonCompProps } from "../../../@types";
-import { Button, ButtonType } from "../../../components/Button";
+import { Button, ButtonVariant } from "../../../components/Button";
 
 interface DrawerButtonProps {
   label: string;
-  type: ButtonType;
+  variant: ButtonVariant;
   onClick: () => void;
   testId?: string;
 }
@@ -33,17 +33,19 @@ export const DrawerFooter: FC<DrawerFooterProps> = ({
       )}
       data-testid={testId}
     >
-      {(buttons || []).map(({ type, label, onClick, testId: buttonTestId }) => (
-        <Button
-          key={label}
-          type={type}
-          onClick={onClick}
-          className={clsx("cta-button")}
-          testId={buttonTestId}
-        >
-          {label}
-        </Button>
-      ))}
+      {(buttons || []).map(
+        ({ variant, label, onClick, testId: buttonTestId }) => (
+          <Button
+            key={label}
+            variant={variant}
+            onClick={onClick}
+            className={clsx("cta-button")}
+            testId={buttonTestId}
+          >
+            {label}
+          </Button>
+        )
+      )}
     </div>
   );
 };

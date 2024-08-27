@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 import { usySpacing } from "../../styles";
-import { Flex } from "../Layout/Flex";
+import { Flex } from "../_Layout/Flex";
 
 import { Badge } from "./index";
 

@@ -4,9 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../.storybook/decorators";
 import { usySpacing } from "../../styles";
+import { Box } from "../_Layout/Box";
+import { Flex } from "../_Layout/Flex";
 import { Button } from "../Button";
-import { Box } from "../Layout/Box";
-import { Flex } from "../Layout/Flex";
 
 import { Table, TableColumnType } from "./index";
 
