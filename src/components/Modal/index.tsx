@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { createPortal } from "react-dom";
 
 import { useMounted, useOutsideClick } from "@src/hooks";
+import { usyZIndex } from "@src/styles";
 
 import { CommonCompProps, WidthProps } from "../../@types";
 import { CloseIcon } from "../Icon";
@@ -27,7 +28,7 @@ export const Modal: FC<ModalProps> = ({
   containerElement,
   children,
   onClose,
-  zIndex,
+  zIndex = usyZIndex.medium,
   className,
   testId = name,
 }) => {

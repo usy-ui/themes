@@ -8,5 +8,8 @@ export const usyZIndex = Object.freeze({
   700: 700,
   800: 800,
   900: 900,
-  latest: 1000,
+  base: 100,
+  medium: 400,
+  high: 700,
+  latest: 999,
 });

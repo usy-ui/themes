@@ -8,7 +8,7 @@ import { useOutsideClick } from "@src/hooks";
 
 import { CommonCompProps, FormFieldProps } from "../../../@types";
 import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
-import { AngleDownIcon } from "../../Icon";
+import { ChevronSortIcon } from "../../Icon";
 
 export type SelectItemType<T = any> = {
   id: string | number;
@@ -65,14 +65,14 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
   const renderDisplayField = () => {
     return (
       <div
-        className="field-container"
+        className="display-field"
         aria-hidden="true"
         role="button"
         onClick={toggleSelect}
         ref={triggerRef}
       >
         {selectedItem.label}
-        <AngleDownIcon />
+        <ChevronSortIcon />
       </div>
     );
   };

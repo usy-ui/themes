@@ -9,10 +9,7 @@
   filter: drop-shadow(0px 4px 0px var(--usy-color-primary-light));
 
   .close-icon {
+    color: var(--usy-element-icon-color-dark);
     cursor: pointer;
-
-    path {
-      fill: var(--usy-color-light-7);
-    }
   }
 }

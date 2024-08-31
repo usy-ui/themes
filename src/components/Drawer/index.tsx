@@ -34,7 +34,7 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
     children,
     footer,
     containerElement,
-    zIndex = usyZIndex[800],
+    zIndex = usyZIndex.medium,
     className,
     testId = name,
   },

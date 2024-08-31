@@ -7,19 +7,19 @@ import { Typography } from "@src/components/Typography";
 
 import { CommonCompProps } from "../../../@types";
 
-export type AccordionItemType = {
+export type PureAccordionItemType = {
   id: string;
   title: string | ReactNode;
   content: ReactNode;
 };
 
-type AccordionItemProps = AccordionItemType & CommonCompProps;
+type AccordionItemProps = PureAccordionItemType & CommonCompProps;
 
 export const AccordionItem: FC<AccordionItemProps> = ({
   title,
   content,
-  name = "accordion-item",
   className,
+  name = "accordion-item",
   testId = name,
 }) => {
   const [isExpand, setIsExpand] = useState(false);

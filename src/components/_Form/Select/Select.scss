@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
 
-  .field-container {
+  .display-field {
     height: var(--usy-element-height-medium);
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,7 @@
       width: var(--usy-spacing-16px);
       height: var(--usy-spacing-16px);
       margin-left: var(--usy-spacing-4px);
+      color: var(--usy-element-icon-color-dark);
     }
   }
 
@@ -33,7 +34,7 @@
     background-color: var(--usy-color-white);
     padding: var(--usy-spacing-10px) 0;
     filter: drop-shadow(0px 0px 6px var(--usy-color-light-2));
-    z-index: var(--usy-zIndex-latest);
+    z-index: var(--usy-zIndex-high);
 
     ul {
       width: 100%;

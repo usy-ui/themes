@@ -8,6 +8,7 @@
   background-color: var(--usy-color-white);
   transform: translateX(-50%);
   filter: drop-shadow(0px 0px 6px var(--usy-color-light-2));
+  z-index: var(--usy-zIndex-high);
 
   &::before {
     content: "";
