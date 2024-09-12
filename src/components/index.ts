@@ -49,4 +49,5 @@ export { Table, TableColumnType } from "./Table";
 export { Tabs, TabItemType } from "./Tabs";
 export { Toast, toastIns } from "./Toast";
 export { TogglePanel } from "./TogglePanel";
+export { Tooltip } from "./Tooltip";
 export { Typography } from "./Typography";

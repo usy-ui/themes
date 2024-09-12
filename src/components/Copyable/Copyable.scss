@@ -1,7 +1,7 @@
 .usy-copyable-container {
   min-height: var(--usy-element-height-medium);
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   background-color: var(--usy-copyable-color);
   padding-left: var(--usy-spacing-16px);

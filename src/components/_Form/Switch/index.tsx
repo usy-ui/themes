@@ -4,17 +4,22 @@ import { ChangeEvent, FC, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, FormFieldProps } from "../../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../FieldTitle";
+import {
+  CommonCompProps,
+  FieldLabelProps,
+  FormFieldProps,
+} from "../../../@types";
+import { FieldLabel } from "../FieldLabel";
 
-type SwitchProps = PureFieldTitleProps &
-  Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError" | "disabled"> &
+type SwitchProps = FieldLabelProps &
+  Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError"> &
   CommonCompProps;
 
 export const Switch: FC<SwitchProps> = ({
-  title,
+  label,
   hasAsterisk,
   value,
+  disabled,
   onChange,
   className,
   name = "switch",
@@ -23,20 +28,30 @@ export const Switch: FC<SwitchProps> = ({
   const [checked, setChecked] = useState(value);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (disabled) {
+      return;
+    }
+
     setChecked(!checked);
     onChange?.(!checked, e);
   };
 
   return (
     <div
-      className={clsx("usy-switch-container", className)}
+      className={clsx(
+        "usy-switch-container",
+        {
+          disabled: Boolean(disabled),
+        },
+        className
+      )}
       data-testid={testId}
     >
-      {title && (
-        <FieldTitle
+      {label && (
+        <FieldLabel
           name={name}
           hasAsterisk={hasAsterisk}
-          title={title}
+          label={label}
           testId={`${testId}-title`}
         />
       )}

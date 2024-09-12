@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
 
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .switch {
     width: 52px;
     height: var(--usy-spacing-28px);

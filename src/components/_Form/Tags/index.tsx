@@ -5,27 +5,23 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { CommonCompProps, WidthProps } from "../../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
+import { CommonCompProps, FieldLabelProps, WidthProps } from "../../../@types";
 import { CloseCircleSolidIcon } from "../../Icon";
+import { FieldLabel } from "../FieldLabel";
 
 type PureTagsProps = {
-  title?: string;
   tags?: string[];
   placeholder?: string;
   onAdd?: (tags: string[], tag: string) => void;
   onRemove?: (tags: string[], tag: string) => void;
 };
 
-type TagsProps = PureTagsProps &
-  PureFieldTitleProps &
-  WidthProps &
-  CommonCompProps;
+type TagsProps = PureTagsProps & FieldLabelProps & WidthProps & CommonCompProps;
 
 export const Tags = forwardRef<HTMLDivElement, TagsProps>(function Tags(
   {
     name = "tags",
-    title,
+    label,
     tags: initTags,
     placeholder = "New tag...",
     hasAsterisk,
@@ -69,10 +65,10 @@ export const Tags = forwardRef<HTMLDivElement, TagsProps>(function Tags(
       className={clsx("usy-tags-container", className)}
       data-testid={testId}
     >
-      {title && (
-        <FieldTitle
+      {label && (
+        <FieldLabel
           name={nameMemo}
-          title={title}
+          label={label}
           hasAsterisk={hasAsterisk}
           testId={`${testId}-title`}
         />

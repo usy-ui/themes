@@ -12,8 +12,8 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { BaseSize, CommonCompProps } from "../../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../FieldTitle";
+import { BaseSize, CommonCompProps, FieldLabelProps } from "../../../@types";
+import { FieldLabel } from "../FieldLabel";
 
 import { InputDescription } from "./components/InputDescription";
 import { InputIconLeft } from "./components/InputIconLeft";
@@ -29,11 +29,12 @@ export type PureInputProps = {
   placeholder?: string;
   description?: ReactNode;
   hasError?: boolean;
+  disabled?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>, value: string) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>, value: string) => void;
   formatOnChange?: (value: string) => string;
   formatOnBlur?: (value: string) => string;
-} & PureFieldTitleProps;
+} & FieldLabelProps;
 
 export type InputProps = PureInputProps & CommonCompProps;
 
@@ -42,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     name = "input",
     value = "",
     size = "medium",
-    title,
+    label,
     type = "text",
     maxWidth = "unset",
     iconLeft,
@@ -51,6 +52,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     description,
     hasAsterisk = false,
     hasError = false,
+    disabled = false,
     onChange,
     onBlur,
     formatOnChange = (value) => value,
@@ -68,12 +70,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   }, [value]);
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (disabled) {
+      return;
+    }
+
     const formattedValue = formatOnChange(e.target.value);
     setInputValue(formattedValue);
     onChange?.(e, formattedValue);
   };
 
   const handleOnBlur = (e: FocusEvent<HTMLInputElement>) => {
+    if (disabled) {
+      return;
+    }
+
     const formattedValue = formatOnBlur(e.target.value);
     setInputValue(formattedValue);
     onBlur?.(e, formattedValue);
@@ -101,12 +111,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   };
 
   return (
-    <div className={clsx("usy-input-container", className)}>
-      {title && (
-        <FieldTitle
+    <div
+      className={clsx(
+        "usy-input-container",
+        {
+          disabled: Boolean(disabled),
+        },
+        className
+      )}
+    >
+      {label && (
+        <FieldLabel
           name={nameMemo}
           hasAsterisk={hasAsterisk}
-          title={title}
+          label={label}
           testId={`${testId}-title`}
         />
       )}

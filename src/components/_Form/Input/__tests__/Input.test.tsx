@@ -13,7 +13,7 @@ describe("Input component", () => {
     it("should render component", () => {
       render(
         <Input
-          title="Email"
+          label="Email"
           placeholder="Enter your email"
           description="This field is empty"
           iconLeft={<EnvelopeIcon width="18px" height="18px" />}

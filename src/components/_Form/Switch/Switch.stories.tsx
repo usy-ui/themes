@@ -17,7 +17,12 @@ const meta: Meta<typeof Switch> = {
 
 export const Types: Story = {
   render: () => {
-    return <Switch title="Agree with term" />;
+    return (
+      <>
+        <Switch label="Agree with term" />
+        <Switch label="Agree with term" disabled />
+      </>
+    );
   },
 };
 

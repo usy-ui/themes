@@ -29,7 +29,7 @@ export const Types: Story = {
       <Flex direction="column" gap={usySpacing.px20}>
         <RadioGroup
           name="animal-1"
-          title="Select type"
+          label="Select type"
           value={items[0]}
           items={items}
           direction="horizontal"
@@ -37,10 +37,18 @@ export const Types: Story = {
         />
         <RadioGroup
           name="animal-2"
-          title="Select type"
+          label="Select type"
           value={items[0]}
           items={items}
           direction="vertical"
+        />
+        <RadioGroup
+          name="animal-3"
+          label="Select type"
+          value={items[0]}
+          items={items}
+          direction="vertical"
+          disabled
         />
       </Flex>
     );

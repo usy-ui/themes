@@ -19,9 +19,10 @@ export const Types: Story = {
   render: () => (
     <>
       <Checkbox label="Check me" />
+      <Checkbox label="Check me" disabled />
       <Checkbox
         label="onClick"
-        isChecked
+        checked
         onChange={(checked) => alert(`is checked: ${checked}`)}
       />
     </>

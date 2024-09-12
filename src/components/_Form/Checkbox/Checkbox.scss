@@ -4,6 +4,11 @@
   cursor: pointer;
   user-select: none;
 
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .input {
     appearance: none;
     width: var(--usy-spacing-20px);

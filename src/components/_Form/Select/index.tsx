@@ -6,9 +6,13 @@ import clsx from "clsx";
 
 import { useOutsideClick } from "@src/hooks";
 
-import { CommonCompProps, FormFieldProps } from "../../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
+import {
+  CommonCompProps,
+  FieldLabelProps,
+  FormFieldProps,
+} from "../../../@types";
 import { ChevronSortIcon } from "../../Icon";
+import { FieldLabel } from "../FieldLabel";
 
 export type SelectItemType<T = any> = {
   id: string | number;
@@ -22,8 +26,8 @@ type PureSelectProps = {
 };
 
 type SelectProps = PureSelectProps &
-  PureFieldTitleProps &
-  Omit<FormFieldProps<SelectItemType>, "hasError" | "disabled"> &
+  FieldLabelProps &
+  Omit<FormFieldProps<SelectItemType>, "hasError"> &
   CommonCompProps;
 
 export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
@@ -31,9 +35,10 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
     name = "select",
     items = [],
     isOpen: initOpen,
-    title,
+    label,
     value,
     hasAsterisk,
+    disabled,
     onChange,
     className,
     testId = name,
@@ -53,6 +58,10 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
 
   const toggleSelect = () => setIsOpen(!isOpen);
   const handleChange = (item: SelectItemType) => {
+    if (disabled) {
+      return;
+    }
+
     setSelectedItem(item);
     onChange?.(item);
     setIsOpen(false);
@@ -104,15 +113,21 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
 
   return (
     <div
-      className={clsx("usy-select-container", className)}
+      className={clsx(
+        "usy-select-container",
+        {
+          disabled: Boolean(disabled),
+        },
+        className
+      )}
       data-testid={testId}
       ref={ref}
     >
-      {title && (
-        <FieldTitle
+      {label && (
+        <FieldLabel
           name={name}
           hasAsterisk={hasAsterisk}
-          title={title}
+          label={label}
           testId={`${testId}-title`}
         />
       )}

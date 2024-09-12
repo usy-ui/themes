@@ -3,6 +3,11 @@
   flex-direction: column;
   position: relative;
 
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .display-field {
     height: var(--usy-element-height-medium);
     display: flex;

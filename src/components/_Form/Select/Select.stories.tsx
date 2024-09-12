@@ -35,11 +35,19 @@ export const Types: Story = {
       },
     ];
     return (
-      <Select
-        title="Select Animal"
-        items={items}
-        onChange={(item) => alert(item.value)}
-      />
+      <>
+        <Select
+          label="Select Animal"
+          items={items}
+          onChange={(item) => alert(item.value)}
+        />
+        <Select
+          label="Select Animal"
+          items={items}
+          onChange={(item) => alert(item.value)}
+          disabled
+        />
+      </>
     );
   },
 };

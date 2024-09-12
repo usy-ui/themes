@@ -4,14 +4,21 @@ import { CSSProperties, FC, useRef, useState } from "react";
 import clsx from "clsx";
 
 import { useUsyColor } from "@src/hooks";
+import { usySpacing } from "@src/styles";
 
-import { BaseColor, CommonCompProps, WidthProps } from "../../@types";
+import {
+  BaseColor,
+  CommonCompProps,
+  MarginProps,
+  WidthProps,
+} from "../../@types";
 import { CheckIcon, CopyIcon } from "../Icon";
 
 type CopyableProps = {
   text: string;
   color?: BaseColor;
 } & WidthProps &
+  MarginProps &
   CommonCompProps;
 
 export const Copyable: FC<CopyableProps> = ({
@@ -19,6 +26,7 @@ export const Copyable: FC<CopyableProps> = ({
   text,
   color = "primary-dark",
   widthProps,
+  marginProps,
   className,
   testId = name,
 }) => {
@@ -42,7 +50,11 @@ export const Copyable: FC<CopyableProps> = ({
   return (
     <div
       className={clsx("usy-copyable-container", className)}
-      style={{ ...cssVariables, ...widthProps }}
+      style={{
+        ...cssVariables,
+        ...widthProps,
+        ...(marginProps || { margin: `${usySpacing.px20} 0` }),
+      }}
       data-testid={testId}
     >
       <pre className="text">{text}</pre>

@@ -7,13 +7,13 @@ import { Typography } from "@src/components/Typography";
 
 import { CommonCompProps } from "../../../@types";
 
-export type PureAccordionItemType = {
+export type AccordionItemType = {
   id: string;
   title: string | ReactNode;
   content: ReactNode;
 };
 
-type AccordionItemProps = PureAccordionItemType & CommonCompProps;
+type AccordionItemProps = AccordionItemType & CommonCompProps;
 
 export const AccordionItem: FC<AccordionItemProps> = ({
   title,

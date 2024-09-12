@@ -13,7 +13,7 @@ import { useNameMemo } from "@src/hooks";
 import { usyElement } from "@src/styles";
 
 import { type CommonCompProps } from "../../../@types";
-import { FieldTitle } from "../FieldTitle";
+import { FieldLabel } from "../FieldLabel";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
 
@@ -21,12 +21,13 @@ type PickedInputProps = Pick<
   PureInputProps,
   | "name"
   | "value"
-  | "title"
+  | "label"
   | "maxWidth"
   | "placeholder"
   | "description"
   | "hasAsterisk"
   | "hasError"
+  | "disabled"
 >;
 
 type MoreTextAreaProps = {
@@ -43,7 +44,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     {
       name,
       value = "",
-      title,
+      label,
       maxWidth = "unset",
       maxHeight = "200px",
       minHeight = usyElement.heightMedium,
@@ -51,6 +52,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       description,
       hasAsterisk = false,
       hasError = false,
+      disabled = false,
       onChange,
       onBlur,
       className,
@@ -66,11 +68,19 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     }, [value]);
 
     const handleOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+      if (disabled) {
+        return;
+      }
+
       setInputValue(e.target.value);
       onChange?.(e, e.target.value);
     };
 
     const handleOnBlur = (e: FocusEvent<HTMLTextAreaElement>) => {
+      if (disabled) {
+        return;
+      }
+
       setInputValue(e.target.value);
       onBlur?.(e, e.target.value);
     };
@@ -99,12 +109,20 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     };
 
     return (
-      <div className={clsx("usy-textarea-container", className)}>
-        {title && (
-          <FieldTitle
+      <div
+        className={clsx(
+          "usy-textarea-container",
+          {
+            disabled: Boolean(disabled),
+          },
+          className
+        )}
+      >
+        {label && (
+          <FieldLabel
             name={nameMemo}
             hasAsterisk={hasAsterisk}
-            title={title}
+            label={label}
             testId={`${testId}-title`}
           />
         )}

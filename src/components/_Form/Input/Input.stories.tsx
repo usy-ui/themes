@@ -22,7 +22,7 @@ export const Types: Story = {
   render: () => (
     <Flex direction="column" gap={usySpacing.px32}>
       <Input
-        title="Email"
+        label="Email"
         placeholder="Enter your email"
         iconLeft={<EnvelopeIcon width="18px" height="18px" />}
         hasAsterisk
@@ -36,6 +36,11 @@ export const Types: Story = {
         description="This field cannot be empty"
         hasError
       />
+      <Input
+        placeholder="Enter your email"
+        description="This field cannot be empty"
+        disabled
+      />
     </Flex>
   ),
 };
@@ -43,9 +48,9 @@ export const Types: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={usySpacing.px32}>
-      <Input title="Small" placeholder="Enter your email" size="small" />
-      <Input title="Medium" placeholder="Enter your email" size="medium" />
-      <Input title="Large" placeholder="Enter your email" size="large" />
+      <Input label="Small" placeholder="Enter your email" size="small" />
+      <Input label="Medium" placeholder="Enter your email" size="medium" />
+      <Input label="Large" placeholder="Enter your email" size="large" />
     </Flex>
   ),
 };

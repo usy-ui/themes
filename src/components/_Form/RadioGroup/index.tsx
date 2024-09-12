@@ -3,8 +3,12 @@ import { ChangeEvent, FC, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, FormFieldProps } from "../../../@types";
-import { FieldTitle, PureFieldTitleProps } from "../../_Form/FieldTitle";
+import {
+  CommonCompProps,
+  FieldLabelProps,
+  FormFieldProps,
+} from "../../../@types";
+import { FieldLabel } from "../FieldLabel";
 
 type RadioType = {
   id: string;
@@ -12,18 +16,22 @@ type RadioType = {
   value: string;
 };
 
-type RadioGroupProps = {
+type PureRadioGroupProps = {
   items: RadioType[];
   direction?: "vertical" | "horizontal";
-} & PureFieldTitleProps &
-  Omit<FormFieldProps<RadioType, HTMLInputElement>, "hasError" | "disabled"> &
+};
+
+type RadioGroupProps = PureRadioGroupProps &
+  FieldLabelProps &
+  Omit<FormFieldProps<RadioType, HTMLInputElement>, "hasError"> &
   CommonCompProps;
 
 export const RadioGroup: FC<RadioGroupProps> = ({
-  title,
+  label,
   value,
   items,
   direction = "horizontal",
+  disabled,
   onChange,
   className,
   name = "radio-group",
@@ -40,19 +48,27 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   }, [value]);
 
   const handleChange = (item: RadioType, e: ChangeEvent<HTMLInputElement>) => {
+    if (disabled) {
+      return;
+    }
+
     setSelectedItem(item);
     onChange?.(item, e);
-
-    console.log(name);
   };
 
   return (
     <div
-      className={clsx("usy-radio-group-container", className)}
+      className={clsx(
+        "usy-radio-group-container",
+        {
+          disabled: Boolean(disabled),
+        },
+        className
+      )}
       data-testid={testId}
     >
-      {title && (
-        <FieldTitle name={name} title={title} testId={`${testId}-title`} />
+      {label && (
+        <FieldLabel name={name} label={label} testId={`${testId}-title`} />
       )}
       <div
         className={clsx("radio-group-container", {

@@ -1,48 +1,64 @@
 "use client";
-import { ChangeEvent, ReactNode, forwardRef, useEffect, useState } from "react";
+import { ChangeEvent, forwardRef, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, FormFieldProps } from "../../../@types";
+import {
+  CommonCompProps,
+  FieldLabelProps,
+  FormFieldProps,
+} from "../../../@types";
 import { Typography } from "../../Typography";
 
 type CheckboxProps = {
-  label: ReactNode;
-} & Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError" | "disabled"> &
+  checked?: boolean;
+} & FieldLabelProps &
+  Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError" | "value"> &
   CommonCompProps;
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   function Checkbox(
     {
-      name = "checkbox",
       label,
-      value = false,
+      checked = false,
+      disabled,
       onChange,
       className,
+      name = "checkbox",
       testId = name,
     },
     ref
   ) {
-    const [checked, setChecked] = useState(value);
+    const [innerChecked, setInnerChecked] = useState(Boolean(checked));
 
     useEffect(() => {
-      setChecked(value);
-    }, [value]);
+      setInnerChecked(checked);
+    }, [checked]);
 
     const handleCheck = (e: ChangeEvent<HTMLInputElement>) => {
-      setChecked(!checked);
-      onChange?.(!checked, e);
+      if (disabled) {
+        return;
+      }
+
+      setInnerChecked(!innerChecked);
+      onChange?.(!innerChecked, e);
     };
 
     return (
       <label
         data-testid={testId}
-        className={clsx("usy-checkbox-container", className)}
+        className={clsx(
+          "usy-checkbox-container",
+          {
+            disabled: Boolean(disabled),
+          },
+          className
+        )}
       >
         <input
           ref={ref}
           type="checkbox"
-          checked={checked}
+          checked={innerChecked}
           onChange={handleCheck}
           className={clsx("input", {
             checked,

@@ -1,4 +1,9 @@
 .usy-radio-group-container {
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .radio-group-container {
     display: flex;
 

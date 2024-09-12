@@ -18,7 +18,7 @@ const meta: Meta<typeof Tags> = {
 export const Types: Story = {
   render: () => (
     <Tags
-      title="Animals"
+      label="Animals"
       tags={["cats", "dogs", "ducks"]}
       widthProps={{ maxWidth: "300px", width: "300px" }}
     />

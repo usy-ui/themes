@@ -13,7 +13,7 @@ import { EyeSlashIcon, EyeIcon } from "@src/components/Icon";
 import { useNameMemo } from "@src/hooks";
 
 import { CommonCompProps } from "../../../@types";
-import { FieldTitle } from "../FieldTitle";
+import { FieldLabel } from "../FieldLabel";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
 import { InputIconLeft } from "../Input/components/InputIconLeft";
@@ -24,13 +24,14 @@ type PickedInputProps = Pick<
   | "name"
   | "value"
   | "size"
-  | "title"
+  | "label"
   | "maxWidth"
   | "iconLeft"
   | "placeholder"
   | "description"
   | "hasAsterisk"
   | "hasError"
+  | "disabled"
   | "onChange"
   | "onBlur"
 >;
@@ -43,13 +44,14 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
       name = "password",
       value = "",
       size = "medium",
-      title,
+      label,
       maxWidth = "unset",
       iconLeft,
       placeholder,
       description,
       hasAsterisk = false,
       hasError = false,
+      disabled = false,
       onChange,
       onBlur,
       className,
@@ -66,11 +68,19 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
     }, [value]);
 
     const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
       setInputValue(e.target.value);
       onChange?.(e, e.target.value);
     };
 
     const handleOnBlur = (e: FocusEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
       setInputValue(e.target.value);
       onBlur?.(e, e.target.value);
     };
@@ -97,12 +107,20 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
     };
 
     return (
-      <div className={clsx("usy-input-container", className)}>
-        {title && (
-          <FieldTitle
+      <div
+        className={clsx(
+          "usy-input-container",
+          {
+            disabled: Boolean(disabled),
+          },
+          className
+        )}
+      >
+        {label && (
+          <FieldLabel
             name={nameMemo}
             hasAsterisk={hasAsterisk}
-            title={title}
+            label={label}
             testId={`${testId}-title`}
           />
         )}

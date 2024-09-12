@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
 
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .textarea {
     resize: vertical;
     padding: var(--usy-spacing-10px);

@@ -19,12 +19,18 @@ const meta: Meta<typeof Password> = {
 export const Types: Story = {
   render: () => (
     <Flex direction="column" gap="30px">
-      <Password title="Password" placeholder="Enter your password" />
+      <Password label="Password" placeholder="Enter your password" />
       <Password
-        title="Password"
+        label="Password"
         placeholder="Enter your password"
         description="This field is required"
         hasError
+      />
+      <Password
+        label="Password"
+        placeholder="Enter your password"
+        description="This field is required"
+        disabled
       />
     </Flex>
   ),

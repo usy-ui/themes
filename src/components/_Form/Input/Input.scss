@@ -3,6 +3,11 @@
   display: flex;
   flex-direction: column;
 
+  &.disabled {
+    opacity: var(--usy-element-disabled-opacity);
+    pointer-events: none;
+  }
+
   .input-container {
     border: 1px solid var(--usy-element-border-color);
     border-radius: var(--usy-element-border-radius);
