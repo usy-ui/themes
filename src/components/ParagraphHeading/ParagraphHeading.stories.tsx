@@ -33,22 +33,22 @@ export const Sizes: Story = {
       <ParagraphHeading
         title="Username"
         description="Choose a your own username"
-        size="large"
+        titleSize="large"
       />
       <ParagraphHeading
         title="Username"
         description="Choose a your own username"
-        size="huge"
+        titleSize="huge"
       />
       <ParagraphHeading
         title="Username"
         description="Choose a your own username"
-        size="gigant-1"
+        titleSize="gigant-1"
       />
       <ParagraphHeading
         title="Username"
         description="Choose a your own username"
-        size="gigant-2"
+        titleSize="gigant-2"
       />
     </Flex>
   ),

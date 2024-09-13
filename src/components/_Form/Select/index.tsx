@@ -16,7 +16,8 @@ import { FieldLabel } from "../FieldLabel";
 
 export type SelectItemType<T = any> = {
   id: string | number;
-  label: ReactNode;
+  label: string;
+  labelElement?: ReactNode;
   value: T;
 };
 
@@ -81,7 +82,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
         ref={triggerRef}
       >
         {selectedItem.label}
-        <ChevronSortIcon />
+        <ChevronSortIcon className="chevron-icon" />
       </div>
     );
   };
@@ -90,6 +91,14 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
     if (!isOpen) {
       return;
     }
+
+    const renderItemLabel = (item: SelectItemType) => {
+      if (item.labelElement) {
+        return <div className="item-label">{item.labelElement}</div>;
+      }
+
+      return <p className="item-label">{item.label}</p>;
+    };
 
     return (
       <div className="menu-overlay" ref={elementRef}>
@@ -102,7 +111,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
                 aria-hidden="true"
                 className="item-container"
               >
-                <p className="item-label">{item.label}</p>
+                {renderItemLabel(item)}
               </li>
             );
           })}

@@ -8,8 +8,9 @@ import { Typography, TypographySize } from "../Typography";
 
 type ParagraphHeadingProps = {
   title: string;
+  titleSize?: TypographySize;
   description?: string | ReactNode;
-  size?: TypographySize;
+  descriptionSize?: TypographySize;
 } & MarginProps &
   CommonCompProps;
 
@@ -27,7 +28,8 @@ export const ParagraphHeading: FC<ParagraphHeadingProps> = ({
   name = "paragraph-heading",
   title,
   description,
-  size = "large",
+  titleSize = "large",
+  descriptionSize = "small",
   marginProps,
   className,
   testId = name,
@@ -39,7 +41,11 @@ export const ParagraphHeading: FC<ParagraphHeadingProps> = ({
 
     if (typeof description === "string") {
       return (
-        <Typography color="dark-1" size="medium" className="description">
+        <Typography
+          color="dark-1"
+          size={descriptionSize}
+          className="description"
+        >
           {description}
         </Typography>
       );
@@ -53,14 +59,18 @@ export const ParagraphHeading: FC<ParagraphHeadingProps> = ({
       className={clsx(
         "usy-paragraph-heading-container",
         {
-          [`mt-${size}`]: Boolean(size),
+          [`mt-${titleSize}`]: Boolean(titleSize),
         },
         className
       )}
       style={{ ...marginProps }}
       data-testid={testId}
     >
-      <Typography tag={MappingHeadingTag[size]} weight="semibold" size={size}>
+      <Typography
+        tag={MappingHeadingTag[titleSize]}
+        weight="semibold"
+        size={titleSize}
+      >
         {title}
       </Typography>
       {renderDescription()}

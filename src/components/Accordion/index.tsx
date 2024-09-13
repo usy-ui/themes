@@ -11,6 +11,7 @@ import {
 } from "../../@types";
 
 import { AccordionItem, AccordionItemType } from "./AccordionItem";
+export { AccordionItemType } from "./AccordionItem";
 
 type AccordionProps = {
   items: AccordionItemType[];

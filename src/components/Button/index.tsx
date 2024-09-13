@@ -23,10 +23,11 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   radius?: BaseRadius;
-  isLoading?: boolean;
+
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  isDisabled?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
   noSole?: boolean;
   children: ReactNode;
   onClick?: () => void;
@@ -41,8 +42,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "normal",
       size = "medium",
       radius = "small",
-      isLoading = false,
-      isDisabled = false,
+      loading: isLoading = false,
+      disabled: isDisabled = false,
       noSole = false,
       iconLeft,
       iconRight,
@@ -100,12 +101,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             [`variant-${variant}`]: Boolean(variant),
             [`radius-${radius}`]: Boolean(radius),
             "no-sole": Boolean(noSole),
-            disabled: isDisabled,
-            loading: isLoading,
+            disabled: Boolean(isDisabled),
+            loading: Boolean(isLoading),
           },
           className
         )}
         style={{ width }}
+        disabled={isDisabled}
         onClick={handleClick}
         data-testid={testId}
       >

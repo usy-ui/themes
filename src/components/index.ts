@@ -27,7 +27,7 @@ export { TextArea } from "./_Form/TextArea";
  * Components
  */
 
-export { Accordion } from "./Accordion";
+export { Accordion, AccordionItemType } from "./Accordion";
 export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
 export { Button } from "./Button";

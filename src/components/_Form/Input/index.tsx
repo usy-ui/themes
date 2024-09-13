@@ -30,8 +30,8 @@ export type PureInputProps = {
   description?: ReactNode;
   hasError?: boolean;
   disabled?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>, value: string) => void;
-  onBlur?: (e: FocusEvent<HTMLInputElement>, value: string) => void;
+  onChange?: (value: string, e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (value: string, e: FocusEvent<HTMLInputElement>) => void;
   formatOnChange?: (value: string) => string;
   formatOnBlur?: (value: string) => string;
 } & FieldLabelProps;
@@ -76,7 +76,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
     const formattedValue = formatOnChange(e.target.value);
     setInputValue(formattedValue);
-    onChange?.(e, formattedValue);
+    onChange?.(formattedValue, e);
   };
 
   const handleOnBlur = (e: FocusEvent<HTMLInputElement>) => {
@@ -86,7 +86,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
     const formattedValue = formatOnBlur(e.target.value);
     setInputValue(formattedValue);
-    onBlur?.(e, formattedValue);
+    onBlur?.(formattedValue, e);
   };
 
   /**

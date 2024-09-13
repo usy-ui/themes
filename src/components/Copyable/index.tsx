@@ -53,7 +53,7 @@ export const Copyable: FC<CopyableProps> = ({
       style={{
         ...cssVariables,
         ...widthProps,
-        ...(marginProps || { margin: `${usySpacing.px20} 0` }),
+        ...marginProps,
       }}
       data-testid={testId}
     >

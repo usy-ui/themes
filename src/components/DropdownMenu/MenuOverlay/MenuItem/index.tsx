@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { CommonCompProps } from "../../../../@types";
 
 export type MenuItem = {
-  label: ReactNode;
+  children: ReactNode;
   onClick?: () => void;
 };
 
@@ -24,7 +24,7 @@ export const MenuItem: FC<MenuItemProps> = ({
       className={clsx("usy-dropdown-menu-item-container", className)}
       data-testid={testId}
     >
-      {item.label}
+      {item.children}
     </li>
   );
 };

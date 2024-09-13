@@ -1,12 +1,32 @@
 .usy-table-container {
   .table-container {
-    border: 1px solid var(--usy-color-light-2);
-    border-radius: var(--usy-spacing-6px);
-    overflow: hidden;
+    .has-outer-border {
+      border: 1px solid var(--usy-color-light-2);
+      border-radius: var(--usy-spacing-6px);
+    }
 
     .table {
       width: 100%;
       border-collapse: collapse;
+
+      .head .head-row .head-column,
+      .body .body-row .body-column {
+        & > * {
+          display: inline-block;
+        }
+
+        &.align-left {
+          text-align: left;
+        }
+
+        &.align-center {
+          text-align: center;
+        }
+
+        &.align-right {
+          text-align: right;
+        }
+      }
 
       .head {
         .head-row {

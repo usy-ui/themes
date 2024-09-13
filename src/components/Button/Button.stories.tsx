@@ -26,7 +26,7 @@ export const Types: Story = {
         <Button variant="outline">Outline</Button>
         <Button variant="normal">Normal</Button>
         <Button variant="danger">Danger</Button>
-        <Button variant="normal" isDisabled>
+        <Button variant="normal" disabled>
           Disabled
         </Button>
       </Flex>
@@ -43,7 +43,7 @@ export const Types: Story = {
         <Button variant="invisible">Invisible</Button>
       </Flex>
       <Flex gap={usySpacing.px20}>
-        <Button variant="normal" isLoading>
+        <Button variant="normal" loading>
           Loading
         </Button>
         <Button

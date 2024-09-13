@@ -3,40 +3,53 @@ import { ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps, WidthProps } from "../../@types";
+import { CommonCompProps, PaddingProps, WidthProps } from "../../@types";
 
 type FallbackRow = Record<string, any>;
 
 export type TableColumnType<R extends FallbackRow> = {
-  key: Extract<keyof R | "action", string>;
+  key: Extract<keyof R | string, string>;
   title?: string;
   align?: "left" | "center" | "right";
   renderRow?: (row: R) => ReactNode;
-} & WidthProps;
+} & WidthProps &
+  PaddingProps;
+
+type TableStyles = {
+  hideHeader?: boolean;
+  hideOuterBorder?: boolean;
+};
 
 type TableProps<R extends FallbackRow> = {
+  rowKey: Extract<keyof R, string>;
   columns: TableColumnType<R>[];
   dataRows: R[];
-  rowKey: Extract<keyof R, string>;
+  styles: TableStyles;
 } & CommonCompProps;
 
 export const Table = <R extends FallbackRow>({
-  name = "table",
+  rowKey,
   columns,
   dataRows,
-  rowKey,
+  styles,
   className,
+  name = "table",
   testId = name,
 }: TableProps<R>) => {
+  const { hideHeader = false, hideOuterBorder = false } = styles || {};
+
   const renderHead = () => {
+    if (hideHeader) {
+      return null;
+    }
+
     return (
       <thead className="head" data-testid={`${testId}-head`}>
         <tr className="head-row" data-testid={`${testId}-head-row`}>
           {columns.map((col) => (
             <th
               key={col.key}
-              className="head-column"
-              style={{ ...col.widthProps, textAlign: col.align || "left" }}
+              className={clsx("head-column", `align-${col.align}`)}
             >
               {col.title}
             </th>
@@ -56,7 +69,14 @@ export const Table = <R extends FallbackRow>({
             data-testid={`${testId}-body-row`}
           >
             {columns.map((col) => (
-              <td key={col.key} className="body-column">
+              <td
+                key={col.key}
+                className={clsx("body-column", `align-${col.align}`)}
+                style={{
+                  ...col.widthProps,
+                  ...col.paddingProps,
+                }}
+              >
                 {col.renderRow ? col.renderRow(row) : row[col.key]}
               </td>
             ))}
@@ -71,7 +91,11 @@ export const Table = <R extends FallbackRow>({
       className={clsx("usy-table-container", className)}
       data-testid={testId}
     >
-      <div className="table-container">
+      <div
+        className={clsx("table-container", {
+          ["has-outer-border"]: !hideOuterBorder,
+        })}
+      >
         <table className="table">
           {renderHead()}
           {renderBody()}

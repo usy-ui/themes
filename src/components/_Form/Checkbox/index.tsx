@@ -21,7 +21,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     {
       label,
       checked = false,
-      disabled,
+      disabled = false,
       onChange,
       className,
       name = "checkbox",
@@ -61,11 +61,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           checked={innerChecked}
           onChange={handleCheck}
           className={clsx("input", {
-            checked,
+            checked: Boolean(innerChecked),
           })}
           data-testid={`${testId}-input`}
         />
-        <Typography size="small">{label}</Typography>
+        <Typography size="medium">{label}</Typography>
       </label>
     );
   }

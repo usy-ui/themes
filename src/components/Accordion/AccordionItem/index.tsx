@@ -10,7 +10,8 @@ import { CommonCompProps } from "../../../@types";
 export type AccordionItemType = {
   id: string;
   title: string | ReactNode;
-  content: ReactNode;
+  content: string | ReactNode;
+  isOpen?: boolean;
 };
 
 type AccordionItemProps = AccordionItemType & CommonCompProps;
@@ -18,11 +19,12 @@ type AccordionItemProps = AccordionItemType & CommonCompProps;
 export const AccordionItem: FC<AccordionItemProps> = ({
   title,
   content,
+  isOpen = false,
   className,
   name = "accordion-item",
   testId = name,
 }) => {
-  const [isExpand, setIsExpand] = useState(false);
+  const [isExpand, setIsExpand] = useState(isOpen);
 
   const toggle = () => {
     setIsExpand(!isExpand);
@@ -45,7 +47,15 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   };
 
   const renderContent = () => {
-    return isExpand && content;
+    if (!isExpand) {
+      return null;
+    }
+
+    if (typeof content === "string") {
+      return <Typography size="medium">{content}</Typography>;
+    }
+
+    return content;
   };
 
   return (

@@ -3,6 +3,12 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeProviderDecorator } from "../../../../.storybook/decorators";
+import {
+  BrandFacebookIcon,
+  BrandInstagramIcon,
+  BrandLinkedinIcon,
+  BrandTwitterIcon,
+} from "../../Icon";
 
 import { Select, SelectItemType } from "./index";
 
@@ -17,7 +23,7 @@ const meta: Meta<typeof Select> = {
 
 export const Types: Story = {
   render: () => {
-    const items: SelectItemType[] = [
+    const animals: SelectItemType[] = [
       {
         id: "cats",
         label: "Cats",
@@ -34,16 +40,58 @@ export const Types: Story = {
         value: "fishes",
       },
     ];
+
+    const socials: SelectItemType[] = [
+      {
+        id: "facebook",
+        label: "facebook",
+        labelElement: (
+          <>
+            <BrandFacebookIcon />
+            Cats
+          </>
+        ),
+        value: "facebook",
+      },
+      {
+        id: "linkedin",
+        label: "Linkedin",
+        labelElement: (
+          <>
+            <BrandLinkedinIcon />
+            Instagram
+          </>
+        ),
+        value: "linkedin",
+      },
+      {
+        id: "twitter",
+        label: "Twitter",
+        labelElement: (
+          <>
+            <BrandTwitterIcon />
+            Twitter
+          </>
+        ),
+        value: "twitter",
+      },
+    ];
+
     return (
       <>
         <Select
           label="Select Animal"
-          items={items}
+          items={animals}
+          onChange={(item) => alert(item.value)}
+        />
+        <Select
+          label="Select Social"
+          items={socials}
           onChange={(item) => alert(item.value)}
         />
         <Select
           label="Select Animal"
-          items={items}
+          items={animals}
           onChange={(item) => alert(item.value)}
           disabled
         />

@@ -30,14 +30,15 @@ export const Types: Story = {
       </DropdownMenuTrigger>
       <DropdownMenuOverlay>
         <DropdownMenuItem
-          label="Change Password"
           onClick={() => {
             alert("Change password");
           }}
-        />
-        <DropdownMenuItem label="Settings" />
+        >
+          Change Password
+        </DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
         <MenuSeparator />
-        <DropdownMenuItem label="Logout" />
+        <DropdownMenuItem>Logout</DropdownMenuItem>
       </DropdownMenuOverlay>
     </DropdownMenu>
   ),

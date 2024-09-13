@@ -73,7 +73,7 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
       }
 
       setInputValue(e.target.value);
-      onChange?.(e, e.target.value);
+      onChange?.(e.target.value, e);
     };
 
     const handleOnBlur = (e: FocusEvent<HTMLInputElement>) => {
@@ -82,7 +82,7 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
       }
 
       setInputValue(e.target.value);
-      onBlur?.(e, e.target.value);
+      onBlur?.(e.target.value, e);
     };
 
     /**

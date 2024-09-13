@@ -11,19 +11,23 @@
   .display-field {
     height: var(--usy-element-height-medium);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    position: relative;
     border: 1px solid var(--usy-element-border-color);
     border-radius: var(--usy-element-border-radius);
-    padding: 0 var(--usy-spacing-10px) 0 var(--usy-spacing-12px);
+    padding: 0 var(--usy-spacing-32px) 0 var(--usy-spacing-12px);
     font-size: var(--usy-fontsize-medium);
     user-select: none;
     cursor: pointer;
 
-    svg {
+    .chevron-icon {
+      position: absolute;
+      top: 50%;
+      right: var(--usy-spacing-10px);
+      transform: translateY(-50%);
       width: var(--usy-spacing-16px);
       height: var(--usy-spacing-16px);
-      margin-left: var(--usy-spacing-4px);
       color: var(--usy-element-icon-color-dark);
     }
   }
@@ -56,6 +60,8 @@
         }
 
         .item-label {
+          display: flex;
+          align-items: center;
           font-size: var(--usy-fontsize-medium);
           text-wrap: nowrap;
           margin: 0;

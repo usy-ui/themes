@@ -15,7 +15,7 @@ describe("Button component", () => {
 
     it("should render loading icon", () => {
       render(
-        <Button testId="click-button" isLoading>
+        <Button testId="click-button" loading>
           Click
         </Button>
       );
@@ -62,7 +62,7 @@ describe("Button component", () => {
 
     it("should not trigger onClick prop when button is disabled or loading", async () => {
       render(
-        <Button testId="click-button" onClick={onClick} isDisabled>
+        <Button testId="click-button" onClick={onClick} disabled>
           Click
         </Button>
       );
