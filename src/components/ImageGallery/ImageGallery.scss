@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: var(--usy-spacing-4px);
+    overflow: hidden;
 
     &.wide {
       grid-column: span 2;
@@ -28,7 +30,11 @@
       vertical-align: middle;
       display: inline-block;
       object-fit: cover;
-      border-radius: var(--usy-spacing-4px);
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.03);
+      }
     }
   }
 }

@@ -1,9 +1,5 @@
 .usy-panel-container {
   width: 100%;
   background-color: var(--usy-color-white);
-
-  &.has-border {
-    border: 2px solid var(--usy-color-light-1);
-    border-radius: var(--usy-spacing-6px);
-  }
+  border: 2px solid var(--usy-color-light-1);
 }

@@ -1,6 +1,11 @@
 export type BaseVariant = "filled" | "outline";
 export type BaseRadius = "none" | "small" | "medium" | "large" | "full";
 export type BasePosition = "top" | "right" | "bottom" | "left";
+export type BasePositionExtra =
+  | "top-start"
+  | "top-end"
+  | "bottom-start"
+  | "bottom-end";
 
 /**
  * Semantic Tag
@@ -27,8 +32,8 @@ export type BaseSemanticTag =
  */
 
 export type BaseSize = "small" | "medium" | "large";
-export type BaseExtraSize = "tiny" | "huge";
-export type BaseGigantSize = "gigant-1" | "gigant-2";
+export type BaseSizeExtra = "tiny" | "huge";
+export type BaseSizeGigant = "gigant-1" | "gigant-2";
 
 /**
  * Color

@@ -19,8 +19,10 @@ export const Types: Story = {
   render: () => {
     return (
       <>
-        <Switch label="Agree with term" />
-        <Switch label="Agree with term" disabled />
+        <Switch name="switch-1" label="Agree with term" size="small" />
+        <Switch name="switch-2" label="Agree with term" size="medium" />
+        <Switch name="switch-3" label="Agree with term" size="large" />
+        <Switch name="switch-4" label="Agree with term" disabled />
       </>
     );
   },

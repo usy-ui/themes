@@ -32,7 +32,6 @@ export const Trigger: FC<TriggerProps> = ({
       data-testid={testId}
     >
       {children}
-      <AngleDownIcon className="angle-down" />
     </div>
   );
 };

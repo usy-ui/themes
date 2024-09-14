@@ -8,7 +8,8 @@ import { CommonCompProps } from "../../../@types";
 
 type PureMenuOverlayProps = {
   zIndex?: number;
-  children: ReactElement[];
+  position?: "top" | "bottom";
+  children: ReactElement | ReactElement[];
 };
 
 type MenuOverlayProps = PureMenuOverlayProps & CommonCompProps;
@@ -16,17 +17,22 @@ type MenuOverlayProps = PureMenuOverlayProps & CommonCompProps;
 export const MenuOverlay = forwardRef<HTMLDivElement, MenuOverlayProps>(
   function MenuOverlay(
     {
-      name = "dropdown-menu-overlay",
+      position = "bottom",
       children,
       zIndex = usyZIndex.latest,
       className,
+      name = "dropdown-menu-overlay",
       testId = name,
     },
     ref
   ) {
     return (
       <div
-        className={clsx("usy-dropdown-menu-overlay-container", className)}
+        className={clsx(
+          "usy-dropdown-menu-overlay",
+          `position-${position}`,
+          className
+        )}
         style={{ zIndex }}
         data-testid={testId}
         ref={ref}

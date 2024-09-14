@@ -18,7 +18,7 @@ import { Typography } from "../../Typography";
 type PurePanelProps = {
   tag?: BaseSemanticTag;
   title?: ReactNode;
-  hasBorder?: boolean;
+  borderRadius?: string;
   children: string | ReactNode;
 };
 type PanelProps = PurePanelProps &
@@ -32,7 +32,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
   {
     name = "panel",
     title,
-    hasBorder = true,
+    borderRadius = usySpacing.px14,
     widthProps,
     heightProps,
     paddingProps,
@@ -46,13 +46,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
   return (
     <div
       ref={ref}
-      className={clsx(
-        "usy-panel-container",
-        {
-          "has-border": Boolean(hasBorder),
-        },
-        className
-      )}
+      className={clsx("usy-panel-container", className)}
       style={{
         ...widthProps,
         ...heightProps,
@@ -60,6 +54,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(function Panel(
           padding: `${usySpacing.px20} ${usySpacing.px24} ${usySpacing.px24}`,
         }),
         ...marginProps,
+        borderRadius,
       }}
       data-testid={testId}
     >

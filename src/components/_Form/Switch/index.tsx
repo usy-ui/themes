@@ -5,17 +5,21 @@ import { ChangeEvent, FC, useState } from "react";
 import clsx from "clsx";
 
 import {
+  BaseSize,
   CommonCompProps,
   FieldLabelProps,
   FormFieldProps,
 } from "../../../@types";
 import { FieldLabel } from "../FieldLabel";
 
-type SwitchProps = FieldLabelProps &
+type SwitchProps = {
+  size?: BaseSize;
+} & FieldLabelProps &
   Omit<FormFieldProps<boolean, HTMLInputElement>, "hasError"> &
   CommonCompProps;
 
 export const Switch: FC<SwitchProps> = ({
+  size = "large",
   label,
   hasAsterisk,
   value,
@@ -62,7 +66,11 @@ export const Switch: FC<SwitchProps> = ({
         onChange={handleChange}
         className="input"
       />
-      <label htmlFor={name} aria-hidden="true" className="switch" />
+      <label
+        htmlFor={name}
+        aria-hidden="true"
+        className={clsx("switch", `size-${size}`)}
+      />
     </div>
   );
 };

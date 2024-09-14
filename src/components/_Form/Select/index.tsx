@@ -10,6 +10,7 @@ import {
   CommonCompProps,
   FieldLabelProps,
   FormFieldProps,
+  WidthProps,
 } from "../../../@types";
 import { ChevronSortIcon } from "../../Icon";
 import { FieldLabel } from "../FieldLabel";
@@ -29,6 +30,7 @@ type PureSelectProps = {
 type SelectProps = PureSelectProps &
   FieldLabelProps &
   Omit<FormFieldProps<SelectItemType>, "hasError"> &
+  WidthProps &
   CommonCompProps;
 
 export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
@@ -40,6 +42,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
     value,
     hasAsterisk,
     disabled,
+    widthProps,
     onChange,
     className,
     testId = name,
@@ -129,6 +132,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
         },
         className
       )}
+      style={{ ...(widthProps || { width: "100%" }) }}
       data-testid={testId}
       ref={ref}
     >

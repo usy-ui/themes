@@ -69,29 +69,25 @@
     }
 
     .status-icon {
+      width: var(--usy-spacing-24px);
+      height: var(--usy-spacing-24px);
       margin-right: var(--usy-spacing-20px);
     }
 
     .close-icon {
       margin-left: var(--usy-spacing-32px);
-      fill: var(--usy-color-white);
+      color: var(--usy-color-light-3);
       cursor: pointer;
+
+      &:hover {
+        color: var(--usy-color-white);
+      }
     }
 
     .content {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-
-      .title {
-        margin: 0 0 10px;
-        font-size: var(--usy-fontsize-medium);
-      }
-
-      .description {
-        margin: 0;
-        font-size: var(--usy-fontsize-medium);
-      }
     }
   }
 }

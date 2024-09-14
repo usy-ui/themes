@@ -22,25 +22,41 @@ const meta: Meta<typeof DropdownMenu> = {
   },
 };
 
+const dropdownOverlayItems = (
+  <>
+    <DropdownMenuItem
+      onClick={() => {
+        alert("Change password");
+      }}
+    >
+      Change Password
+    </DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <MenuSeparator />
+    <DropdownMenuItem>Logout</DropdownMenuItem>
+  </>
+);
+
 export const Types: Story = {
   render: () => (
-    <DropdownMenu>
-      <DropdownMenuTrigger>
-        <span>Open Dropdown</span>
-      </DropdownMenuTrigger>
-      <DropdownMenuOverlay>
-        <DropdownMenuItem
-          onClick={() => {
-            alert("Change password");
-          }}
-        >
-          Change Password
-        </DropdownMenuItem>
-        <DropdownMenuItem>Settings</DropdownMenuItem>
-        <MenuSeparator />
-        <DropdownMenuItem>Logout</DropdownMenuItem>
-      </DropdownMenuOverlay>
-    </DropdownMenu>
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <span>Overlay Top</span>
+        </DropdownMenuTrigger>
+        <DropdownMenuOverlay position="top">
+          {dropdownOverlayItems}
+        </DropdownMenuOverlay>
+      </DropdownMenu>
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <span>Overlay Bottom</span>
+        </DropdownMenuTrigger>
+        <DropdownMenuOverlay position="bottom">
+          {dropdownOverlayItems}
+        </DropdownMenuOverlay>
+      </DropdownMenu>
+    </>
   ),
 };
 

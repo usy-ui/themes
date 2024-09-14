@@ -7,15 +7,15 @@ import { useUsyColor } from "@src/hooks";
 
 import {
   BaseColor,
-  BaseExtraSize,
-  BaseGigantSize,
+  BaseSizeExtra,
+  BaseSizeGigant,
   BaseSize,
   BaseTypographyTag,
   BaseTypographyWeight,
   CommonCompProps,
 } from "../../@types";
 
-export type TypographySize = BaseSize | BaseExtraSize | BaseGigantSize;
+export type TypographySize = BaseSize | BaseSizeExtra | BaseSizeGigant;
 type TypographyAlign = "left" | "center" | "right" | "justify";
 
 type TypographyProps = {

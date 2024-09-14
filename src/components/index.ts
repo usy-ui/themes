@@ -9,6 +9,7 @@ export { Box } from "./_Layout/Box";
 export { Flex } from "./_Layout/Flex";
 export { Panel } from "./_Layout/Panel";
 export { Scrollable } from "./_Layout/Scrollable";
+export { Separator } from "./_Layout/Separator";
 
 /**
  * Form

@@ -9,14 +9,14 @@ import { usyColor } from "@src/styles";
 import {
   CommonCompProps,
   BaseColor,
-  BaseExtraSize,
+  BaseSizeExtra,
   BaseRadius,
   BaseSize,
 } from "../../@types";
 
 type AvatarProps = {
   url: string;
-  size?: BaseSize | BaseExtraSize;
+  size?: BaseSize | BaseSizeExtra;
   color?: BaseColor | "random";
   radius?: BaseRadius;
   fallback?: ReactNode;

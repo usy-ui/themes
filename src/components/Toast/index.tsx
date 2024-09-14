@@ -16,12 +16,13 @@ import {
   ExclamationCircleIcon,
   BanIcon,
 } from "../Icon";
+import { Typography } from "../Typography";
 
 type ToastType = "success" | "info" | "warning" | "error";
 type PushToastProps = {
   type: ToastType;
-  title: ReactNode;
-  description: ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   statusIcon: FunctionComponent<{ className: string }>;
   timeout?: number;
   onClose?: () => void;
@@ -130,8 +131,20 @@ export const Toast: FC<ToastProps> = ({
       <>
         <StatusIcon className="status-icon" />
         <div className="content">
-          {title && <h4 className="title">{title}</h4>}
-          {description && <div className="description">{description}</div>}
+          {typeof title === "string" ? (
+            <Typography tag="h4" weight="semibold" color="white">
+              {title}
+            </Typography>
+          ) : (
+            title
+          )}
+          {typeof description === "string" ? (
+            <Typography tag="small" size="small" color="white">
+              {description}
+            </Typography>
+          ) : (
+            description
+          )}
         </div>
         <CloseIcon className="close-icon" />
       </>

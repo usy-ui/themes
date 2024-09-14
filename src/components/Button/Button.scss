@@ -20,7 +20,7 @@
 
   &.variant-outline {
     background-color: var(--usy-color-white);
-    border: 1px solid var(--usy-color-primary);
+    border: 2px solid var(--usy-color-primary);
     filter: drop-shadow(0px 4px 0px var(--usy-color-primary));
     color: var(--usy-color-dark-7);
   }
@@ -43,6 +43,11 @@
     color: var(--usy-color-dark-7);
     border: none;
     filter: none;
+    margin-bottom: 0;
+
+    &:hover {
+      background-color: var(--usy-color-light-0);
+    }
   }
 
   &.disabled {
@@ -69,7 +74,7 @@
    */
 
   &.size-small {
-    height: 28px;
+    height: var(--usy-element-height-small);
     padding: 1px var(--usy-spacing-10px);
     font-size: calc(var(--usy-fontsize-tiny) + 0.1rem);
 
@@ -80,7 +85,7 @@
   }
 
   &.size-medium {
-    height: 36px;
+    height: calc(var(--usy-element-height-medium) - 4px);
     padding: 1px var(--usy-spacing-12px);
     font-size: var(--usy-fontsize-medium);
 
@@ -91,7 +96,7 @@
   }
 
   &.size-large {
-    height: 42px;
+    height: calc(var(--usy-element-height-medium) + 4px);
     padding: 1px var(--usy-spacing-16px);
     font-size: var(--usy-fontsize-medium);
 

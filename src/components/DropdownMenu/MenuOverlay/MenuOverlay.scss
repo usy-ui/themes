@@ -1,26 +1,21 @@
-.usy-dropdown-menu-overlay-container {
+.usy-dropdown-menu-overlay {
   position: absolute;
-  top: calc(100% + var(--usy-spacing-8px));
-  left: 50%;
-  padding: var(--usy-spacing-10px) 0;
+  padding: var(--usy-spacing-6px) 0;
   border: 1px solid var(--usy-element-border-color);
   border-radius: var(--usy-element-border-radius);
   background-color: var(--usy-color-white);
-  transform: translateX(-50%);
   filter: drop-shadow(0px 0px 6px var(--usy-color-light-2));
-  z-index: var(--usy-zIndex-high);
 
-  &::before {
-    content: "";
-    width: var(--usy-spacing-12px);
-    height: var(--usy-spacing-12px);
-    position: absolute;
-    top: -7px;
-    right: 30%;
-    transform: rotate(45deg);
-    background-color: var(--usy-color-white);
-    border-left: 1px solid var(--usy-color-light-5);
-    border-top: 1px solid var(--usy-color-light-5);
+  &.position-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(-100% - var(--usy-spacing-6px)));
+  }
+
+  &.position-bottom {
+    top: calc(100% + var(--usy-spacing-6px));
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
   }
 
   ul {

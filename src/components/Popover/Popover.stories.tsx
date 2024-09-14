@@ -19,54 +19,34 @@ const meta: Meta<typeof Popover> = {
   },
 };
 
-export const Types: Story = {
+export const Top: Story = {
   render: () => (
-    <Flex direction="column" alignItems="center" gap={usySpacing.px40}>
-      <Flex
-        widthProps={{ width: "350px" }}
-        justifyContent="space-between"
-        gap={usySpacing.px32}
-      >
-        <Popover content="This is this the first line" position="top">
-          <Button>Top</Button>
-        </Popover>
-        <Popover
-          content={
-            <Box widthProps={{ width: "250px" }}>
-              This is this the first line\nThis is this the first line
-            </Box>
-          }
-          position="bottom"
-        >
-          <Button>Bottom</Button>
-        </Popover>
-      </Flex>
-      <Flex
-        widthProps={{ width: "350px" }}
-        justifyContent="space-between"
-        gap={usySpacing.px32}
-      >
-        <Popover
-          content={
-            <Box widthProps={{ width: "250px" }}>
-              This is this the first line\nThis is this the first line
-            </Box>
-          }
-          position="left"
-        >
-          <Button>Left</Button>
-        </Popover>
-        <Popover
-          content={
-            <Box widthProps={{ width: "250px" }}>
-              This is this the first line\nThis is this the first line
-            </Box>
-          }
-          position="right"
-        >
-          <Button>Right</Button>
-        </Popover>
-      </Flex>
+    <Flex justifyContent="center" alignItems="center" gap={usySpacing.px32}>
+      <Popover content="This is this the first line" position="top-start">
+        <Button>Top start</Button>
+      </Popover>
+      <Popover content="This is this the first line" position="top">
+        <Button>Top</Button>
+      </Popover>
+      <Popover content="This is this the first line" position="top-end">
+        <Button>Top end</Button>
+      </Popover>
+    </Flex>
+  ),
+};
+
+export const Bottom: Story = {
+  render: () => (
+    <Flex justifyContent="center" alignItems="center" gap={usySpacing.px32}>
+      <Popover content="This is this the first line" position="bottom-start">
+        <Button>Bottom start</Button>
+      </Popover>
+      <Popover content="This is this the first line" position="bottom">
+        <Button>Bottom</Button>
+      </Popover>
+      <Popover content="This is this the first line" position="bottom-end">
+        <Button>Bottom end</Button>
+      </Popover>
     </Flex>
   ),
 };

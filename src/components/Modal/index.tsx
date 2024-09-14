@@ -5,13 +5,14 @@ import clsx from "clsx";
 import { createPortal } from "react-dom";
 
 import { useMounted, useOutsideClick } from "@src/hooks";
-import { usyZIndex } from "@src/styles";
+import { usySpacing, usyZIndex } from "@src/styles";
 
 import { CommonCompProps, WidthProps } from "../../@types";
 import { CloseIcon } from "../Icon";
+import { ParagraphHeading } from "../ParagraphHeading";
 
 type ModalProps = {
-  title?: ReactNode;
+  title?: string | ReactNode;
   preventOutsideClose?: boolean;
   containerElement?: HTMLElement;
   children: ReactNode;
@@ -21,7 +22,6 @@ type ModalProps = {
   CommonCompProps;
 
 export const Modal: FC<ModalProps> = ({
-  name = "modal",
   title,
   widthProps,
   preventOutsideClose = false,
@@ -30,6 +30,7 @@ export const Modal: FC<ModalProps> = ({
   onClose,
   zIndex = usyZIndex.medium,
   className,
+  name = "modal",
   testId = name,
 }) => {
   const { isMounted } = useMounted();
@@ -78,12 +79,18 @@ export const Modal: FC<ModalProps> = ({
       );
     };
 
-    const renderTitle = () =>
-      title && (
-        <h4 className="header-title" data-testid={`${testId}-header-title`}>
-          {title}
-        </h4>
-      );
+    const renderTitle = () => {
+      if (typeof title === "string") {
+        return (
+          <ParagraphHeading
+            title={title}
+            marginProps={{ marginBottom: usySpacing.px20 }}
+          />
+        );
+      }
+
+      return title;
+    };
 
     return (
       <div className={clsx("usy-modal-overlay")} style={{ zIndex }}>

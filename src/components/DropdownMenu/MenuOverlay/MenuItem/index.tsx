@@ -12,8 +12,8 @@ export type MenuItem = {
 type MenuItemProps = MenuItem & CommonCompProps;
 
 export const MenuItem: FC<MenuItemProps> = ({
-  name = "dropdown-menu-ite,",
   className,
+  name = "dropdown-menu-item",
   testId = name,
   ...item
 }) => {
@@ -21,7 +21,7 @@ export const MenuItem: FC<MenuItemProps> = ({
     <li
       onClick={item.onClick}
       aria-hidden="true"
-      className={clsx("usy-dropdown-menu-item-container", className)}
+      className={clsx("usy-dropdown-menu-item", className)}
       data-testid={testId}
     >
       {item.children}

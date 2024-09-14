@@ -8,7 +8,7 @@ import { CommonCompProps, PaddingProps, WidthProps } from "../../@types";
 type FallbackRow = Record<string, any>;
 
 export type TableColumnType<R extends FallbackRow> = {
-  key: Extract<keyof R | string, string>;
+  key: Extract<keyof R | "select" | "action-1" | "action-2", string>;
   title?: string;
   align?: "left" | "center" | "right";
   renderRow?: (row: R) => ReactNode;

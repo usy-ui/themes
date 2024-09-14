@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
   left: 0;
@@ -13,20 +13,14 @@
 
 .usy-modal-container {
   width: 100%;
-  min-height: 200px;
-  border-radius: var(--usy-spacing-8px);
+  min-height: 100px;
+  margin: -8vh var(--usy-spacing-14px) 0;
+  border-radius: var(--usy-spacing-16px);
   border: 1px solid var(--usy-color-light-1);
   background-color: var(--usy-color-white);
-  margin: var(--usy-spacing-24px);
-  padding: var(--usy-spacing-24px);
+  padding: var(--usy-spacing-20px) var(--usy-spacing-20px)
+    var(--usy-spacing-32px);
   position: relative;
-
-  .header-title {
-    margin-top: calc(var(--usy-spacing-6px) * -1);
-    margin-bottom: var(--usy-spacing-16px);
-    font-size: var(--usy-fontsize-large);
-    user-select: none;
-  }
 
   .header-close {
     width: var(--usy-spacing-24px);
