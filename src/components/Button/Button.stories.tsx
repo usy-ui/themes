@@ -70,6 +70,9 @@ export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={usySpacing.px20}>
       <Flex alignItems="center" gap={usySpacing.px20}>
+        <Button variant="normal" size="tiny">
+          tiny
+        </Button>
         <Button variant="normal" size="small">
           small
         </Button>

@@ -3,23 +3,16 @@ import { FC } from "react";
 import clsx from "clsx";
 
 import { CommonCompProps } from "../../../@types";
-import { Button, ButtonVariant } from "../../../components/Button";
-
-interface DrawerButtonProps {
-  label: string;
-  variant: ButtonVariant;
-  onClick: () => void;
-  testId?: string;
-}
+import { Button, ButtonProps } from "../../../components/Button";
 
 type DrawerFooterProps = {
   alignContent?: "left" | "center" | "right";
-  buttons: DrawerButtonProps[];
+  buttons: ButtonProps[];
 } & CommonCompProps;
 
 export const DrawerFooter: FC<DrawerFooterProps> = ({
   name = "drawer-footer",
-  alignContent = "right",
+  alignContent = "center",
   buttons,
   className,
   testId = name,
@@ -33,19 +26,9 @@ export const DrawerFooter: FC<DrawerFooterProps> = ({
       )}
       data-testid={testId}
     >
-      {(buttons || []).map(
-        ({ variant, label, onClick, testId: buttonTestId }) => (
-          <Button
-            key={label}
-            variant={variant}
-            onClick={onClick}
-            className={clsx("cta-button")}
-            testId={buttonTestId}
-          >
-            {label}
-          </Button>
-        )
-      )}
+      {(buttons || []).map((buttonProps, index) => (
+        <Button key={`${buttonProps.name}-${index}`} {...buttonProps} />
+      ))}
     </div>
   );
 };

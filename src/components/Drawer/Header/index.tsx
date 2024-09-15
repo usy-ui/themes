@@ -8,7 +8,7 @@ import { Typography } from "@src/components/Typography";
 import { CommonCompProps } from "../../../@types";
 
 type DrawerHeaderProps = {
-  title: ReactNode;
+  title: string | ReactNode;
   onClose?: () => void;
 } & CommonCompProps;
 
@@ -24,9 +24,13 @@ export const DrawerHeader: FC<DrawerHeaderProps> = ({
       className={clsx("usy-drawer-header-container", className)}
       data-testid={testId}
     >
-      <Typography size="large" weight="semibold" testId={`${testId}-title`}>
-        {title}
-      </Typography>
+      {typeof title === "string" ? (
+        <Typography size="large" weight="semibold" testId={`${testId}-title`}>
+          {title}
+        </Typography>
+      ) : (
+        title
+      )}
       {onClose ? (
         <CloseIcon
           onClick={onClose}

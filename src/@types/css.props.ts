@@ -2,35 +2,35 @@
  * WidthProps
  */
 
-type WidthCSS = {
+type WidthCSSType = {
   width?: string;
   maxWidth?: string;
   minWidth?: string;
 };
 
 export type WidthProps = {
-  widthProps?: WidthCSS;
+  widthProps?: WidthCSSType;
 };
 
 /**
  * HeightProps
  */
 
-type heightCSS = {
+type HeightCSSType = {
   height?: string;
   maxHeight?: string;
   minHeight?: string;
 };
 
 export type HeightProps = {
-  heightProps?: heightCSS;
+  heightProps?: HeightCSSType;
 };
 
 /**
  * MarginProps
  */
 
-type MarginCSS = {
+type MarginCSSType = {
   marginTop?: string;
   marginRight?: string;
   marginBottom?: string;
@@ -39,14 +39,14 @@ type MarginCSS = {
 };
 
 export type MarginProps = {
-  marginProps?: MarginCSS;
+  marginProps?: MarginCSSType;
 };
 
 /**
  * PaddingProps
  */
 
-type PaddingCSS = {
+type PaddingCSSType = {
   paddingTop?: string;
   paddingRight?: string;
   paddingBottom?: string;
@@ -55,5 +55,5 @@ type PaddingCSS = {
 };
 
 export type PaddingProps = {
-  paddingProps?: PaddingCSS;
+  paddingProps?: PaddingCSSType;
 };

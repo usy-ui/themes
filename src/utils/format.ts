@@ -41,3 +41,11 @@ export const camelCase = (input: string): string => {
     )
     .replace(/\s+/g, "");
 };
+
+/**
+ * formatAmount
+ * 3400 => $3,400
+ */
+
+export const formatAmount = (num: number, prefix?: string): string =>
+  `${prefix || ""}${num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;

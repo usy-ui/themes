@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, forwardRef } from "react";
+import { CSSProperties, ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
@@ -15,7 +15,7 @@ export type ButtonVariant =
   | "normal"
   | "danger"
   | "invisible";
-export type ButtonSize = BaseSize;
+export type ButtonSize = BaseSize | "tiny";
 
 export type ButtonProps = {
   type?: ButtonType;
@@ -32,6 +32,13 @@ export type ButtonProps = {
   children: ReactNode;
   onClick?: () => void;
 } & CommonCompProps;
+
+const SoleSizeMappingConst: Record<ButtonSize, string> = {
+  tiny: "2px",
+  small: "3px",
+  medium: "4px",
+  large: "4px",
+};
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
@@ -54,6 +61,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) {
+    const cssVariables = {
+      "--usy-button-sole-height": SoleSizeMappingConst[size],
+    } as CSSProperties;
+
     const handleClick = () => {
       if (isDisabled || isLoading || typeof onClick !== "function") {
         return;
@@ -106,7 +117,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
-        style={{ width }}
+        style={{ width, ...cssVariables }}
         disabled={isDisabled}
         onClick={handleClick}
         data-testid={testId}

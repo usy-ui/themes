@@ -6,8 +6,10 @@
 
   .radio-group-container {
     display: flex;
+    padding: var(--usy-spacing-10px) 0;
 
     &.direction-horizontal {
+      align-items: center;
       flex-direction: row;
       gap: var(--usy-spacing-20px);
     }

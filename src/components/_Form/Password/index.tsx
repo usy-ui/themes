@@ -25,7 +25,6 @@ type PickedInputProps = Pick<
   | "value"
   | "size"
   | "label"
-  | "maxWidth"
   | "iconLeft"
   | "placeholder"
   | "description"
@@ -34,6 +33,7 @@ type PickedInputProps = Pick<
   | "disabled"
   | "onChange"
   | "onBlur"
+  | "widthProps"
 >;
 
 type PasswordProps = PickedInputProps & CommonCompProps;
@@ -45,13 +45,13 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
       value = "",
       size = "medium",
       label,
-      maxWidth = "unset",
       iconLeft,
       placeholder,
       description,
       hasAsterisk = false,
       hasError = false,
       disabled = false,
+      widthProps,
       onChange,
       onBlur,
       className,
@@ -129,7 +129,7 @@ export const Password = forwardRef<HTMLInputElement, PasswordProps>(
             [`size-${size}`]: Boolean(size),
             "has-error": hasError,
           })}
-          style={{ maxWidth }}
+          style={{ ...(widthProps || { width: "100%" }) }}
           data-testid={testId}
         >
           <InputIconLeft iconLeft={iconLeft} testId={testId} />

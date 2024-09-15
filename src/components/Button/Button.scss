@@ -14,27 +14,35 @@
 
   &.variant-primary {
     background-color: var(--usy-color-primary);
-    filter: drop-shadow(0px 4px 0px var(--usy-color-primary-dark));
+    filter: drop-shadow(
+      0px var(--usy-button-sole-height) 0px var(--usy-color-primary-dark)
+    );
     color: var(--usy-color-white);
   }
 
   &.variant-outline {
     background-color: var(--usy-color-white);
     border: 2px solid var(--usy-color-primary);
-    filter: drop-shadow(0px 4px 0px var(--usy-color-primary));
+    filter: drop-shadow(
+      0px var(--usy-button-sole-height) 0px var(--usy-color-primary)
+    );
     color: var(--usy-color-dark-7);
   }
 
   &.variant-normal {
     background-color: var(--usy-color-white);
     border: 1px solid var(--usy-color-light-3);
-    filter: drop-shadow(0px 4px 0px var(--usy-color-light-3));
+    filter: drop-shadow(
+      0px var(--usy-button-sole-height) 0px var(--usy-color-light-3)
+    );
     color: var(--usy-color-dark-7);
   }
 
   &.variant-danger {
     background-color: var(--usy-color-red);
-    filter: drop-shadow(0px 4px 0px var(--usy-color-red-5));
+    filter: drop-shadow(
+      0px var(--usy-button-sole-height) 0px var(--usy-color-red-5)
+    );
     color: var(--usy-color-white);
   }
 
@@ -72,6 +80,17 @@
   /*
    * Sizes 
    */
+
+  &.size-tiny {
+    height: var(--usy-element-height-tiny);
+    padding: 1px var(--usy-spacing-10px);
+    font-size: calc(var(--usy-fontsize-tiny) + 0.1rem);
+
+    svg {
+      width: var(--usy-spacing-16px);
+      height: var(--usy-spacing-16px);
+    }
+  }
 
   &.size-small {
     height: var(--usy-element-height-small);

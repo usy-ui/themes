@@ -75,7 +75,7 @@ export const Tags = forwardRef<HTMLDivElement, TagsProps>(function Tags(
       )}
       <div
         className={clsx("tags-container", className)}
-        style={{ ...widthProps }}
+        style={{ ...(widthProps || { width: "100%" }) }}
       >
         {tags.map((tagItem) => {
           return (

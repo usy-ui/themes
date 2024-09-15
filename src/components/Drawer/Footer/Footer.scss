@@ -5,6 +5,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: var(--usy-spacing-16px);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -20,9 +21,5 @@
 
   &.align-content-right {
     justify-content: right;
-  }
-
-  .cta-button:not(:last-child) {
-    margin: 0 var(--usy-spacing-16px);
   }
 }

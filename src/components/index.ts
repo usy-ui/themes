@@ -18,7 +18,7 @@ export { Separator } from "./_Layout/Separator";
 export { Checkbox } from "./_Form/Checkbox";
 export { Input } from "./_Form/Input";
 export { Password } from "./_Form/Password";
-export { RadioGroup } from "./_Form/RadioGroup";
+export { RadioGroup, RadioType } from "./_Form/RadioGroup";
 export { Select, SelectItemType } from "./_Form/Select";
 export { Switch } from "./_Form/Switch";
 export { Tags } from "./_Form/Tags";

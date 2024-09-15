@@ -12,7 +12,12 @@ import clsx from "clsx";
 
 import { useNameMemo } from "@src/hooks";
 
-import { BaseSize, CommonCompProps, FieldLabelProps } from "../../../@types";
+import {
+  BaseSize,
+  CommonCompProps,
+  FieldLabelProps,
+  WidthProps,
+} from "../../../@types";
 import { FieldLabel } from "../FieldLabel";
 
 import { InputDescription } from "./components/InputDescription";
@@ -23,7 +28,6 @@ export type PureInputProps = {
   value?: string;
   type?: "text" | "number";
   size?: BaseSize;
-  maxWidth?: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   placeholder?: string;
@@ -34,7 +38,8 @@ export type PureInputProps = {
   onBlur?: (value: string, e: FocusEvent<HTMLInputElement>) => void;
   formatOnChange?: (value: string) => string;
   formatOnBlur?: (value: string) => string;
-} & FieldLabelProps;
+} & FieldLabelProps &
+  WidthProps;
 
 export type InputProps = PureInputProps & CommonCompProps;
 
@@ -45,7 +50,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     size = "medium",
     label,
     type = "text",
-    maxWidth = "unset",
     iconLeft,
     iconRight,
     placeholder,
@@ -53,6 +57,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     hasAsterisk = false,
     hasError = false,
     disabled = false,
+    widthProps,
     onChange,
     onBlur,
     formatOnChange = (value) => value,
@@ -133,7 +138,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           [`size-${size}`]: Boolean(size),
           "has-error": hasError,
         })}
-        style={{ maxWidth }}
+        style={{ ...(widthProps || { width: "100%" }) }}
         data-testid={testId}
       >
         <InputIconLeft iconLeft={iconLeft} testId={testId} />

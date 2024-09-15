@@ -9,12 +9,13 @@ import { usyZIndex } from "@src/styles";
 
 import { CommonCompProps, WidthProps } from "../../@types";
 
+import { disableScroll } from "./Drawer.utils";
+
 export { DrawerHeader } from "./Header";
 export { DrawerContent } from "./Content";
 export { DrawerFooter } from "./Footer";
 
 type DrawerProps = {
-  isOpen?: boolean;
   side?: "left" | "right";
   header?: ReactNode;
   children: ReactNode;
@@ -27,7 +28,6 @@ type DrawerProps = {
 export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
   {
     name = "drawer",
-    isOpen,
     side = "right",
     widthProps,
     header,
@@ -42,23 +42,13 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
 ) {
   const { isMounted } = useMounted();
 
-  const enableScroll = () => {
-    document.body.style.overflow = "auto";
-  };
-
-  const disableScroll = () => {
-    document.body.style.overflow = "hidden";
-  };
-
   useEffect(() => {
+    disableScroll(true);
+
     return () => {
-      enableScroll();
+      disableScroll(false);
     };
   }, []);
-
-  useEffect(() => {
-    isOpen ? disableScroll() : enableScroll();
-  }, [isOpen]);
 
   const renderDrawer = () => {
     return (

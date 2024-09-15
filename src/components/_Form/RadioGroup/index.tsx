@@ -10,7 +10,7 @@ import {
 } from "../../../@types";
 import { FieldLabel } from "../FieldLabel";
 
-type RadioType = {
+export type RadioType = {
   id: string;
   label: string;
   value: string;

@@ -25,7 +25,7 @@ const TriggerModal = () => {
 
   return (
     <>
-      <Button onClick={openModal}>Open</Button>
+      <Button onClick={openModal}>Open Modal</Button>
       {isOpen && (
         <Modal title="Modal" onClose={closeModal}>
           Lorem Ipsum is simply dummy text of the printing and typesetting

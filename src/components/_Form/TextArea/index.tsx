@@ -12,7 +12,7 @@ import clsx from "clsx";
 import { useNameMemo } from "@src/hooks";
 import { usyElement } from "@src/styles";
 
-import { type CommonCompProps } from "../../../@types";
+import { HeightProps, type CommonCompProps } from "../../../@types";
 import { FieldLabel } from "../FieldLabel";
 import { PureInputProps } from "../Input";
 import { InputDescription } from "../Input/components/InputDescription";
@@ -22,17 +22,16 @@ type PickedInputProps = Pick<
   | "name"
   | "value"
   | "label"
-  | "maxWidth"
   | "placeholder"
   | "description"
   | "hasAsterisk"
   | "hasError"
   | "disabled"
->;
+  | "widthProps"
+> &
+  HeightProps;
 
 type MoreTextAreaProps = {
-  maxHeight?: string;
-  minHeight?: string;
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>, value: string) => void;
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>, value: string) => void;
 };
@@ -45,14 +44,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       name,
       value = "",
       label,
-      maxWidth = "unset",
-      maxHeight = "200px",
-      minHeight = usyElement.heightMedium,
       placeholder,
       description,
       hasAsterisk = false,
       hasError = false,
       disabled = false,
+      widthProps,
+      heightProps,
       onChange,
       onBlur,
       className,
@@ -103,7 +101,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           className={clsx("textarea", {
             "has-error": hasError,
           })}
-          style={{ maxWidth, maxHeight, minHeight }}
+          style={{
+            ...(widthProps || { width: "100%" }),
+            height: heightProps?.height,
+            minHeight: heightProps?.minHeight || usyElement.heightMedium,
+            maxHeight: heightProps?.maxHeight || "200px",
+          }}
         />
       );
     };
