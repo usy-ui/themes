@@ -3,8 +3,6 @@ import { FC, ReactNode } from "react";
 
 import clsx from "clsx";
 
-import { usySpacing } from "@src/styles";
-
 import {
   HeightProps,
   WidthProps,
@@ -17,6 +15,7 @@ import {
 type PureScrollableProps = {
   tag?: BaseSemanticTag;
   scrollType?: "vertical" | "horizontal" | "both";
+  showScrollOnHover?: boolean;
   children?: ReactNode;
 };
 
@@ -30,28 +29,26 @@ type ScrollableProps = PureScrollableProps &
 export const Scrollable: FC<ScrollableProps> = ({
   tag: Tag = "div",
   scrollType = "vertical",
-  name = "scrollable",
   widthProps,
   heightProps,
   paddingProps,
   marginProps,
   children,
   className,
+  name = "scrollable",
   testId = name,
 }) => {
   return (
     <Tag
       className={clsx(
         "usy-scrollable-container",
-        {
-          [`scroll-${scrollType}`]: Boolean(scrollType),
-        },
+        `scroll-${scrollType}`,
         className
       )}
       style={{
         ...(widthProps || { width: "100%" }),
         ...heightProps,
-        ...(paddingProps || { paddingRight: usySpacing.px10 }),
+        ...paddingProps,
         ...marginProps,
       }}
       data-testid={testId}

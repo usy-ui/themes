@@ -34,7 +34,9 @@
   },
   "keywords": [
     "react",
-    "react-components"
+    "react-components",
+    "react-library",
+    "ui-library"
   ],
   "author": "Thi Nguyen",
   "license": "ISC",
@@ -135,3 +137,4 @@
     ]
   }
 }
+

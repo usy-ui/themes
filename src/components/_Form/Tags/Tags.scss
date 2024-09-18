@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     gap: var(--usy-spacing-6px);
     min-height: var(--usy-element-height-medium);
-    padding: var(--usy-spacing-8px);
+    padding: var(--usy-spacing-8px) var(--usy-spacing-10px);
     border: 1px solid var(--usy-element-border-color);
     border-radius: var(--usy-element-border-radius);
 
@@ -18,9 +18,9 @@
       align-items: center;
       font-size: var(--usy-fontsize-small);
       border: 1px solid var(--usy-color-primary);
-      border-radius: var(--usy-spacing-12px);
+      border-radius: var(--usy-spacing-14px);
       margin-right: var(--usy-spacing-4px);
-      padding: 0 var(--usy-spacing-8px);
+      padding: 0 var(--usy-spacing-6px) 0 var(--usy-spacing-10px);
 
       svg {
         fill: var(--usy-color-primary);

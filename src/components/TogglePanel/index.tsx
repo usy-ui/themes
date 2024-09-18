@@ -3,29 +3,30 @@ import { forwardRef, ReactNode, useState } from "react";
 
 import clsx from "clsx";
 
-import { CommonCompProps } from "../../@types";
+import { CommonCompProps, MarginProps, WidthProps } from "../../@types";
 import { AngleDownIcon } from "../Icon";
+import { Typography } from "../Typography";
 
 export type TogglePanelProps = {
   title: ReactNode;
-  isExpand?: boolean;
-  maxWidth?: string;
-  maxContentHeight?: string;
+  expand?: boolean;
   children: ReactNode;
   onToggle?: (isExpand: boolean) => void;
-} & CommonCompProps;
+} & WidthProps &
+  MarginProps &
+  CommonCompProps;
 
 export const TogglePanel = forwardRef<HTMLDivElement, TogglePanelProps>(
   function TogglePanel(
     {
-      name = "toggle-panel",
       title,
-      isExpand: isDefExpand = false,
-      maxWidth,
-      maxContentHeight = "unset",
+      expand: isDefExpand = false,
       children,
+      widthProps,
+      marginProps,
       onToggle,
       className,
+      name = "toggle-panel",
       testId = name,
     },
     ref
@@ -50,14 +51,19 @@ export const TogglePanel = forwardRef<HTMLDivElement, TogglePanelProps>(
           onClick={handleToggle}
           data-testid={`${testId}-header`}
         >
-          <label className="title" data-testid={`${testId}-header-title`}>
+          <Typography
+            tag="label"
+            size="medium"
+            weight="semibold"
+            data-testid={`${testId}-header-title`}
+          >
             {title}
-          </label>
+          </Typography>
           <AngleDownIcon
             className={clsx("arrow-icon", {
               expanded: isExpand,
             })}
-            data-testid={`${testId}-header-toggle`}
+            data-testid={`${testId}-header-toggle-icon`}
           />
         </div>
       );
@@ -67,7 +73,6 @@ export const TogglePanel = forwardRef<HTMLDivElement, TogglePanelProps>(
       return (
         <div
           className={clsx("usy-toggle-panel-content")}
-          style={{ maxHeight: maxContentHeight }}
           data-testid={`${testId}-content`}
         >
           {children}
@@ -85,7 +90,7 @@ export const TogglePanel = forwardRef<HTMLDivElement, TogglePanelProps>(
           },
           className
         )}
-        style={{ maxWidth }}
+        style={{ ...(widthProps || { width: "100%" }), ...marginProps }}
         data-testid={testId}
       >
         {renderHeader()}
